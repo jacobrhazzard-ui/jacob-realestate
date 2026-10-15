@@ -5,6 +5,7 @@ import { formatDate } from './listingsData';
 const badgeStyles = {
   'Sold': 'bg-[#b29567] text-white',
   'Under Contract': 'bg-white text-[#2e2b28]',
+  'Active Under Contract': 'bg-white text-[#2e2b28]',
   'Leased': 'bg-[#2e2b28] text-white border border-white/30',
   'Active': 'bg-emerald-700 text-white',
   'Off-Market': 'bg-black text-[#d8c39e] border border-[#b29567]',
