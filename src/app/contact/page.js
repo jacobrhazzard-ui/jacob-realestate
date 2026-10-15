@@ -18,7 +18,6 @@ config.autoAddCss = false;
 export default function ContactPage() {
     const pathname = usePathname();
     const [menuOpen, setMenuOpen] = useState(false);
-    const [status, setStatus] = useState('idle');
 
     const navItems = [
         { label: 'Sell', href: '/sell' },
@@ -26,27 +25,6 @@ export default function ContactPage() {
         { label: 'About', href: '/about' },
         // { label: 'Testimonials', href: '/testimonials' },
     ];
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const form = e.currentTarget;
-        const data = new FormData(form);
-
-        const res = await fetch('https://formspree.io/f/xdkdldna', {
-            method: 'POST',
-            body: data,
-            headers: {
-                Accept: 'application/json',
-            },
-        });
-
-        if (res.ok) {
-            setStatus('success');
-            form.reset();
-        } else {
-            setStatus('error');
-        }
-    };
 
     return (
         <>
@@ -166,144 +144,38 @@ export default function ContactPage() {
                 {/* Contact Form Section */}
                 <section id="contact-form" className="relative bg-[#2e2b28] px-6 py-24 text-white border-t-4 border-white">
                     <div className="max-w-4xl mx-auto">
-                        {status === 'success' ? (
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                className="text-center bg-[#242220] p-16 border border-gray-700"
-                            >
-                                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <h3 className="text-3xl font-semibold mb-4 f1">Message Sent Successfully</h3>
-                                <p className="text-lg text-gray-300 f2 mb-8 max-w-2xl mx-auto">
-                                    Thank you for reaching out. Jacob will review your message and get back to you within 24 hours.
-                                </p>
-                                <Link href="/" className="inline-flex items-center gap-3 text-white border border-white px-10 py-4 text-lg tracking-wide font-light hover:bg-white hover:text-black transition-all duration-300">
-                                    Return to Homepage →
-                                </Link>
-                            </motion.div>
-                        ) : (
-                            <>
-                                <div className="text-center mb-16">
-                                    <div className="w-20 h-20 flex items-center justify-center mx-auto mb-15">
-                                        <Image
-                                            src="/jg-logo-2.png"
-                                            alt="Logo"
-                                            width={200}
-                                            height={200}
-                                            className="max-w-[200] max-h-[200] object-contain"
-                                        />
-                                    </div>
-                                    <h2 className="text-4xl md:text-5xl font-semibold mb-6 f1">
-                                        Send a Detailed Message
-                                    </h2>
-                                    <p className="text-lg md:text-xl text-gray-300 font-light f2 max-w-2xl mx-auto">
-                                        Share your real estate goals and Jacob will craft a personalized strategy for your success. All inquiries receive a response within 24 hours.
-                                    </p>
-                                </div>
+                        <div className="text-center mb-16">
+                            <div className="w-20 h-20 flex items-center justify-center mx-auto mb-15">
+                                <Image
+                                    src="/jg-logo-2.png"
+                                    alt="Logo"
+                                    width={200}
+                                    height={200}
+                                    className="max-w-[200] max-h-[200] object-contain"
+                                />
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-semibold mb-6 f1">
+                                Making a Move in Orange County?
+                            </h2>
+                            <p className="text-lg md:text-xl text-gray-300 font-light f2 max-w-2xl mx-auto">
+                                Answer a few quick questions about buying or selling and Jacob will reach out with a personalized plan, usually the same day.
+                            </p>
+                        </div>
 
-                                <motion.form
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6 }}
-                                    onSubmit={handleSubmit}
-                                    className="bg-[#242220] p-12 border border-gray-700 space-y-8 shadow-2xl"
-                                >
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div>
-                                            <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Full Name *</label>
-                                            <input
-                                                type="text"
-                                                name="name"
-                                                required
-                                                className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
-                                                placeholder="Enter your full name"
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Email Address *</label>
-                                            <input
-                                                type="email"
-                                                name="email"
-                                                required
-                                                className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
-                                                placeholder="Enter your email address"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div>
-                                            <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Phone Number</label>
-                                            <input
-                                                type="tel"
-                                                name="phone"
-                                                className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
-                                                placeholder="Enter your phone number"
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Property Address</label>
-                                            <input
-                                                type="text"
-                                                name="address"
-                                                className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors f2 text-lg"
-                                                placeholder="Property address (if applicable)"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Reason for Contact *</label>
-                                        <select
-                                            name="category"
-                                            required
-                                            defaultValue=""
-                                            className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white focus:border-white focus:outline-none transition-colors f2 text-lg"
-                                        >
-                                            <option value="" disabled className="bg-[#242220] text-gray-400">Select a reason</option>
-                                            <option value="buying" className="bg-[#242220] text-white">Find a Home</option>
-                                            <option value="selling" className="bg-[#242220] text-white">Looking to Sell</option>
-                                            <option value="renovate" className="bg-[#242220] text-white">Renovate to Sell</option>
-                                            <option value="valuation" className="bg-[#242220] text-white">Home Valuation</option>
-                                            <option value="investment" className="bg-[#242220] text-white">Investment Opportunities</option>
-                                            <option value="general" className="bg-[#242220] text-white">General Inquiry</option>
-                                        </select>
-                                    </div>
-
-                                    <div>
-                                        <label className="block text-sm uppercase tracking-widest text-gray-400 mb-3 f2">Message *</label>
-                                        <textarea
-                                            name="message"
-                                            rows={6}
-                                            required
-                                            className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-600 text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors resize-none f2 text-lg"
-                                            placeholder="Tell Jacob about your real estate goals..."
-                                        ></textarea>
-                                    </div>
-
-                                    {status === 'error' && (
-                                        <div className="bg-red-500/10 border border-red-500/30 p-4 rounded">
-                                            <p className="text-red-400 f2">Something went wrong. Please try again or contact Jacob directly.</p>
-                                        </div>
-                                    )}
-
-                                    <div className="text-center pt-8">
-                                        <button
-                                            type="submit"
-                                            disabled={status === 'submitting'}
-                                            className="inline-flex items-center gap-3 text-white border border-white px-12 py-4 text-lg tracking-wide font-light hover:bg-white hover:text-black transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                                        >
-                                            {status === 'submitting' ? 'Sending...' : 'Send Message →'}
-                                        </button>
-                                    </div>
-                                </motion.form >
-                            </>
-                        )}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            className="bg-white p-4 md:p-8 border border-gray-700 shadow-2xl"
+                        >
+                            <iframe
+                                title="Contact Jacob Hazzard"
+                                src="https://form.jotform.com/262540630184048"
+                                className="w-full min-h-[1100px] border-0 bg-white"
+                                allow="geolocation; microphone; camera; fullscreen"
+                            />
+                        </motion.div>
                     </div>
                 </section>
 

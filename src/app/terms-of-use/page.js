@@ -95,7 +95,7 @@ export default function TermsOfUse() {
         <h2 className="text-xl font-semibold mb-2">12. Contact</h2>
         <p className="text-base text-gray-700">
           Questions about these Terms: <br />
-          Email: <a href="mailto:[contact@example.com]" className="underline">jacobhazzardrealestate@gmail.com</a><br />
+          Email: <a href="mailto:jacobhazzardrealestate@gmail.com" className="underline">jacobhazzardrealestate@gmail.com</a><br />
         </p>
       </section>
 

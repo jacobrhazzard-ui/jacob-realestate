@@ -1,10 +1,8 @@
 export async function GET() {
-  const pages = [
-    { url: "https://jacobhazzardrealestate.com/", lastModified: "2025-08-08" },
-    { url: "https://jacobhazzardrealestate.com/about", lastModified: "2025-08-08" },
-    { url: "https://jacobhazzardrealestate.com/contact", lastModified: "2025-08-08" },
-    // Add more pages here
-  ];
+  const lastModified = "2026-10-15";
+  const pages = ["", "/sell", "/buy", "/listings", "/about", "/contact", "/privacy-policy", "/terms-of-use"].map(
+    (path) => ({ url: `https://jacobhazzardrealestate.com${path}`, lastModified })
+  );
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
