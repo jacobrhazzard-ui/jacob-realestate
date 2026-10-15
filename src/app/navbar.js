@@ -28,9 +28,10 @@ const Navigation = () => {
             dropdownItems: [
                 { label: 'Buyers Guide', href: '/buy#buyers-guide' },
                 { label: 'Mortgage Calculator', href: '/buy#mortgage-calculator' }, 
-                { label: 'Featured Listings', href: '/buy#buy-listings' }
+                { label: 'Recent Sales', href: '/buy#buy-listings' }
             ]
         },
+        { label: 'Listings', href: '/listings' },
         { label: 'About', href: '/about' }
     ];
 
