@@ -5,7 +5,7 @@ import { Home, MapPin, Calculator, CheckCircle, ArrowRight, DollarSign, Trending
 import Footer from '../footer';
 import Link from 'next/link';
 import Navigation from '../navbar';
-import BuyFeaturedListings from '../buylistingsection';
+import FeaturedListings from '../listingSection';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -932,7 +932,7 @@ const BuyingPage = () => {
                 </div>
             </section>
             {/* Current Listings */}
-            <BuyFeaturedListings />
+            <FeaturedListings id="buy-listings" />
 
             {/* CTA Section */}
             <section className="py-20 bg-slate-900 text-white">
