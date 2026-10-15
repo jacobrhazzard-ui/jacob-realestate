@@ -16,6 +16,8 @@ const merriweather = Merriweather({ subsets: ['latin'], weight: ['300', '400', '
 
 // app/layout.js (or a separate metadata file imported by layout)
 export const metadata = {
+  metadataBase: new URL("https://jacobhazzardrealestate.com"),
+  alternates: { canonical: "/" },
   title: {
     default: "Jacob Hazzard | Luxre Realty — San Clemente & Orange County Realtor",
     template: "%s | Jacob Hazzard, Luxre Realty"

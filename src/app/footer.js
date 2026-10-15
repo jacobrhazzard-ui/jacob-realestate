@@ -15,7 +15,7 @@ export default function Footer() {
                     </p>
                     <Image
                         src="/jg-logo-2.png"
-                        alt="Logo"
+                        alt="Jacob Hazzard Real Estate logo"
                         width={250}
                         height={200}
                         className="w-full max-w-[125] max-h-[125] object-contain md:ml-20"
@@ -32,7 +32,7 @@ export default function Footer() {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                             </svg>
-                            <a href="mailto:info@yourgroup.com" className="hover:text-white transition">jacobhazzardrealestate@gmail.com</a>
+                            <a href="mailto:jacobhazzardrealestate@gmail.com" className="hover:text-white transition">jacobhazzardrealestate@gmail.com</a>
                         </li>
                         <li className="flex items-center gap-3">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -52,7 +52,7 @@ export default function Footer() {
 
                 {/* Right Column - Branding */}
                 <div className="flex flex-col items-start md:items-end">
-                    <Image src="/LUXRE Realty Logo.svg" width={150} height={150} alt="Coldwell Banker Realty" className="h-25 w-50 md:mr-3" />
+                    <Image src="/LUXRE Realty Logo.svg" width={150} height={150} alt="Luxre Realty" className="h-25 w-50 md:mr-3" />
                     <p className="text-sm text-gray-400">
                         Jacob Hazzard | CA DRE# 02222037 <br />
                         Luxre Realty | CA DRE# 01897290
@@ -62,10 +62,10 @@ export default function Footer() {
 
             {/* Bottom Bar */}
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center mt-6 text-sm text-gray-500">
-                <p>© {new Date().getFullYear()} Jacob Hazzard Real Estate Group. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} Jacob Hazzard, Luxre Realty. CA DRE# 02222037. All rights reserved.</p>
                 <div className="flex gap-5 mt-3 md:mt-0">
-                    <a href="/terms-of-use" className="hover:text-white transition">Privacy Policy</a>
-                    <a href="privacy-policy" className="hover:text-white transition">Terms of Use</a>
+                    <a href="/privacy-policy" className="hover:text-white transition">Privacy Policy</a>
+                    <a href="/terms-of-use" className="hover:text-white transition">Terms of Use</a>
                 </div>
             </div>
         </footer>
