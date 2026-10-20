@@ -44,12 +44,12 @@ export default function SellHomePage() {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://formspree.io/f/xgvzprll', {
+            const response = await fetch('/api/lead', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, kind: 'seller' }),
             });
 
             if (response.ok) {
