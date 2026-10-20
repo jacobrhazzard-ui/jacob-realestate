@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  async redirects() {
+    return [
+      { source: '/home-value', destination: '/sell#property-valuation', permanent: false },
+      { source: '/whats-my-home-worth', destination: '/sell#property-valuation', permanent: false },
+    ];
+  },
+};
 
 export default nextConfig;

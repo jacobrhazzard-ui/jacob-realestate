@@ -175,7 +175,7 @@ const BuyingPage = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://formspree.io/f/xnnzoeen', {
+            const response = await fetch('/api/lead', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -183,7 +183,7 @@ const BuyingPage = () => {
                 },
                 body: JSON.stringify({
                     ...formData,
-                    _subject: 'New Home Buyer Inquiry',
+                    kind: 'buyer',
                 })
             });
 
