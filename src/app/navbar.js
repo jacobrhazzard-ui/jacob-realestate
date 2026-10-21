@@ -31,6 +31,7 @@ const Navigation = () => {
                 { label: 'Recent Sales', href: '/buy#buy-listings' }
             ]
         },
+        { label: 'Search Homes', href: 'https://jacobhazzardrealestate.idxbroker.com/idx/map/mapsearch' },
         { label: 'Listings', href: '/listings' },
         { label: 'About', href: '/about' }
     ];
