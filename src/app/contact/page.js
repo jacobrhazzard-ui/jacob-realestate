@@ -101,6 +101,7 @@ export default function ContactPage() {
                                     (949) 291-9395
                                 </Link> 
                                 <p className="text-sm f2 text-white/60 mt-2">Available 7 days a week</p>
+                                <p className="text-sm f2 text-white font-semibold mt-1">Jacob Hazzard | CA DRE# 02222037</p>
                             </div>
 
                             {/* Email Card */}
@@ -109,8 +110,8 @@ export default function ContactPage() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                 </svg>
                                 <h3 className="text-xl font-semibold f1 mb-2">Send Email</h3>
-                                <Link href="mailto:jacobhazzardrealestate@gmail.com" className="text-lg f2 hover:text-white/80 transition break-all">
-                                    jacobhazzardrealestate@gmail.com
+                                <Link href="mailto:jacob@hazzardestates.com" className="text-lg f2 hover:text-white/80 transition break-all">
+                                    jacob@hazzardestates.com
                                 </Link>
                                 <p className="text-sm f2 text-white/60 mt-2">Quick response guaranteed</p>
                             </div>

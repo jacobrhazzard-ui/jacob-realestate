@@ -32,7 +32,7 @@ export default function Footer() {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                             </svg>
-                            <a href="mailto:jacobhazzardrealestate@gmail.com" className="hover:text-white transition">jacobhazzardrealestate@gmail.com</a>
+                            <a href="mailto:jacob@hazzardestates.com" className="hover:text-white transition">jacob@hazzardestates.com</a>
                         </li>
                         <li className="flex items-center gap-3">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -46,6 +46,9 @@ export default function Footer() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 22s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
                             </svg>
                             222 Avenida Del Mar, <br />San Clemente, CA 92672
+                        </li>
+                        <li className="text-white font-semibold pt-1">
+                            Jacob Hazzard, REALTOR® | CA DRE# 02222037
                         </li>
                     </ul>
                 </div>
