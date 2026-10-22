@@ -1,6 +1,6 @@
 export async function GET() {
-  const lastModified = "2026-10-15";
-  const pages = ["", "/sell", "/buy", "/listings", "/about", "/contact", "/privacy-policy", "/terms-of-use"].map(
+  const lastModified = "2026-10-22";
+  const pages = ["", "/sell", "/buy", "/listings", "/about", "/contact", "/oc-relocation-guide", "/privacy-policy", "/terms-of-use"].map(
     (path) => ({ url: `https://jacobhazzardrealestate.com${path}`, lastModified })
   );
 
