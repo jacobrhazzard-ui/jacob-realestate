@@ -5,6 +5,7 @@ import Link from 'next/link';
 import PastSuccessSlideshow from './pastSection';
 import FeaturedListings from './listingSection';
 import Footer from './footer';
+import LuxreStats from './luxreStats';
 import { icons } from 'lucide-react';
 
 export const metadata = {
@@ -176,6 +177,7 @@ export default function Home() {
             />
           </div>
         </section>
+        <LuxreStats />
         {/* Current Listings */}
         <FeaturedListings />
         {/* Contact Section */}
