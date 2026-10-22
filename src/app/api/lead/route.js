@@ -1,3 +1,4 @@
+// Website leads -> Follow Up Boss (requires FUB_API_KEY env var)
 // Website lead intake: sends each form submission to Follow Up Boss (as an
 // event, so FUB creates/updates the contact and fires automations) and keeps
 // the original Formspree email notification as a backup.
