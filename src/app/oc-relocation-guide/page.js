@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Footer from '../footer';
 import Navigation from '../navbar';
+import { regions } from './regions';
 
 export const metadata = {
   title: 'Orange County Relocation Guide',
@@ -8,25 +9,6 @@ export const metadata = {
     "Moving to Orange County? A local's guide to OC neighborhoods, schools, commutes, and homeownership costs, from San Clemente native Jacob Hazzard of Luxre Realty.",
   alternates: { canonical: '/oc-relocation-guide' },
 };
-
-const regions = [
-  { name: 'South County', places: 'San Clemente, Dana Point, San Juan Capistrano, Laguna Niguel, Mission Viejo, Ladera Ranch, Rancho Mission Viejo', vibe: 'Beach towns, master-planned communities, and a slower, outdoorsy pace. My home turf.' },
-  { name: 'Coastal OC', places: 'Laguna Beach, Newport Beach, Corona del Mar, Huntington Beach', vibe: 'Iconic coastline, harbors, art and dining. Premium pricing for the ocean lifestyle.' },
-  { name: 'Central OC', places: 'Irvine, Tustin, Costa Mesa, Lake Forest', vibe: 'The job hub. Newer neighborhoods, highly rated schools, and shorter commutes.' },
-  { name: 'North County', places: 'Yorba Linda, Fullerton, Orange, Anaheim Hills', vibe: 'More space for the money, established neighborhoods, and easier access to LA.' },
-];
-
-const neighborhoods = [
-  { name: 'San Clemente', best: 'Surfers, families, and anyone who wants a true beach-town feel', about: 'The "Spanish Village by the Sea." White walls, red tile roofs, a walkable downtown on Avenida Del Mar, and world-class surf at Trestles. Neighborhoods range from walk-to-the-pier cottages near T-Street to newer master-planned areas like Talega and Forster Ranch with pools, parks, and trails.', tip: 'West of the freeway puts you near the beach and downtown. East of the freeway generally means newer homes, larger lots, and community amenities.' },
-  { name: 'Dana Point', best: 'Boaters, beach lovers, and buyers seeking luxury or coastal condos', about: 'Built around Dana Point Harbor and Doheny State Beach, with famous whale watching. Capistrano Beach offers a laid-back, neighborly feel, while Monarch Beach and the Strand are home to some of the most prestigious oceanfront real estate in Southern California.', tip: 'The harbor has been going through a major revitalization, so expect new shops and dining along the water.' },
-  { name: 'San Juan Capistrano', best: 'Horse owners, history lovers, and buyers who want more land', about: 'Home to the historic Mission San Juan Capistrano and the Los Rios Historic District, one of the oldest neighborhoods in California. Larger lots, equestrian properties, and a charming small-town downtown with a train station.', tip: 'Ask me about equestrian-zoned areas if you want room for horses or a bigger yard.' },
-  { name: 'Rancho Mission Viejo & Ladera Ranch', best: 'Families who want newer homes and resort-style amenities', about: 'Two of OC\'s most popular master-planned communities. Ladera Ranch is established and walkable with parks and pools in every neighborhood. Rancho Mission Viejo\'s villages (Sendero, Esencia, and Rienda) offer brand-new construction and include 55+ options.', tip: 'Newer communities often carry Mello-Roos taxes and HOA dues, so factor those into your monthly budget.' },
-  { name: 'Laguna Niguel & Mission Viejo', best: 'Families who want great value, parks, and suburban convenience', about: 'Quiet, well-kept suburbs with plenty of parks and trails. Mission Viejo is known for its private resident lake, and Laguna Niguel sits just minutes from the coast. Both offer easy freeway access.', tip: 'Ocean-view pockets of Laguna Niguel offer coastal views at a lower price point than the beach cities.' },
-  { name: 'Laguna Beach', best: 'Artists, creatives, and buyers who want a one-of-a-kind coastal village', about: 'Dramatic coves, tide pools, galleries, and the famous Festival of Arts and Pageant of the Masters. Homes range from historic cottages to architectural estates on the hillsides.', tip: 'Summer traffic is real. Many locals plan errands and beach days around it.' },
-  { name: 'Newport Beach', best: 'Buyers who want the luxury coastal lifestyle and boating', about: 'Balboa Island, the Peninsula, Corona del Mar, and Newport Coast. World-class dining and shopping at Fashion Island, a large harbor, and some of the highest-end real estate in the country.', tip: 'Each area of Newport has a completely different personality. We should tour a few before you decide.' },
-  { name: 'Irvine', best: 'Professionals and families who prioritize schools and a short commute', about: 'One of the largest master-planned cities in the U.S. It\'s home to UC Irvine, the Irvine Spectrum, and many of OC\'s major employers, with highly rated public schools and a reputation for safety.', tip: 'Newer Irvine villages commonly have Mello-Roos and HOA fees. I\'ll help you compare the total monthly cost, not just the price.' },
-  { name: 'Huntington Beach', best: 'Beach lovers who want more space and a classic SoCal vibe', about: '"Surf City USA," with miles of wide sandy beaches, the pier, and a wide range of neighborhoods. It\'s also a quicker drive to Long Beach and LA than South County.', tip: 'Neighborhoods close to the water feel very different from inland HB. Location within the city matters a lot here.' },
-];
 
 const schools = [
   ['Capistrano Unified', 'San Clemente, Dana Point, San Juan Capistrano, Laguna Niguel, Ladera Ranch, Rancho Mission Viejo, and parts of Mission Viejo'],
@@ -68,43 +50,31 @@ export default function RelocationGuide() {
           Hi, I&apos;m Jacob Hazzard. I grew up in San Clemente, and I help families buy and sell homes across Orange County. People move here for the weather, the beaches, the schools, and the lifestyle. But OC is really a collection of very different communities, and the right one depends on how you want to live.
         </p>
         <p>
-          This guide gives you the lay of the land: the regions, the neighborhoods, schools, getting around, and the costs that surprise most newcomers. When you&apos;re ready for current prices and on-the-ground advice, I&apos;m one call away.
+          This guide gives you the lay of the land: the four regions, schools, getting around, and the costs that surprise most newcomers. When you&apos;re ready for current prices and on-the-ground advice, I&apos;m one call away.
         </p>
       </section>
 
       <section className="bg-white py-16 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl f1 font-light mb-10 text-center">Know the Map</h2>
+          <h2 className="text-3xl f1 font-light mb-3 text-center">Choose Your Region</h2>
+          <p className="text-center f2 text-gray-600 mb-10">Orange County breaks into four very different areas. Each has its own guide with cities, local tips, schools, and commutes.</p>
           <div className="grid md:grid-cols-2 gap-6">
             {regions.map((r) => (
-              <div key={r.name} className="border border-gray-200 p-6">
-                <h3 className="text-xl f1 mb-2">{r.name}</h3>
-                <p className="text-sm text-gray-500 f2 mb-3">{r.places}</p>
-                <p className="f2 text-gray-800">{r.vibe}</p>
-              </div>
+              <Link key={r.slug} href={`/oc-relocation-guide/${r.slug}`} className="group block border border-gray-200 hover:border-gray-900 transition">
+                <div className="h-44 bg-cover bg-center" style={{ backgroundImage: `url('${r.image}')` }} />
+                <div className="p-6">
+                  <h3 className="text-2xl f1 mb-2">{r.name}</h3>
+                  <p className="f2 text-gray-800 mb-3">{r.tagline}</p>
+                  <p className="text-sm text-gray-500 f2 mb-4">{r.places}</p>
+                  <span className="f2 text-sm uppercase tracking-widest underline underline-offset-4">Read the {r.short} guide &rarr;</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl f1 font-light mb-3 text-center">Neighborhood Guide</h2>
-          <p className="text-center f2 text-gray-600 mb-10">With a local&apos;s tip for each one.</p>
-          <div className="space-y-8">
-            {neighborhoods.map((n) => (
-              <div key={n.name} className="bg-white p-8 shadow-sm">
-                <h3 className="text-2xl f1 mb-1">{n.name}</h3>
-                <p className="text-sm uppercase tracking-wider text-gray-500 f2 mb-4">Best for: {n.best}</p>
-                <p className="f2 text-gray-800 mb-4 leading-relaxed">{n.about}</p>
-                <p className="f2 text-gray-700 border-l-4 border-gray-400 pl-4 italic">Local tip: {n.tip}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl f1 font-light mb-6 text-center">Schools</h2>
           <p className="f2 text-gray-700 mb-8 text-center">Orange County is known for strong public schools. These are the main districts by area:</p>
@@ -120,7 +90,7 @@ export default function RelocationGuide() {
         </div>
       </section>
 
-      <section className="py-16 px-6">
+      <section className="bg-white py-16 px-6">
         <div className="max-w-4xl mx-auto f2 text-gray-800 leading-relaxed">
           <h2 className="text-3xl f1 font-light mb-6 text-center">Getting Around</h2>
           <ul className="space-y-3 list-disc pl-6">
@@ -132,7 +102,7 @@ export default function RelocationGuide() {
         </div>
       </section>
 
-      <section className="bg-white py-16 px-6">
+      <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto f2 text-gray-800 leading-relaxed">
           <h2 className="text-3xl f1 font-light mb-6 text-center">Costs That Surprise Newcomers</h2>
           <ul className="space-y-4 list-disc pl-6">
@@ -141,23 +111,6 @@ export default function RelocationGuide() {
             <li><strong>HOA dues:</strong> Common in condos and master-planned neighborhoods. They often cover pools, parks, and landscaping. Review the HOA documents and reserves before you commit.</li>
             <li><strong>Homeowners insurance:</strong> Wildfire risk has made coverage harder to get in some areas. Get quotes early in your search, not after you&apos;re in escrow.</li>
             <li><strong>Utilities:</strong> Electricity and water rates vary by provider and city. Budget a little higher for summer cooling in inland areas.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto f2 text-gray-800 leading-relaxed">
-          <h2 className="text-3xl f1 font-light mb-6 text-center">My San Clemente Favorites</h2>
-          <p className="mb-6 text-center">A few spots I&apos;d show any friend moving to town:</p>
-          <ul className="grid md:grid-cols-2 gap-3 list-disc pl-6">
-            <li>Sunset walk on the San Clemente Pier</li>
-            <li>Surfing (or watching the pros) at Trestles</li>
-            <li>Morning coffee and shops on Avenida Del Mar</li>
-            <li>The Beach Trail from North Beach to Calafia</li>
-            <li>Casa Romantica Cultural Center &amp; Gardens</li>
-            <li>A swim at the Ole Hanson Beach Club</li>
-            <li>Whale watching out of Dana Point Harbor</li>
-            <li>Historic Mission San Juan Capistrano</li>
           </ul>
         </div>
       </section>

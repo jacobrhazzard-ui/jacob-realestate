@@ -1,0 +1,102 @@
+// Content for the four Orange County regional relocation guides.
+// Evergreen facts only. Prices are intentionally omitted (they go stale); the CTA offers current numbers.
+
+export const regions = [
+  {
+    slug: 'south-oc',
+    name: 'South Orange County',
+    short: 'South OC',
+    image: '/cordoba1.jpeg',
+    tagline: 'Beach towns, master-planned communities, and a slower, outdoorsy pace.',
+    places: 'San Clemente, Dana Point, San Juan Capistrano, Laguna Beach, Laguna Niguel, Aliso Viejo, Mission Viejo, Ladera Ranch, Rancho Mission Viejo, Rancho Santa Margarita, Laguna Hills, Lake Forest',
+    intro:
+      "South County is home for me. I was born and raised in San Clemente, and I still think it's one of the best places in Southern California to live. Think surf breaks and harbor sunsets on the coast, and newer master-planned neighborhoods with parks, pools, and trails just inland. It's quieter than the rest of OC and very family-oriented.",
+    bestFor: ['Families who want great schools and community amenities', 'Surfers, boaters, and beach lovers', 'Buyers who want newer construction', 'Remote workers and retirees who value lifestyle over commute'],
+    cities: [
+      { name: 'San Clemente', about: 'The "Spanish Village by the Sea": white walls, red tile roofs, a walkable downtown on Avenida Del Mar, the pier, and world-class surf at Trestles. Homes range from beach cottages near T-Street to newer communities like Talega and Forster Ranch.', tip: 'West of the freeway puts you near the beach and downtown. East of the freeway usually means newer homes and community amenities.' },
+      { name: 'Dana Point', about: 'Built around Dana Point Harbor and Doheny State Beach, and famous for whale watching. Capistrano Beach is laid-back and neighborly, while Monarch Beach and the Strand hold some of the most prestigious oceanfront homes in SoCal.', tip: 'Coastal condos here can be a great entry point into a beach-town lifestyle.' },
+      { name: 'San Juan Capistrano', about: 'Home to the historic Mission San Juan Capistrano and the Los Rios Historic District, one of the oldest neighborhoods in California. Larger lots, equestrian properties, and a charming small-town downtown with a train station.', tip: 'Ask me about horse-property areas if you want room for animals or a bigger yard.' },
+      { name: 'Laguna Beach', about: 'Coves, tide pools, galleries, and the Festival of Arts and Pageant of the Masters. A one-of-a-kind artists\' village with everything from historic cottages to architectural hillside estates.', tip: 'Summer traffic is real. Locals plan errands and beach days around it.' },
+      { name: 'Laguna Niguel & Aliso Viejo', about: 'Quiet, well-kept suburbs minutes from the coast. Laguna Niguel has ocean-view pockets and big regional parks; Aliso Viejo is a newer master-planned city bordering Aliso and Wood Canyons Wilderness Park.', tip: 'Ocean-view homes in Laguna Niguel can cost less than similar views in the beach cities.' },
+      { name: 'Mission Viejo', about: 'An established master-planned city known for its private resident lake, tree-lined streets, parks, and a strong sense of community. Easy access to the I-5 and the 241 toll road.', tip: 'Lake access is a real perk for families. Ask me which neighborhoods include Lake Mission Viejo membership.' },
+      { name: 'Ladera Ranch & Rancho Mission Viejo', about: 'Two of OC\'s most popular master-planned communities. Ladera Ranch is established and walkable with parks and pools in every neighborhood. Rancho Mission Viejo\'s villages (Sendero, Esencia, and Rienda) offer newer construction, including 55+ options.', tip: 'These communities often carry Mello-Roos and HOA dues, so budget the full monthly cost.' },
+      { name: 'Rancho Santa Margarita, Laguna Hills & Lake Forest', about: 'Value-friendly inland suburbs with mountain views, trails, and convenient freeway access. Rancho Santa Margarita is built around its own resident lake and town center.', tip: 'These areas often give you more home for the money while keeping South County schools and lifestyle.' },
+    ],
+    schools: 'Most of South County is served by Capistrano Unified. Mission Viejo, Laguna Hills, Lake Forest, and parts of Rancho Santa Margarita are largely in Saddleback Valley Unified, and Laguna Beach has its own district, Laguna Beach Unified.',
+    gettingAround: ['The I-5 is the main north-south route, with the 73 and 241 toll roads as faster alternatives at rush hour.', 'John Wayne Airport (SNA) is typically 25–40 minutes away depending on traffic. San Diego\'s airport is also within reach from the south end.', 'Metrolink and Amtrak\'s Pacific Surfliner stop in San Juan Capistrano. The coastal line through San Clemente has had periodic closures, so check current schedules.'],
+    goodToKnow: ['Much of South County is served by SDG&E for electricity.', 'Newer communities commonly carry Mello-Roos taxes and HOA dues.', 'Homes near canyons and open space can be in higher wildfire-risk zones, which affects insurance. Get quotes early.'],
+    favorites: ['Sunset walk on the San Clemente Pier', 'Surfing (or watching the pros) at Trestles', 'Coffee and shopping on Avenida Del Mar', 'The Beach Trail from North Beach to Calafia', 'Casa Romantica Cultural Center & Gardens', 'Whale watching out of Dana Point Harbor', 'Historic Mission San Juan Capistrano', 'Hiking Aliso and Wood Canyons'],
+  },
+  {
+    slug: 'central-oc',
+    name: 'Central Orange County',
+    short: 'Central OC',
+    image: '/cordoba5.jpeg',
+    tagline: 'The job hub of OC, with top schools, shopping, and the Newport coast.',
+    places: 'Irvine, Tustin, Santa Ana, Costa Mesa, Newport Beach, Huntington Beach, Fountain Valley',
+    intro:
+      "Central OC is where much of the county works, shops, and goes to school. It has newer planned neighborhoods, highly rated schools, major employers, and quick access to the coast at Newport and Huntington Beach. If a shorter commute matters to you, this is usually where we start.",
+    bestFor: ['Professionals who want a short commute', 'Families who prioritize schools', 'Buyers who want to be close to the airport and freeways', 'Anyone who wants city amenities with a coastal option nearby'],
+    cities: [
+      { name: 'Irvine', about: 'One of the largest master-planned cities in the U.S. It\'s home to UC Irvine, the Irvine Spectrum, and many of OC\'s largest employers, with highly rated public schools and a reputation for safety. Each "village" has its own parks, pools, and shopping.', tip: 'Newer villages commonly have Mello-Roos and HOA fees. I\'ll help you compare the total monthly cost, not just the price.' },
+      { name: 'Newport Beach', about: 'Balboa Island, the Peninsula, Corona del Mar, and Newport Coast. A big harbor, world-class dining and shopping at Fashion Island, and some of the highest-end real estate in the country.', tip: 'Each part of Newport has a different personality. We should tour a few before you decide.' },
+      { name: 'Costa Mesa', about: 'The "City of the Arts," with South Coast Plaza, the Segerstrom Center for the Arts, and a creative food scene. A central location minutes from the beach, the airport, and Irvine.', tip: 'The Eastside and Mesa Verde neighborhoods are local favorites for their location and character.' },
+      { name: 'Huntington Beach', about: '"Surf City USA," with miles of wide sandy beaches, the pier, and a wide range of neighborhoods. It\'s a quicker drive to Long Beach and LA than South County.', tip: 'Neighborhoods close to the water feel very different from inland HB, so location within the city matters.' },
+      { name: 'Tustin', about: 'A mix of historic Old Town Tustin and newer neighborhoods like Tustin Legacy and Tustin Ranch. Central, convenient, and close to Irvine.', tip: 'Tustin often gives you Irvine-adjacent convenience at a different price point.' },
+      { name: 'Santa Ana', about: 'The county seat, with a historic downtown, an arts district, and diverse dining. Neighborhoods range from historic homes in areas like Floral Park to more affordable entry-level options.', tip: 'The historic districts have beautiful older homes with a lot of character.' },
+      { name: 'Fountain Valley', about: 'A quiet, family-friendly city known for Mile Square Regional Park and a central location between the beach and the job centers.', tip: 'A great option for families who want a classic suburban feel close to the coast.' },
+    ],
+    schools: 'Central OC includes Irvine Unified, Newport-Mesa Unified (Newport Beach and Costa Mesa), Tustin Unified, Santa Ana Unified, and the Huntington Beach and Fountain Valley elementary districts that feed into Huntington Beach Union High School District.',
+    gettingAround: ['The I-405, I-5, and 55 meet in Central OC, and the 73 toll road runs toward the coast.', 'John Wayne Airport (SNA) is right in the middle of it all, often 10–20 minutes away.', 'Metrolink and Amtrak stop at the Irvine and Santa Ana stations, and Tustin has a Metrolink station.'],
+    goodToKnow: ['Most of Central OC is served by SCE for electricity.', 'Newer Irvine and Tustin neighborhoods often have Mello-Roos and HOA dues.', 'Coastal areas near the beach can have flood-zone considerations, so check before you buy.'],
+    favorites: ['Sunset at Corona del Mar State Beach', 'A walk around Balboa Island', 'A show at the Segerstrom Center for the Arts', 'Shopping at South Coast Plaza', 'Bike rides around Mile Square Park', 'The Huntington Beach Pier'],
+  },
+  {
+    slug: 'north-oc',
+    name: 'North Orange County',
+    short: 'North OC',
+    image: '/cordoba3.jpeg',
+    tagline: 'Established neighborhoods, more space for the money, and easy access to LA.',
+    places: 'Fullerton, Brea, Placentia, La Habra, Buena Park, Anaheim, Cypress, Los Alamitos, Seal Beach',
+    intro:
+      "North OC has some of the county's most established neighborhoods, larger lots for the money, and the easiest commute to Los Angeles. You'll find college-town energy in Fullerton, small-town feel in Brea, and a quiet beach town in Seal Beach.",
+    bestFor: ['Commuters heading toward LA or Long Beach', 'Buyers who want more home and land for the money', 'Families looking for well-regarded schools at a better value', 'Fans of classic, established neighborhoods'],
+    cities: [
+      { name: 'Fullerton', about: 'Home to Cal State Fullerton, the Fullerton Arboretum, and a lively downtown with a historic train station. Neighborhoods range from historic homes to hillside properties with views.', tip: 'The hillside neighborhoods north of downtown are some of the most sought-after in North OC.' },
+      { name: 'Brea', about: 'A clean, small-town feel with a walkable downtown, the Brea Mall, and a well-regarded school district. Hillside neighborhoods offer views and larger lots.', tip: 'Brea is a favorite for families who want a tight-knit community feel.' },
+      { name: 'Placentia & La Habra', about: 'Friendly, value-oriented suburbs with parks, good schools, and easy access to the 57 freeway. Placentia is in the Placentia-Yorba Linda school district.', tip: 'These cities can offer more space and value while staying close to Fullerton and Brea.' },
+      { name: 'Anaheim', about: 'Home of Disneyland, Angel Stadium, and the Honda Center, with neighborhoods ranging from historic districts to newer developments. It\'s a big, diverse city with a lot of variety in housing.', tip: 'Anaheim is huge, so the right neighborhood matters more here than the city name.' },
+      { name: 'Buena Park & Cypress', about: 'Central, convenient suburbs with parks and easy freeway access. Buena Park is home to Knott\'s Berry Farm; Cypress is known for quiet neighborhoods and strong schools.', tip: 'Great options for buyers who need easy access to both OC and LA County.' },
+      { name: 'Los Alamitos & Seal Beach', about: 'Los Alamitos is known for its highly regarded school district. Seal Beach is a quiet beach town with a pier and Main Street, plus Leisure World, one of the area\'s best-known 55+ communities.', tip: 'Seal Beach is one of the most affordable ways to live in an OC beach town.' },
+    ],
+    schools: 'North OC includes Fullerton and Brea Olinda districts, Placentia-Yorba Linda Unified, Anaheim and Cypress districts that feed into Anaheim Union High School District, Buena Park and La Habra districts, and Los Alamitos Unified (which also serves Seal Beach).',
+    gettingAround: ['The 91, 57, 5, and 22 freeways connect North OC to LA, the Inland Empire, and the rest of the county.', 'Long Beach Airport and John Wayne Airport are both convenient. Ontario Airport is an option from the northeast side.', 'Fullerton, Anaheim (ARTIC), and Buena Park have Metrolink and/or Amtrak service.'],
+    goodToKnow: ['Most of North OC is served by SCE for electricity.', 'Older neighborhoods have fewer HOAs and Mello-Roos taxes, but may need more updating.', 'Hillside homes near open space can be in higher wildfire-risk zones, which affects insurance.'],
+    favorites: ['Downtown Fullerton\'s restaurants and train station', 'The Fullerton Arboretum', 'Downtown Brea on a Friday night', 'Main Street and the pier in Seal Beach', 'A day at Knott\'s Berry Farm', 'Game night at the Honda Center'],
+  },
+  {
+    slug: 'east-oc',
+    name: 'East Orange County',
+    short: 'East OC',
+    image: '/cordoba7.jpeg',
+    tagline: 'Hillside views, bigger lots, and a quieter, more suburban feel.',
+    places: 'Orange, Anaheim Hills, Villa Park, Yorba Linda, North Tustin, and the canyon communities',
+    intro:
+      "East OC sits up against the foothills. It's where you'll find larger lots, hillside views, equestrian trails, and some of the county's most charming historic neighborhoods in Old Towne Orange. It's quieter and more spread out than the coast, with easy access to the 91, 55, and 241.",
+    bestFor: ['Buyers who want land, privacy, and views', 'Families who want suburban space and strong schools', 'Horse owners and outdoor lovers', 'Commuters headed toward the Inland Empire or north to LA'],
+    cities: [
+      { name: 'Orange', about: 'Home to Old Towne Orange, one of the largest historic districts in California, with antique shops, cafes, and Chapman University. Neighborhoods range from historic craftsman homes to newer hillside communities.', tip: 'Old Towne homes have tons of character, and some have historic-district rules for renovations. Ask me first.' },
+      { name: 'Anaheim Hills', about: 'Hillside neighborhoods with views, trails, and newer homes compared to the flatlands of Anaheim. Quiet, residential, and convenient to the 91 and 55.', tip: 'School assignments vary across Anaheim Hills, so confirm by exact address.' },
+      { name: 'Villa Park', about: 'A small, quiet city known for large lots, custom homes, and a strong sense of community. It\'s one of the most exclusive pockets of East OC.', tip: 'Inventory is limited, so it pays to be ready when the right home comes up.' },
+      { name: 'Yorba Linda', about: '"The Land of Gracious Living." Larger lots, equestrian trails, the Nixon Presidential Library, and the well-regarded Placentia-Yorba Linda school district.', tip: 'Many neighborhoods have horse-trail access, which is a big plus for equestrian buyers.' },
+      { name: 'North Tustin', about: 'An unincorporated area known for large lots, mature trees, custom homes, and Tustin Unified schools. Privacy and space close to everything.', tip: 'Because it\'s unincorporated, some services and permits run through the county instead of a city.' },
+      { name: 'The Canyons (Silverado, Modjeska & more)', about: 'Rural, rustic homes tucked into the Santa Ana Mountains. Peaceful and wooded, with a true country feel just minutes from the suburbs.', tip: 'Wildfire risk and insurance are serious considerations here. Get coverage quotes before you write an offer.' },
+    ],
+    schools: 'East OC includes Orange Unified (Orange, Villa Park, and parts of Anaheim Hills), Placentia-Yorba Linda Unified (Yorba Linda and parts of Anaheim Hills), and Tustin Unified (North Tustin).',
+    gettingAround: ['The 91, 55, 57, and the 241 and 261 toll roads connect East OC to the rest of the county and the Inland Empire.', 'John Wayne Airport is usually 20–35 minutes away; Ontario Airport is another option.', 'Orange has a Metrolink station, and Anaheim\'s ARTIC transit center is close by.'],
+    goodToKnow: ['Most of East OC is served by SCE for electricity.', 'Hillside and canyon homes can be in high wildfire-risk zones, which affects insurance availability and cost.', 'Larger lots and custom homes may have septic systems or special inspections. Plan for them.'],
+    favorites: ['Antique shopping and cafes in Old Towne Orange', 'The Nixon Presidential Library in Yorba Linda', 'Hiking at Santiago Oaks Regional Park', 'Irvine Regional Park and the Orange County Zoo', 'Horseback riding on the Yorba Linda trails'],
+  },
+];
+
+export const getRegion = (slug) => regions.find((r) => r.slug === slug);
