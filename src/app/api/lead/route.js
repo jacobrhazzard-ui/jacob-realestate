@@ -30,7 +30,7 @@ function buildEvent(kind, d) {
     .filter(([k, v]) => v && !['firstName', 'lastName', 'name', 'email', 'phone', 'kind'].includes(k))
     .map(([k, v]) => `${k}: ${v}`);
   const event = {
-    source: kind === 'seller' ? 'Website - Seller' : 'Website - Buyer',
+    source: 'jacobhazzardrealestate.com',
     system: 'JH Website',
     type: kind === 'seller' ? 'Seller Inquiry' : 'General Inquiry',
     message: lines.join('\n'),
