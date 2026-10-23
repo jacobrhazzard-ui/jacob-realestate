@@ -34,6 +34,7 @@ const Navigation = () => {
         },
         { label: 'Search Homes', href: 'https://jacobhazzardrealestate.idxbroker.com/idx/map/mapsearch' },
         { label: 'Listings', href: '/listings' },
+        { label: 'Blog', href: '/blog' },
         { label: 'About', href: '/about' }
     ];
 

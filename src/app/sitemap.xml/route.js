@@ -1,11 +1,15 @@
+import { getPublishedPosts } from "../blog/posts";
+
 export async function GET() {
-  const lastModified = "2026-10-22";
-  const pages = ["", "/sell", "/buy", "/listings", "/about", "/contact", "/oc-relocation-guide",
+  const lastModified = "2026-10-23";
+  const pages = ["", "/sell", "/buy", "/listings", "/about", "/contact", "/blog", "/oc-relocation-guide",
     "/oc-relocation-guide/south-oc",
     "/oc-relocation-guide/central-oc",
     "/oc-relocation-guide/north-oc",
     "/oc-relocation-guide/east-oc", "/privacy-policy", "/terms-of-use"].map(
     (path) => ({ url: `https://jacobhazzardrealestate.com${path}`, lastModified })
+  ).concat(
+    getPublishedPosts().map((p) => ({ url: `https://jacobhazzardrealestate.com/blog/${p.slug}`, lastModified: p.date }))
   );
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
