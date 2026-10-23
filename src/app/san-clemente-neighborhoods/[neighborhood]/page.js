@@ -1,4 +1,48 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import { Home, Trees, Waves, Flag, ShoppingCart, Layers, Building2, ShieldCheck, Car, GraduationCap, Receipt, MapPin } from 'lucide-react';
+
+const ICONS = { home: Home, trees: Trees, pool: Waves, flag: Flag, cart: ShoppingCart, layers: Layers, building: Building2, gate: ShieldCheck };
+
+const money = (v) => `$${v.toLocaleString('en-US')}`;
+
+function IconCards({ items, cols = 'md:grid-cols-3', bg = 'bg-white' }) {
+  return (
+    <div className={`grid sm:grid-cols-2 ${cols} gap-6`}>
+      {items.map((it) => {
+        const Icon = ICONS[it.icon] || MapPin;
+        return (
+          <div key={it.title} className={`${bg} p-6 shadow-sm`}>
+            <div className="w-12 h-12 bg-gray-900 text-white flex items-center justify-center mb-4">
+              <Icon className="h-6 w-6" aria-hidden="true" />
+            </div>
+            <h3 className="text-xl f1 mb-2 text-gray-900">{it.title}</h3>
+            <p className="f2 text-base text-gray-700 leading-relaxed">{it.text}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function PriceRange({ r }) {
+  const pct = ((r.median - r.low) / (r.high - r.low)) * 100;
+  return (
+    <div className="mt-10">
+      <p className="text-sm uppercase tracking-widest text-gray-500 mb-6">{r.label}</p>
+      <div className="relative h-3 bg-gradient-to-r from-gray-300 via-gray-500 to-gray-900 rounded-full">
+        <div className="absolute -top-2 w-1 h-7 bg-blue-500" style={{ left: `${pct}%` }} />
+        <div className="absolute top-7 -translate-x-1/2 text-center whitespace-nowrap" style={{ left: `${pct}%` }}>
+          <p className="text-sm font-medium text-blue-600">Median {money(r.median)}</p>
+        </div>
+      </div>
+      <div className="flex justify-between mt-12 text-sm text-gray-600">
+        <span>Low {money(r.low)}</span>
+        <span>High {money(r.high)}</span>
+      </div>
+    </div>
+  );
+}
 import { notFound } from 'next/navigation';
 import Footer from '../../footer';
 import Navigation from '../../navbar';
@@ -95,42 +139,105 @@ export default async function NeighborhoodGuide({ params }) {
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-6 py-16 f2 text-lg leading-relaxed text-gray-800">
-        <h2 className="text-3xl f1 font-light mb-6">About {n.name}</h2>
-        <p className="mb-10">{n.intro}</p>
-        <h2 className="text-3xl f1 font-light mb-6">Why People Move to {n.name}</h2>
-        <List items={n.whyPeopleMove} />
-        {n.localTip && (
-          <p className="mt-8 text-gray-700 border-l-4 border-gray-400 pl-4 italic">Local tip: {n.localTip}</p>
+      {n.atAGlance && (
+        <section className="bg-gray-900 text-white px-6 py-10">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+            {n.atAGlance.map((s) => (
+              <div key={s.label}>
+                <p className="text-3xl md:text-4xl f1 font-light text-blue-300">{s.value}</p>
+                <p className="f2 text-xs uppercase tracking-widest text-white/70 mt-2">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section className="max-w-6xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="f2 text-lg leading-relaxed text-gray-800">
+          <h2 className="text-3xl f1 font-light mb-6">About {n.name}</h2>
+          <p>{n.intro}</p>
+          {n.localTip && (
+            <p className="mt-8 text-gray-700 border-l-4 border-gray-400 pl-4 italic">Local tip: {n.localTip}</p>
+          )}
+        </div>
+        {n.map && (
+          <figure>
+            <iframe
+              title={`Map of ${n.name}, San Clemente`}
+              className="w-full h-80 border-0 shadow-sm"
+              loading="lazy"
+              src={`https://www.openstreetmap.org/export/embed.html?bbox=${n.map.bbox.join('%2C')}&layer=mapnik&marker=${n.map.marker.join('%2C')}`}
+            />
+            <figcaption className="f2 text-xs text-gray-500 mt-2">
+              Map &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="underline">OpenStreetMap</a> contributors
+            </figcaption>
+          </figure>
         )}
       </section>
 
+      {n.gallery && n.gallery.length > 0 && (
+        <section className="px-6 pb-16">
+          <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {n.gallery.map((g) => (
+              <figure key={g.src} className="relative h-64 overflow-hidden">
+                <Image src={g.src} alt={g.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+                {g.caption && (
+                  <figcaption className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent text-white f2 text-sm p-3">{g.caption}</figcaption>
+                )}
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section className="py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl f1 font-light mb-10 text-center">Why People Move to {n.name}</h2>
+          <IconCards items={n.whyPeopleMove} />
+        </div>
+      </section>
+
       <section className="bg-white py-16 px-6">
-        <div className="max-w-3xl mx-auto f2 text-lg leading-relaxed text-gray-800">
-          <h2 className="text-3xl f1 font-light mb-6">Types of Homes</h2>
-          <List items={n.homeTypes} />
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl f1 font-light mb-10 text-center">Types of Homes</h2>
+          <IconCards items={n.homeTypes} bg="bg-[#f1f0eb]" />
         </div>
       </section>
 
       <section className="py-16 px-6">
-        <div className="max-w-3xl mx-auto f2 text-lg leading-relaxed text-gray-800">
-          <h2 className="text-3xl f1 font-light mb-6">{n.name} Home Prices</h2>
-          <List items={n.market.figures} />
-          <p className="text-sm text-gray-500 mt-6">{n.market.note}</p>
-          <Link href="/sell#property-valuation" className="inline-block mt-6 underline">
-            Want a valuation for a specific {n.name} home?
-          </Link>
+        <div className="max-w-5xl mx-auto f2 text-lg leading-relaxed text-gray-800">
+          <h2 className="text-3xl f1 font-light mb-10 text-center">{n.name} Home Prices</h2>
+          {n.market.cards && (
+            <div className="grid md:grid-cols-3 gap-6 mb-4">
+              {n.market.cards.map((c) => (
+                <div key={c.label} className="bg-white p-6 shadow-sm text-center">
+                  <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">{c.label}</p>
+                  <p className="text-4xl f1 font-light text-gray-900 mb-2">{c.value}</p>
+                  <p className="text-sm text-gray-600">{c.detail}</p>
+                  <p className="text-xs text-gray-400 mt-1">Source: {c.source}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          {n.market.range && <PriceRange r={n.market.range} />}
+          <div className="max-w-3xl mx-auto mt-12">
+            <List items={n.market.figures} />
+            <p className="text-sm text-gray-500 mt-6">{n.market.note}</p>
+            <Link href="/sell#property-valuation" className="inline-block mt-6 underline">
+              Want a valuation for a specific {n.name} home?
+            </Link>
+          </div>
         </div>
       </section>
 
       <section className="bg-white py-16 px-6">
         <div className="max-w-4xl mx-auto f2 text-gray-800 leading-relaxed grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl f1 font-light mb-6">HOA &amp; Taxes</h2>
+            <h2 className="text-3xl f1 font-light mb-6 flex items-center gap-3"><Receipt className="h-7 w-7" aria-hidden="true" />HOA &amp; Taxes</h2>
             <List items={n.costsToKnow} />
           </div>
           <div>
-            <h2 className="text-3xl f1 font-light mb-6">Getting Around</h2>
+            <h2 className="text-3xl f1 font-light mb-6 flex items-center gap-3"><Car className="h-7 w-7" aria-hidden="true" />Getting Around</h2>
             <List items={n.gettingAround} />
           </div>
         </div>
@@ -138,7 +245,7 @@ export default async function NeighborhoodGuide({ params }) {
 
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto f2 text-lg leading-relaxed text-gray-800">
-          <h2 className="text-3xl f1 font-light mb-6">Schools</h2>
+          <h2 className="text-3xl f1 font-light mb-6 flex items-center gap-3"><GraduationCap className="h-7 w-7" aria-hidden="true" />Schools</h2>
           <p>{n.schools}</p>
         </div>
       </section>

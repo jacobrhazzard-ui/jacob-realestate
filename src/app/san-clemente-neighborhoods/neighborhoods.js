@@ -19,20 +19,40 @@ export const neighborhoods = [
       'Talega is a master-planned community in northeast San Clemente, built starting in 1999, with Spanish and Mediterranean-style homes, a swim and athletic club, about 2,000 acres of open space, and the Talega Golf Club.',
     intro:
       "Talega sits in the northeast corner of San Clemente, roughly 3 miles from the coast and about 2 miles east of the 5. Construction started in 1999, so most homes here are newer than what you'll find closer to the pier. The whole area covers 3,510 acres and is made up of more than 30 smaller neighborhoods, from condos and townhomes to large single-family estates, plus a gated 55+ community.",
+    // At-a-glance stats strip (all from the sources listed below)
+    atAGlance: [
+      { value: '1999', label: 'Construction began' },
+      { value: '3,510', label: 'Acres in the plan area' },
+      { value: '~2,000', label: 'Acres of open space' },
+      { value: '19+', label: 'Miles of trails' },
+      { value: '30+', label: 'Smaller neighborhoods' },
+      { value: '~3 mi', label: 'To the coast' },
+    ],
+    // Map: OpenStreetMap embed (free, no API key). bbox = [west, south, east, north]
+    map: { bbox: [-117.625, 33.445, -117.55, 33.485], marker: [33.4639, -117.5889] },
+    // Photos: add Jacob's own photos here, e.g. { src: '/neighborhoods/talega-trails.jpg', alt: '...', caption: '...' }
+    gallery: [],
     whyPeopleMove: [
-      'Newer construction: homes built from 1999 on, mostly Spanish and Mediterranean in style',
-      'Open space: about 2,000 acres of open space and more than 19 miles of trails',
-      'The Talega Swim & Athletic Club, with two pools, tennis courts, sand volleyball, and a roller hockey rink',
-      'Talega Golf Club, a public 18-hole course designed by Fred Couples that opened in 2001',
-      'Everyday errands close by at Talega Village Center, with a supermarket, restaurants, and services',
-      'A range of home sizes in one community, from 3-bedroom homes to 7-bedroom estates',
+      { icon: 'home', title: 'Newer construction', text: 'Homes built from 1999 on, mostly Spanish and Mediterranean in style' },
+      { icon: 'trees', title: 'Trails & open space', text: 'About 2,000 acres of open space and more than 19 miles of trails' },
+      { icon: 'pool', title: 'Swim & Athletic Club', text: 'Two pools, tennis courts, sand volleyball, and a roller hockey rink' },
+      { icon: 'flag', title: 'Talega Golf Club', text: 'A public 18-hole course designed by Fred Couples that opened in 2001' },
+      { icon: 'cart', title: 'Errands nearby', text: 'Talega Village Center, with a supermarket, restaurants, and services' },
+      { icon: 'layers', title: 'Range of home sizes', text: 'From townhomes and 3-bedroom homes to 7-bedroom estates' },
     ],
     homeTypes: [
-      'Single-family homes: mostly tract homes, from 3-bedroom homes up to 7-bedroom estates; larger lots tend to command higher prices',
-      'Condos and townhomes: mostly two- and three-story attached homes; single-level options are limited to Carmel, Santalana, Verano, and a few units in Seagarden',
-      'Talega Gallery: a gated 55+ community with four sub-communities, three with detached homes and one with single-level attached townhomes',
+      { icon: 'home', title: 'Single-family homes', text: 'Mostly tract homes, from 3-bedroom homes up to 7-bedroom estates; larger lots tend to command higher prices' },
+      { icon: 'building', title: 'Condos & townhomes', text: 'Mostly two- and three-story attached homes; single-level options are limited to Carmel, Santalana, Verano, and a few units in Seagarden' },
+      { icon: 'gate', title: 'Talega Gallery (55+)', text: 'A gated 55+ community with four sub-communities, three with detached homes and one with single-level attached townhomes' },
     ],
     market: {
+      cards: [
+        { value: '$1,983,810', label: 'Median sale price', detail: '3 months ending June 2026, +13.4% YoY', source: 'Redfin' },
+        { value: '$1,974,500', label: 'Median list price', detail: '26 active listings, Oct 17, 2026', source: 'Ruby Home' },
+        { value: '$733', label: 'Avg. list price per sq ft', detail: 'Active listings, Oct 17, 2026', source: 'Ruby Home' },
+      ],
+      // Listed price range on Oct 17, 2026 (Ruby Home), drawn as a bar with the median marked
+      range: { low: 839888, high: 5875000, median: 1974500, label: 'Listed prices, Oct 17, 2026 (Ruby Home)' },
       figures: [
         'Median sale price: $1,983,810 over the three months ending June 2026, up 13.4% from the same period a year earlier (Redfin)',
         'Homes sold in June 2026: 35, up from 33 a year earlier (Redfin)',
