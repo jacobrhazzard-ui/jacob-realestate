@@ -9,6 +9,7 @@ import ScrollToValuation from '../scrollButton2';
 import Navigation from '../navbar';
 import MarketingSection from './marketing';
 import SellPastSlide from '../sellpastslideshow';
+import ReviewQuote from '../reviewQuote';
 
 export default function SellHomePage() {
     const [formData, setFormData] = useState({
@@ -404,6 +405,7 @@ export default function SellHomePage() {
                     </div>
                 </div>
             </section>
+            <ReviewQuote />
             <MarketingSection />
             {/* Properties Showcase */}
             <SellPastSlide />

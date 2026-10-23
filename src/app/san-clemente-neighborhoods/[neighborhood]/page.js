@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import PhotoRotator from '../../photoRotator';
+import ReviewQuote from '../../reviewQuote';
 import { Home, Trees, Waves, Flag, ShoppingCart, ShoppingBag, Layers, Building2, ShieldCheck, Car, GraduationCap, Receipt, MapPin, Umbrella, TrainFront, Landmark, Mountain, TreePine, Trophy } from 'lucide-react';
 
 const ICONS = { home: Home, trees: Trees, pool: Waves, flag: Flag, cart: ShoppingCart, bag: ShoppingBag, layers: Layers, building: Building2, gate: ShieldCheck, beach: Umbrella, train: TrainFront, landmark: Landmark, mountain: Mountain, park: TreePine, receipt: Receipt, tennis: Trophy };
@@ -308,6 +309,8 @@ export default async function NeighborhoodGuide({ params }) {
           </div>
         </section>
       )}
+
+      <ReviewQuote />
 
       <section className="bg-gray-900 text-white py-20 px-6 text-center">
         <div className="max-w-2xl mx-auto">

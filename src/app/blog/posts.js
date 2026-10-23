@@ -22,8 +22,8 @@ export const posts = [
     excerpt:
       'More sales, faster sales, and fewer price cuts than last September, a closer look at Talega, and a free community celebration at Max Berg Plaza Park on November 2.',
     neighborhoods: ['talega'],
-    image: '/ameno2.jpeg',
-    imageAlt: 'San Clemente coastline',
+    image: '/photos/san-clemente/pier-bowl-aerial-dusk.jpg',
+    imageAlt: 'Aerial view of the San Clemente Pier at dusk',
     body: [
       { type: 'p', text: "Here's a quick look at how San Clemente's housing market finished September, a closer look at Talega, and a community event worth putting on your calendar." },
       { type: 'h2', text: 'The September Numbers' },
