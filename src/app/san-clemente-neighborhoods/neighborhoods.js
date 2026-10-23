@@ -9,7 +9,7 @@
 export const neighborhoods = [
   {
     slug: 'talega',
-    published: false, // awaiting Jacob's approval
+    published: true,
     name: 'Talega',
     updated: '2026-10-23',
     image: '/cordoba2.jpeg',
@@ -101,7 +101,7 @@ export const neighborhoods = [
 
   {
     slug: 'pier-bowl',
-    published: false,
+    published: true,
     name: 'Pier Bowl',
     updated: '2026-10-23',
     image: '/ameno1.jpeg',
@@ -180,7 +180,7 @@ export const neighborhoods = [
 
   {
     slug: 'forster-ranch',
-    published: false,
+    published: true,
     name: 'Forster Ranch',
     updated: '2026-10-23',
     image: '/cordoba3.jpeg',
@@ -260,7 +260,7 @@ export const neighborhoods = [
 
   {
     slug: 'rancho-san-clemente',
-    published: false,
+    published: true,
     name: 'Rancho San Clemente',
     updated: '2026-10-23',
     image: '/cordoba5.jpeg',
@@ -334,7 +334,7 @@ export const neighborhoods = [
 
   {
     slug: 'marblehead',
-    published: false,
+    published: true,
     name: 'Marblehead',
     updated: '2026-10-23',
     image: '/cordoba6.jpeg',
@@ -408,7 +408,7 @@ export const neighborhoods = [
 
   {
     slug: 'sea-summit',
-    published: false,
+    published: true,
     name: 'Sea Summit',
     updated: '2026-10-23',
     image: '/ameno3.jpeg',
@@ -485,7 +485,7 @@ export const neighborhoods = [
 
   {
     slug: 'shorecliffs',
-    published: false,
+    published: true,
     name: 'Shorecliffs',
     updated: '2026-10-23',
     image: '/ameno4.jpeg',
@@ -551,7 +551,7 @@ export const neighborhoods = [
 
   {
     slug: 'cyprus-shore',
-    published: false,
+    published: true,
     name: 'Cyprus Shore & Cyprus Cove',
     shortName: 'Cyprus Shore',
     updated: '2026-10-23',
@@ -625,7 +625,7 @@ export const neighborhoods = [
 
   {
     slug: 'broadmoor',
-    published: false,
+    published: true,
     name: 'Broadmoor',
     updated: '2026-10-23',
     image: '/cordoba8.jpeg',
@@ -684,7 +684,7 @@ export const neighborhoods = [
 
   {
     slug: 'misty-ridge',
-    published: false,
+    published: true,
     name: 'Misty Ridge',
     updated: '2026-10-23',
     image: '/cordoba1.jpeg',
@@ -738,7 +738,7 @@ export const neighborhoods = [
 
   {
     slug: 'sea-ridge-estates',
-    published: false,
+    published: true,
     name: 'Sea Ridge Estates',
     updated: '2026-10-23',
     image: '/ameno3.jpeg',
@@ -800,7 +800,7 @@ export const neighborhoods = [
 
   {
     slug: 'sea-pointe-estates',
-    published: false,
+    published: true,
     name: 'Sea Pointe Estates',
     updated: '2026-10-23',
     image: '/cordoba2.jpg',
@@ -860,7 +860,7 @@ export const neighborhoods = [
 
   {
     slug: 'southeast-san-clemente',
-    published: false,
+    published: true,
     name: 'Southeast San Clemente',
     updated: '2026-10-23',
     image: '/cordoba6.jpeg',

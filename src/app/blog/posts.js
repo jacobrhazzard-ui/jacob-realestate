@@ -15,8 +15,8 @@
 export const posts = [
   {
     slug: 'san-clemente-market-update-september-2026',
-    published: false, // awaiting Jacob's approval
-    date: '2026-10-26',
+    published: true,
+    date: '2026-10-23',
     category: 'Market Update',
     title: 'San Clemente Market Update: September Numbers, a Talega Spotlight + Día de los Muertos',
     excerpt:
@@ -25,7 +25,7 @@ export const posts = [
     image: '/ameno2.jpeg',
     imageAlt: 'San Clemente coastline',
     body: [
-      { type: 'p', text: "Happy Monday! Here's a quick look at how San Clemente's housing market finished September, a closer look at Talega, and a community event worth putting on your calendar." },
+      { type: 'p', text: "Here's a quick look at how San Clemente's housing market finished September, a closer look at Talega, and a community event worth putting on your calendar." },
       { type: 'h2', text: 'The September Numbers' },
       {
         type: 'list',
