@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 
 
@@ -67,14 +68,14 @@ export default function Footer() {
             <nav aria-label="Local guides" className="max-w-6xl mx-auto mt-10 pt-8 border-t border-gray-700 text-sm text-gray-400">
                 <p className="uppercase tracking-widest text-gray-400 mb-3">San Clemente &amp; Orange County Guides</p>
                 <ul className="flex flex-wrap gap-x-5 gap-y-2">
-                    <li><a href="/san-clemente-neighborhoods" className="hover:text-white transition">Best San Clemente Neighborhoods</a></li>
-                    <li><a href="/san-clemente-neighborhoods/talega" className="hover:text-white transition">Talega</a></li>
-                    <li><a href="/san-clemente-neighborhoods/pier-bowl" className="hover:text-white transition">Pier Bowl</a></li>
-                    <li><a href="/san-clemente-neighborhoods/forster-ranch" className="hover:text-white transition">Forster Ranch</a></li>
-                    <li><a href="/san-clemente-neighborhoods/sea-summit" className="hover:text-white transition">Sea Summit</a></li>
-                    <li><a href="/oc-relocation-guide" className="hover:text-white transition">OC Relocation Guide</a></li>
-                    <li><a href="/blog" className="hover:text-white transition">Market Notes</a></li>
-                    <li><a href="/sell#property-valuation" className="hover:text-white transition">Home Valuation</a></li>
+                    <li><Link href="/san-clemente-neighborhoods" className="hover:text-white transition">Best San Clemente Neighborhoods</Link></li>
+                    <li><Link href="/san-clemente-neighborhoods/talega" className="hover:text-white transition">Talega</Link></li>
+                    <li><Link href="/san-clemente-neighborhoods/pier-bowl" className="hover:text-white transition">Pier Bowl</Link></li>
+                    <li><Link href="/san-clemente-neighborhoods/forster-ranch" className="hover:text-white transition">Forster Ranch</Link></li>
+                    <li><Link href="/san-clemente-neighborhoods/sea-summit" className="hover:text-white transition">Sea Summit</Link></li>
+                    <li><Link href="/oc-relocation-guide" className="hover:text-white transition">OC Relocation Guide</Link></li>
+                    <li><Link href="/blog" className="hover:text-white transition">Market Notes</Link></li>
+                    <li><Link href="/sell#property-valuation" className="hover:text-white transition">Home Valuation</Link></li>
                 </ul>
             </nav>
 
