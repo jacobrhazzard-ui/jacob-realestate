@@ -83,7 +83,7 @@ const Navigation = () => {
                 <Link href='/'>
                     <Image
                         src="/jg-logo-2.png"
-                        alt="Logo"
+                        alt="Jacob Hazzard Real Estate logo"
                         width={400}
                         height={250}
                         className="w-full max-w-[200px] object-contain"
@@ -179,7 +179,7 @@ const Navigation = () => {
             <div className="absolute top-0 left-0 right-0 z-40 px-6 py-6 flex justify-between items-center md:hidden">
                 <Image
                     src="/jg-logo-2.png"
-                    alt="Logo"
+                    alt="Jacob Hazzard Real Estate logo"
                     width={130}
                     height={70}
                     className="object-contain"

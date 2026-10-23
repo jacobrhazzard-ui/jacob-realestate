@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PhotoRotator from '../../photoRotator';
 import { notFound } from 'next/navigation';
 import Footer from '../../footer';
 import Navigation from '../../navbar';
@@ -29,7 +30,8 @@ export default async function RegionGuide({ params }) {
 
   return (
     <main className="text-gray-900 bg-[#f1f0eb] font-sans">
-      <section className="relative min-h-[70vh] bg-cover bg-center flex flex-col" style={{ backgroundImage: `url('${r.image}')` }}>
+      <section className="relative min-h-[70vh] flex flex-col">
+        <PhotoRotator photos={r.photos && r.photos.length ? r.photos : [{ src: r.image, alt: `${r.name}, Orange County` }]} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/30 z-10" />
         <Navigation />
         <div className="relative z-20 text-white text-center max-w-4xl mx-auto px-6 mt-auto mb-20 pt-40">

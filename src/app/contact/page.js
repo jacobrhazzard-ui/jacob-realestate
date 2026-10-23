@@ -149,7 +149,7 @@ export default function ContactPage() {
                             <div className="w-20 h-20 flex items-center justify-center mx-auto mb-15">
                                 <Image
                                     src="/jg-logo-2.png"
-                                    alt="Logo"
+                                    alt="Jacob Hazzard Real Estate logo"
                                     width={200}
                                     height={200}
                                     className="max-w-[200] max-h-[200] object-contain"

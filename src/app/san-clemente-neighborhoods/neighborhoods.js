@@ -552,70 +552,385 @@ export const neighborhoods = [
   {
     slug: 'cyprus-shore',
     published: false,
-    name: 'Cyprus Shore',
+    name: 'Cyprus Shore & Cyprus Cove',
+    shortName: 'Cyprus Shore',
     updated: '2026-10-23',
     image: '/cordoba7.jpeg',
     imageAlt: 'Luxury home in San Clemente',
-    tagline: 'Guard-gated custom homes with private beach access looking out toward Trestles.',
+    tagline: 'Two neighboring guard-gated communities sharing one entrance, with private beach access facing Trestles.',
     summary:
-      'Cyprus Shore is a guard-gated community in Southwest San Clemente with custom homes, 24-hour security, an association pool and tennis courts, and private beach access facing Trestles.',
+      'Cyprus Shore and Cyprus Cove are neighboring guard-gated communities in Southwest San Clemente that share an entrance off Avenida Del Presidente, with custom homes and private beach access facing Trestles.',
     intro:
-      'Cyprus Shore is in Southwest San Clemente, near the beach, behind a gate off Avenida Del Presidente. It shares a large gated area with neighboring Cyprus Cove and sits between Cyprus Cove and Cotton Point. The homes are custom, roughly 1,896 to 4,302 square feet, and residents have private access to a beach that looks out on Trestles.',
+      'Cyprus Shore and Cyprus Cove are two separate, side-by-side communities in Southwest San Clemente that share one guard-gated entrance off Avenida Del Presidente. Cyprus Shore sits between Cyprus Cove and Cotton Point. Both are made up of custom homes, and both give residents private access to a beach looking out on Trestles. Cyprus Shore homes run roughly 1,896 to 4,302 square feet; Cyprus Cove homes run about 3,000 to 5,000.',
     atAGlance: [
+      { value: '2', label: 'Communities, one gate' },
       { value: '24/7', label: 'Guard-gated security' },
       { value: 'Private', label: 'Beach access' },
       { value: 'Trestles', label: 'Surf break view' },
-      { value: '3–5', label: 'Bedrooms' },
-      { value: '1,896–4,302', label: 'Square feet' },
+      { value: '3–7', label: 'Bedrooms' },
       { value: 'Custom', label: 'Homes' },
     ],
-    map: { bbox: [-117.612, 33.386, -117.582, 33.41] },
+    map: { bbox: [-117.612, 33.382, -117.582, 33.404], marker: [33.3921, -117.5974] },
     gallery: [],
     whyPeopleMove: [
       { icon: 'beach', title: 'Private beach', text: 'Residents’ access to a beach facing Trestles that is hard to reach from outside' },
-      { icon: 'gate', title: '24-hour guard gate', text: 'Guard-gated entry off Avenida Del Presidente with security around the clock' },
-      { icon: 'pool', title: 'Association amenities', text: 'A pool, spa, and tennis courts' },
-      { icon: 'home', title: 'Custom homes', text: 'Custom brick, stone, granite, and woodwork' },
-      { icon: 'trees', title: 'Resort-style yards', text: 'Tropical landscaping, BBQ islands, waterfalls, koi ponds, and palm trees' },
+      { icon: 'gate', title: 'Guard-gated', text: 'One shared, staffed gate off Avenida Del Presidente; Cyprus Shore has 24-hour security' },
+      { icon: 'pool', title: 'Association amenities', text: 'Pools, spas, and tennis courts; Cyprus Cove also lists a clubhouse and sports courts' },
+      { icon: 'home', title: 'Custom homes', text: 'Custom brick, stone, granite, and woodwork, cathedral ceilings, and stone-path entries' },
+      { icon: 'trees', title: 'Resort-style yards', text: 'Tropical landscaping, pools and spas, BBQ islands, waterfalls, and koi ponds' },
     ],
     homeTypes: [
-      { icon: 'home', title: 'Custom single-family homes', text: 'About 1,896 to 4,302 square feet, 3 to 5 bedrooms, 2 to 6 baths, 2- to 3-car garages' },
+      { icon: 'home', title: 'Cyprus Shore', text: 'Custom homes of about 1,896 to 4,302 sq ft, 3 to 5 bedrooms, 2- to 3-car garages' },
+      { icon: 'home', title: 'Cyprus Cove', text: 'Custom homes of about 3,000 to 5,000 sq ft, 3 to 7 bedrooms, 2- to 6-car garages' },
     ],
     market: {
       cards: [
-        { value: '$9,725,000', label: 'Median list price', detail: '6 active listings, Oct 20, 2026', source: 'Ruby Home' },
-        { value: '$2,155', label: 'Avg. list price per sq ft', detail: 'Active listings, Oct 20, 2026', source: 'Ruby Home' },
-        { value: '6', label: 'Homes for sale', detail: 'Oct 20, 2026', source: 'Ruby Home' },
+        { value: '$9,725,000', label: 'Cyprus Shore median list price', detail: '6 active listings, Oct 20, 2026', source: 'Ruby Home' },
+        { value: '$2,155', label: 'Avg. list price per sq ft', detail: 'Cyprus Shore, Oct 20, 2026', source: 'Ruby Home' },
+        { value: '0', label: 'Cyprus Cove homes for sale', detail: 'At the time of research, Oct 2026', source: 'Ruby Home' },
       ],
-      range: { low: 3795000, high: 11995000, median: 9725000, label: 'Listed prices, Oct 20, 2026 (Ruby Home)' },
-      figures: ['On October 20, 2026, 6 homes were listed from $3,795,000 to $11,995,000 (Ruby Home)'],
+      range: { low: 3795000, high: 11995000, median: 9725000, label: 'Cyprus Shore listed prices, Oct 20, 2026 (Ruby Home)' },
+      figures: ['On October 20, 2026, 6 Cyprus Shore homes were listed from $3,795,000 to $11,995,000 (Ruby Home)'],
       note: 'Every home here is custom, so prices depend heavily on the lot, the beach frontage, and the home itself.',
     },
     costsToKnow: [
-      'HOA dues are paid monthly and support the pool, spa, tennis courts, security, and beach access; get the current amount for any specific home',
+      'Both communities have monthly HOA dues that support the gate, security, and shared amenities; published guides don’t say whether the two share one HOA, so confirm for any specific home',
     ],
     schools:
-      'Cyprus Shore is in Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
+      'Cyprus Shore and Cyprus Cove are in Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
     gettingAround: [
-      'Gated entrance off Avenida Del Presidente',
-      'Next to Cyprus Cove and Cotton Point, at the south end of San Clemente near Trestles',
+      'Shared gated entrance off Avenida Del Presidente',
+      'At the south end of San Clemente near Cotton Point and Trestles',
     ],
     localTip: null,
     faqs: [
       {
-        q: 'Is Cyprus Shore in San Clemente gated?',
-        a: 'Yes. Cyprus Shore is guard-gated with 24-hour security, with its entrance off Avenida Del Presidente.',
+        q: 'Are Cyprus Shore and Cyprus Cove the same neighborhood?',
+        a: 'No. They are two separate, neighboring communities in Southwest San Clemente that share one guard-gated entrance off Avenida Del Presidente. Both have private beach access facing Trestles.',
       },
       {
-        q: 'Does Cyprus Shore have private beach access?',
-        a: 'Yes. Residents have private access to a beach that faces the Trestles surf break.',
+        q: 'Is Cyprus Shore gated?',
+        a: 'Yes. Cyprus Shore is guard-gated with 24-hour security, sharing its entrance with Cyprus Cove.',
       },
       {
         q: 'How much do homes cost in Cyprus Shore?',
-        a: 'On October 20, 2026, Ruby Home reported 6 homes for sale with a median list price of $9,725,000, from $3,795,000 to $11,995,000.',
+        a: 'On October 20, 2026, Ruby Home reported 6 Cyprus Shore homes for sale with a median list price of $9,725,000, from $3,795,000 to $11,995,000.',
       },
     ],
-    sources: [{ label: 'Ruby Home: Cyprus Shore', href: 'https://www.rubyhome.com/san-clemente-ca/cyprus-shore/' }],
+    sources: [
+      { label: 'Ruby Home: Cyprus Shore', href: 'https://www.rubyhome.com/san-clemente-ca/cyprus-shore/' },
+      { label: 'Ruby Home: Cyprus Cove', href: 'https://www.rubyhome.com/san-clemente-ca/cyprus-cove/' },
+    ],
+  },
+
+  {
+    slug: 'broadmoor',
+    published: false,
+    name: 'Broadmoor',
+    updated: '2026-10-23',
+    image: '/cordoba8.jpeg',
+    imageAlt: 'San Clemente home',
+    tagline: 'Single-story 1970s homes on big lots in the hills above town, close to downtown and the high school.',
+    summary:
+      'Broadmoor is a mid-1970s tract of single-story homes on large lots in the hills of Central San Clemente, above San Clemente High School, with some ocean views and relatively low HOA fees.',
+    intro:
+      'Broadmoor is a large tract in the hills of Central San Clemente, reached by climbing up from San Clemente High School on Avenida Presidio. Homes were built in the mid-1970s and are all single-story, on lots of roughly 7,000 to 13,000 square feet. It sits far enough from the freeway and Avenida Pico to stay fairly quiet, and some homes look out over the coastline and the city.',
+    atAGlance: [
+      { value: 'Mid-1970s', label: 'Homes built' },
+      { value: 'Single-story', label: 'Every home' },
+      { value: '7K–13K', label: 'Sq ft lots' },
+      { value: '1,900–2,339', label: 'Sq ft homes' },
+      { value: '3–4', label: 'Bedrooms' },
+      { value: 'Low', label: 'HOA fees' },
+    ],
+    map: { bbox: [-117.628, 33.428, -117.596, 33.448], marker: [33.4368, -117.6121] },
+    gallery: [],
+    whyPeopleMove: [
+      { icon: 'home', title: 'All single-story', text: 'One-level homes, rare for a hillside neighborhood' },
+      { icon: 'layers', title: 'Big lots', text: 'About 7,000 to 13,000 square feet, with room for pools and large yards' },
+      { icon: 'mountain', title: 'Views', text: 'Select homes look out over the coastline and the city' },
+      { icon: 'gate', title: 'Quiet streets', text: 'Cul-de-sacs and single-loaded streets, set back from the freeway and Avenida Pico' },
+      { icon: 'landmark', title: 'Close to town', text: 'Near Downtown San Clemente, San Clemente High School, and Verde Park' },
+      { icon: 'receipt', title: 'Low HOA fees', text: 'Relatively low for San Clemente' },
+    ],
+    homeTypes: [
+      { icon: 'home', title: 'Single-story single-family', text: 'Models include Seascape (3 bed, 1,900 sq ft), Windjammer (4 bed, 2,212), Brigantine (4 bed, 2,272), and Sandcastle (4 bed, 2,339)' },
+      { icon: 'pool', title: 'Large backyards', text: 'Some homes have private pools; 2-car attached garages are standard' },
+    ],
+    market: {
+      cards: [
+        { value: '0', label: 'Homes for sale', detail: 'At the time of research, Oct 2026', source: 'Ruby Home' },
+      ],
+      figures: [],
+      note: 'No Broadmoor homes were listed for sale when this guide was written, so there is no current list price to report. Ask for recent Broadmoor closed sales for an accurate picture of value.',
+    },
+    costsToKnow: ['HOA fees are relatively low for San Clemente; get the current amount for any specific home'],
+    schools:
+      'Broadmoor is in Capistrano Unified School District and sits just above San Clemente High School. Always confirm the assigned schools for a specific address with the district.',
+    gettingAround: ['Reached by climbing up from San Clemente High School on Avenida Presidio', 'Close to Downtown San Clemente and Verde Park'],
+    localTip: null,
+    faqs: [
+      {
+        q: 'Are Broadmoor homes in San Clemente single-story?',
+        a: 'Yes. Broadmoor homes are single-story, built in the mid-1970s, about 1,900 to 2,339 square feet on lots of roughly 7,000 to 13,000 square feet.',
+      },
+      {
+        q: 'Where is Broadmoor in San Clemente?',
+        a: 'In the hills of Central San Clemente, above San Clemente High School off Avenida Presidio, close to downtown and Verde Park.',
+      },
+    ],
+    sources: [{ label: 'Ruby Home: Broadmoor', href: 'https://www.rubyhome.com/san-clemente-ca/broadmoor/' }],
+  },
+
+  {
+    slug: 'misty-ridge',
+    published: false,
+    name: 'Misty Ridge',
+    updated: '2026-10-23',
+    image: '/cordoba1.jpeg',
+    imageAlt: 'Custom home in San Clemente',
+    tagline: 'Custom 1980s homes on a quiet ridge with panoramic ocean views, minutes from downtown.',
+    summary:
+      'Misty Ridge is a small enclave of custom homes, mostly built in the late 1980s, in the hills of Central San Clemente off Avenida Salvador, with panoramic ocean views and low HOA dues.',
+    intro:
+      'Misty Ridge sits in the hills of Central San Clemente, east of the 5, just off Avenida Salvador and near Avenida Presidio, which leads down to downtown. It has a single entrance, and its side streets end in cul-de-sacs. The homes are custom, many built in the late 1980s, roughly 3,000 to 5,000 square feet, and many have panoramic ocean views reaching downtown and Dana Point Harbor on clear days.',
+    atAGlance: [
+      { value: 'Late 1980s', label: 'Most homes built' },
+      { value: 'Custom', label: 'Homes' },
+      { value: '3,000–5,000', label: 'Sq ft' },
+      { value: '3–5', label: 'Bedrooms' },
+      { value: '1', label: 'Community entrance' },
+      { value: 'Low', label: 'HOA dues' },
+    ],
+    gallery: [],
+    whyPeopleMove: [
+      { icon: 'mountain', title: 'Ocean views', text: 'Panoramic views over downtown to Dana Point Harbor on clear days' },
+      { icon: 'home', title: 'Custom homes', text: 'Many with designer finishes, some on oversized lots with pools or room for one' },
+      { icon: 'gate', title: 'Quiet and private', text: 'One community entrance, with side streets ending in cul-de-sacs' },
+      { icon: 'landmark', title: 'Close to downtown', text: 'Near Avenida Presidio, which leads down to downtown' },
+      { icon: 'receipt', title: 'Low HOA dues', text: 'Few shared amenities keep dues low' },
+    ],
+    homeTypes: [
+      { icon: 'home', title: 'Custom single-family homes', text: 'About 3,000 to 5,000 sq ft, 3 to 5 bedrooms, 2.5 to 5 baths, 2- to 3-car garages' },
+    ],
+    market: {
+      cards: [{ value: '0', label: 'Homes for sale', detail: 'At the time of research, Oct 2026', source: 'Ruby Home' }],
+      figures: [],
+      note: 'No Misty Ridge homes were listed for sale when this guide was written. Homes here trade rarely, so recent closed sales are the best guide to value.',
+    },
+    costsToKnow: ['HOA dues are low because there are few shared amenities; get the current amount for any specific home'],
+    schools:
+      'Misty Ridge is in Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
+    gettingAround: ['Just off Avenida Salvador, east of I-5', 'Avenida Presidio leads down to downtown'],
+    localTip: null,
+    faqs: [
+      {
+        q: 'Where is Misty Ridge in San Clemente?',
+        a: 'In the hills of Central San Clemente, east of I-5, just off Avenida Salvador and near Avenida Presidio.',
+      },
+      {
+        q: 'What are homes like in Misty Ridge?',
+        a: 'Custom homes, many built in the late 1980s, about 3,000 to 5,000 square feet with 3 to 5 bedrooms, many with panoramic ocean views.',
+      },
+    ],
+    sources: [{ label: 'Ruby Home: Misty Ridge', href: 'https://www.rubyhome.com/san-clemente-ca/misty-ridge/' }],
+  },
+
+  {
+    slug: 'sea-ridge-estates',
+    published: false,
+    name: 'Sea Ridge Estates',
+    updated: '2026-10-23',
+    image: '/ameno3.jpeg',
+    imageAlt: 'Ocean-view home in San Clemente',
+    tagline: 'A small gated enclave of 1990s villa-style homes on one of the highest points in San Clemente.',
+    summary:
+      'Sea Ridge Estates is a gated community of about 43 villa-style custom homes built from 1990 on, on one of the highest points in Southeast San Clemente, with panoramic ocean and canyon views.',
+    intro:
+      'Sea Ridge Estates is a private, gated community of about 43 homes in Southeast San Clemente, on one of the highest points in the city. The homes are villa-style customs built from 1990 on, roughly 3,200 to 5,700 square feet on lots of about 7,000 to 9,000 square feet, set along the ridgetop with views of the canyons and the Pacific.',
+    atAGlance: [
+      { value: '~43', label: 'Homes' },
+      { value: 'Gated', label: 'Private entrance' },
+      { value: '1990s', label: 'Homes built' },
+      { value: '3,200–5,700', label: 'Sq ft' },
+      { value: '4–6', label: 'Bedrooms' },
+      { value: 'Ridgetop', label: 'Ocean & canyon views' },
+    ],
+    map: { bbox: [-117.612, 33.42, -117.582, 33.438], marker: [33.4287, -117.5968] },
+    gallery: [],
+    whyPeopleMove: [
+      { icon: 'mountain', title: 'Panoramic views', text: 'Ridgetop homesites look out over the canyons and the Pacific' },
+      { icon: 'gate', title: 'Gated and small', text: 'A private, gated community of about 43 homes' },
+      { icon: 'home', title: 'Villa-style customs', text: 'Gourmet kitchens, dual-sided fireplaces, and primary-suite view decks' },
+      { icon: 'trees', title: 'Outdoor living', text: 'Large backyards with BBQ islands and ocean views' },
+      { icon: 'receipt', title: 'No Mello-Roos', text: 'Ruby Home reports no Mello-Roos assessments in Southeast San Clemente' },
+    ],
+    homeTypes: [
+      { icon: 'home', title: 'Custom single-family homes', text: 'About 3,200 to 5,700 sq ft on 7,000 to 9,000 sq ft lots, 4 to 6 bedrooms, 3-car garages' },
+    ],
+    market: {
+      cards: [{ value: '0', label: 'Homes for sale', detail: 'At the time of research, Oct 2026', source: 'Ruby Home' }],
+      figures: [],
+      note: 'No Sea Ridge Estates homes were listed for sale when this guide was written. With only about 43 homes, sales are rare, so recent closed sales are the best guide to value.',
+    },
+    costsToKnow: [
+      'Monthly HOA dues cover the gated entrance and common-area maintenance; get the current amount for any specific home',
+      'Ruby Home reports no Mello-Roos in Southeast San Clemente; confirm on the tax bill',
+    ],
+    schools:
+      'Sea Ridge Estates is in Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
+    gettingAround: ['In the hills of Southeast San Clemente, east of I-5', 'Close to hiking trails, beaches, and downtown'],
+    localTip: null,
+    faqs: [
+      {
+        q: 'Is Sea Ridge Estates in San Clemente gated?',
+        a: 'Yes. Sea Ridge Estates is a private gated community of about 43 homes in Southeast San Clemente.',
+      },
+      {
+        q: 'What are homes like in Sea Ridge Estates?',
+        a: 'Villa-style custom homes built from 1990 on, about 3,200 to 5,700 square feet on 7,000 to 9,000 square foot lots, with ocean and canyon views.',
+      },
+    ],
+    sources: [
+      { label: 'Ruby Home: Sea Ridge Estates', href: 'https://www.rubyhome.com/san-clemente-ca/sea-ridge-estates/' },
+      { label: 'BCRE: Sea Ridge Estates', href: 'https://www.bcre.com/sea-ridge-estates-san-clemente-ca.php' },
+      { label: 'Ruby Home: Southeast San Clemente', href: 'https://www.rubyhome.com/san-clemente-ca/southeast-san-clemente/' },
+    ],
+  },
+
+  {
+    slug: 'sea-pointe-estates',
+    published: false,
+    name: 'Sea Pointe Estates',
+    updated: '2026-10-23',
+    image: '/cordoba2.jpg',
+    imageAlt: 'Custom home in San Clemente',
+    tagline: 'A 24/7 guard-gated hillside community of custom homes with views to Catalina.',
+    summary:
+      'Sea Pointe Estates is a 24/7 guard-gated community of custom homes in the hills of North San Clemente (92673), with coastal, canyon, and Catalina views and an association pool, clubhouse, and tennis courts.',
+    intro:
+      'Sea Pointe Estates is a 24/7 guard-gated community in the hills of North San Clemente, in the 92673 ZIP code, a couple of miles from the beach and less than a mile from the 5. The homes are custom, from about 2,702 to 6,408 square feet with Spanish-influenced architecture and large backyards, and nearly every homesite has a view of the coast, the canyons, city lights, or Catalina Island.',
+    atAGlance: [
+      { value: '24/7', label: 'Guard-gated' },
+      { value: '2,702–6,408', label: 'Sq ft' },
+      { value: '3–6', label: 'Bedrooms' },
+      { value: 'Catalina', label: 'Views' },
+      { value: '<1 mi', label: 'To I-5' },
+      { value: '92673', label: 'ZIP code' },
+    ],
+    map: { bbox: [-117.665, 33.45, -117.632, 33.472], marker: [33.461, -117.6486] },
+    gallery: [],
+    whyPeopleMove: [
+      { icon: 'gate', title: '24/7 guard gate', text: 'A staffed gate around the clock' },
+      { icon: 'mountain', title: 'Views from nearly every lot', text: 'The coast, rolling canyons, city lights, and Catalina Island' },
+      { icon: 'pool', title: 'Association amenities', text: 'Pool and spa, a clubhouse with BBQ area, tennis and sports courts, and a playground' },
+      { icon: 'home', title: 'Custom homes', text: 'Spanish-influenced architecture with large backyards' },
+      { icon: 'bag', title: 'Convenient', text: 'Near shopping on Camino De Los Mares and under a mile from I-5' },
+    ],
+    homeTypes: [
+      { icon: 'home', title: 'Custom single-family homes', text: 'About 2,702 to 6,408 sq ft (mostly 3,000 to 5,000), 3 to 6 bedrooms, 3- to 5-car garages' },
+    ],
+    market: {
+      cards: [
+        { value: '$4,000,000', label: 'Median list price', detail: '3 active listings, Oct 6, 2026', source: 'Ruby Home' },
+        { value: '$882', label: 'Avg. list price per sq ft', detail: 'Active listings, Oct 6, 2026', source: 'Ruby Home' },
+        { value: '3', label: 'Homes for sale', detail: 'Oct 6, 2026', source: 'Ruby Home' },
+      ],
+      range: { low: 3798000, high: 5800000, median: 4000000, label: 'Listed prices, Oct 6, 2026 (Ruby Home)' },
+      figures: ['On October 6, 2026, listed prices ran from $3,798,000 for a 4-bed, 5,129 sq ft home to $5,800,000 for a 4-bed, 6,145 sq ft home (Ruby Home)'],
+      note: 'With only a few homes for sale at a time, list prices can move a lot from month to month.',
+    },
+    costsToKnow: ['HOA dues support the guard gate and amenities; published guides don’t list the amount, so get it for any specific home'],
+    schools:
+      'Sea Pointe Estates is in Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
+    gettingAround: ['Under a mile from I-5', 'Near shopping centers on Camino De Los Mares, a couple of miles from the beach'],
+    localTip: null,
+    faqs: [
+      {
+        q: 'Is Sea Pointe Estates in San Clemente guard-gated?',
+        a: 'Yes. Sea Pointe Estates is a 24/7 guard-gated community in North San Clemente.',
+      },
+      {
+        q: 'How much do homes cost in Sea Pointe Estates?',
+        a: 'On October 6, 2026, Ruby Home reported 3 homes for sale with a median list price of $4,000,000, from $3,798,000 to $5,800,000.',
+      },
+    ],
+    sources: [{ label: 'Ruby Home: Sea Pointe Estates', href: 'https://www.rubyhome.com/san-clemente-ca/sea-pointe-estates/' }],
+  },
+
+  {
+    slug: 'southeast-san-clemente',
+    published: false,
+    name: 'Southeast San Clemente',
+    updated: '2026-10-23',
+    image: '/cordoba6.jpeg',
+    imageAlt: 'San Clemente hillside home',
+    tagline: 'Hillside homes east of the 5 around the municipal golf course, close to the beaches near Trestles.',
+    summary:
+      'Southeast San Clemente is the hillside area east of I-5 around the San Clemente Municipal Golf Course, with single-family homes and condos, no Mello-Roos, and quick access to the beaches near Trestles.',
+    intro:
+      "Southeast San Clemente covers the hillsides east of the 5 around the San Clemente Municipal Golf Course, about a mile from the ocean. It's made up of a mix of single-family homes and condo communities, many built in the 1960s and 1970s, with smaller enclaves including Cantamar, Mariners Point, Palacio Del Mar, Patrician Villa, Salvador Summit, and Sea Ridge Estates.",
+    atAGlance: [
+      { value: '1930', label: 'Golf course opened' },
+      { value: '18', label: 'Holes, ocean views' },
+      { value: '~1 mi', label: 'Course to the ocean' },
+      { value: '19', label: 'Homes for sale (Oct 9)' },
+      { value: '6', label: 'Named enclaves' },
+      { value: 'None', label: 'Mello-Roos' },
+    ],
+    map: { bbox: [-117.615, 33.398, -117.58, 33.425], marker: [33.409, -117.5966] },
+    gallery: [],
+    whyPeopleMove: [
+      { icon: 'flag', title: 'Municipal golf course', text: 'A public 18-hole course with sweeping ocean views; nine holes opened in 1930 and the back nine in 1955' },
+      { icon: 'beach', title: 'South-end beaches', text: 'Close to Riviera, San Clemente State Beach, and San Onofre, home to Trestles' },
+      { icon: 'park', title: 'Parks', text: 'San Luis Rey Park and Vista Bahia Park near the golf course' },
+      { icon: 'trees', title: 'Trails', text: 'Hiking on local trails in the hills' },
+      { icon: 'receipt', title: 'No Mello-Roos', text: 'Ruby Home reports no Mello-Roos and no leased land' },
+      { icon: 'landmark', title: 'Close to downtown', text: 'A shorter drive to downtown than many hillside neighborhoods' },
+    ],
+    homeTypes: [
+      { icon: 'home', title: 'Single-family homes', text: 'Many built in the 1960s and 1970s' },
+      { icon: 'building', title: 'Condo communities', text: 'Including Presidential Heights, which borders the golf course' },
+      { icon: 'gate', title: 'Gated enclave', text: 'Sea Ridge Estates, with 1990s villa-style custom homes' },
+    ],
+    market: {
+      cards: [
+        { value: '$2,195,000', label: 'Median list price', detail: '19 active listings, Oct 9, 2026', source: 'Ruby Home' },
+        { value: '$1,034', label: 'Avg. list price per sq ft', detail: 'Active listings, Oct 9, 2026', source: 'Ruby Home' },
+        { value: '19', label: 'Homes for sale', detail: 'Oct 9, 2026', source: 'Ruby Home' },
+      ],
+      figures: ['On October 9, 2026, Southeast San Clemente had 19 active listings with a median list price of $2,195,000 and an average of $1,034 per square foot (Ruby Home)'],
+      note: 'This area mixes condos and single-family homes, so the median moves with whatever is for sale that week.',
+    },
+    costsToKnow: [
+      'Ruby Home reports no Mello-Roos assessments and no leased land; confirm on the tax bill',
+      'Condo communities and gated enclaves have HOA dues; get the current amount for any specific home',
+    ],
+    schools:
+      'Southeast San Clemente is in Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
+    gettingAround: [
+      'San Clemente Municipal Golf Course: 150 E Avenida Magdalena',
+      'East of I-5, close to the south-end beaches and San Onofre State Beach',
+    ],
+    localTip: null,
+    faqs: [
+      {
+        q: 'What neighborhoods are near the San Clemente Municipal Golf Course?',
+        a: 'Southeast San Clemente, east of I-5. Presidential Heights condos border the course, and enclaves nearby include Cantamar, Mariners Point, Palacio Del Mar, Patrician Villa, Salvador Summit, and Sea Ridge Estates.',
+      },
+      {
+        q: 'Is there Mello-Roos in Southeast San Clemente?',
+        a: 'Ruby Home reports no Mello-Roos assessments and no leased land in Southeast San Clemente. Confirm on the tax bill for any specific home.',
+      },
+      {
+        q: 'How much do homes cost in Southeast San Clemente?',
+        a: 'On October 9, 2026, Ruby Home reported 19 homes for sale with a median list price of $2,195,000.',
+      },
+    ],
+    sources: [
+      { label: 'Ruby Home: Southeast San Clemente', href: 'https://www.rubyhome.com/san-clemente-ca/southeast-san-clemente/' },
+      { label: 'City of San Clemente: Golf course information', href: 'https://www.sanclemente.gov/208' },
+    ],
   },
 ];
 

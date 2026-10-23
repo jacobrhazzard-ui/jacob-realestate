@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import { JsonLd } from './jsonld';
 import HeroSlideshow from './hero';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,73 +6,72 @@ import PastSuccessSlideshow from './pastSection';
 import FeaturedListings from './listingSection';
 import Footer from './footer';
 import LuxreStats from './luxreStats';
-import { icons } from 'lucide-react';
 
 export const metadata = {
-  title: "Jacob Hazzard, Luxre Realty | San Clemente Realtor",
-  description: "Local Realtor in San Clemente & Orange County. Renovations, selling, buying, rental & investment property specialists. Get a valuation or find investment opportunities.",
+  title: { absolute: "San Clemente Realtor | Jacob Hazzard, Luxre Realty | Orange County Real Estate" },
+  description: "San Clemente-born REALTOR® Jacob Hazzard of Luxre Realty helps buyers, sellers, and families relocating across San Clemente and Orange County. Free home valuations and local neighborhood guides.",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: " Jacob Hazzard | San Clemente Realtor",
-    description: "Local Realtor in San Clemente & Orange County. Renovations, selling, buying, rental & investment property specialists. Get a valuation or find investment opportunities.",
+    title: "Jacob Hazzard | San Clemente & Orange County Realtor",
+    description: "San Clemente-born REALTOR® with Luxre Realty. Free home valuations, neighborhood guides, and relocation help across Orange County.",
     url: "https://jacobhazzardrealestate.com",
     siteName: "Jacob Hazzard Real Estate",
     images: [
       {
-        url: "/jg-logo-2.png",
-        width: 1200,
-        height: 630,
-        alt: "Jacob Hazzard Real Estate Logo",
+        url: "/cordoba5.jpeg",
+        alt: "San Clemente home sold by Jacob Hazzard, Luxre Realty",
       },
     ],
-    icons: {
-      icon: "/favicon.ico",
-    },
     locale: "en_US",
     type: "website",
   },
 };
 
+const faqs = [
+  {
+    q: 'Who is Jacob Hazzard?',
+    a: 'Jacob Hazzard is a REALTOR® with Luxre Realty (CA DRE #02222037) who was born and raised in San Clemente. His office is at 222 Avenida Del Mar in San Clemente, and he helps clients buy, sell, renovate, and invest across Orange County.',
+  },
+  {
+    q: 'What areas does Jacob Hazzard serve?',
+    a: 'San Clemente and the rest of Orange County, including Dana Point and Laguna Niguel. His San Clemente neighborhood guides cover more than a dozen areas, including Talega, the Pier Bowl, Forster Ranch, Sea Summit, Marblehead, Broadmoor, and Cyprus Shore.',
+  },
+  {
+    q: 'How can I find out what my San Clemente home is worth?',
+    a: 'Request a free valuation on the Sell page and Jacob will personally review your home within 24 hours, or use the instant automated estimate on the same page.',
+  },
+  {
+    q: 'What are the best neighborhoods in San Clemente?',
+    a: 'It depends on what matters to you: walking to the beach, newer construction, views, gated privacy, or trails. The San Clemente neighborhood guides compare each area’s homes, prices, HOA and Mello-Roos, and amenities.',
+  },
+  {
+    q: 'I am relocating to Orange County. Where should I start?',
+    a: 'Start with the Orange County Relocation Guide, which breaks the county into South, Central, North, and East OC with cities, schools, commutes, and costs, then reach out for a custom neighborhood shortlist.',
+  },
+  {
+    q: 'How do I contact Jacob Hazzard?',
+    a: 'Call or text (949) 291-9395, email jacob@hazzardestates.com, or visit 222 Avenida Del Mar, San Clemente, CA 92672.',
+  },
+];
+
+const explore = [
+  { href: '/san-clemente-neighborhoods', title: 'San Clemente Neighborhoods', text: 'Homes, prices, and what each area is really like.' },
+  { href: '/oc-relocation-guide', title: 'Orange County Relocation Guide', text: 'South, Central, North, and East OC, compared.' },
+  { href: '/blog', title: 'Weekly Market Notes', text: 'San Clemente market numbers and local highlights.' },
+  { href: '/sell#property-valuation', title: 'What’s My Home Worth?', text: 'A free valuation, personally reviewed in 24 hours.' },
+];
+
 export default function Home() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "Jacob Hazzard",
-    "image": "https://jacobhazzardrealestate.com/profile.jpg",
-    "url": "https://jacobhazzardrealestate.com",
-    "telephone": "+1-949-291-9395",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "222 Avenida Del Mar, San Clemente, CA 92672",
-      "addressLocality": "San Clemente",
-      "addressRegion": "CA",
-      "postalCode": "92672",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      {
-        "@type": "Place",
-        "name": "Orange County, California"
-      },
-      {
-        "@type": "Place",
-        "name": "San Clemente, California"
-      }
-    ],
-    "servesCuisine": "Real Estate",
-    "openingHours": "Mo,Tu,We,Th,Fr 09:00-18:00",
-    "priceRange": "$$$",
-    "description": "Jacob Hazzard is a luxury real estate agent with LUXRE Realty, specializing in buying, selling, renovations, investment properties, and rentals in Orange County, CA."
-  };
   return (
     <>
-      <Head>
-        <title>Jacob Hazzard | Luxury Real Estate in Orange County</title>
-        <meta name="description" content="Work with Jacob Hazzard of LUXRE Realty for luxury real estate in Orange County. Specializing in buying, selling, renovations, and investment opportunities." />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </Head>
+      <JsonLd
+        data={[
+          {
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+          },
+        ]}
+      />
       <main className="text-gray-800 bg-[#f9f7f4]" >
         {/* Hero Section */}
         <HeroSlideshow />
@@ -170,7 +169,7 @@ export default function Home() {
           <div className="py-0 flex justify-center items-center ">
             <Image
               src="/jg-logo-2.png"
-              alt="Logo"
+              alt="Jacob Hazzard Real Estate logo"
               width={400}
               height={250}
               className="w-40 h-35 object-cover mx-auto"
@@ -180,6 +179,34 @@ export default function Home() {
         <LuxreStats />
         {/* Current Listings */}
         <FeaturedListings />
+        {/* Explore + FAQ (internal links and answers for search and AI tools) */}
+        <section className="bg-white py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl f1 font-light text-center mb-4">Explore San Clemente &amp; Orange County</h2>
+            <p className="f2 text-center text-gray-600 mb-12 max-w-2xl mx-auto">Local guides written by a San Clemente native, updated as the market moves.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+              {explore.map((e) => (
+                <Link key={e.href} href={e.href} className="block bg-[#f9f7f4] p-6 hover:shadow-md transition">
+                  <h3 className="text-xl f1 mb-2 text-gray-900">{e.title}</h3>
+                  <p className="f2 text-sm text-gray-600">{e.text}</p>
+                </Link>
+              ))}
+            </div>
+            <h2 className="text-3xl md:text-4xl f1 font-light text-center mb-10">Frequently Asked Questions</h2>
+            <div className="max-w-3xl mx-auto divide-y divide-gray-200">
+              {faqs.map((f) => (
+                <details key={f.q} className="py-5 group">
+                  <summary className="cursor-pointer list-none flex justify-between items-center text-lg f1 text-gray-900">
+                    {f.q}
+                    <span className="ml-4 text-gray-400 group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <p className="f2 text-gray-700 mt-3 leading-relaxed">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section id="contact" className="relative bg-[#f9f7f4] py-24 px-6 text-center overflow-hidden">
           {/* Optional: Background Accent Image */}

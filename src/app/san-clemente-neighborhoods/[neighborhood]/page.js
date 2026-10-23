@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import PhotoRotator from '../../photoRotator';
 import { Home, Trees, Waves, Flag, ShoppingCart, ShoppingBag, Layers, Building2, ShieldCheck, Car, GraduationCap, Receipt, MapPin, Umbrella, TrainFront, Landmark, Mountain, TreePine, Trophy } from 'lucide-react';
 
 const ICONS = { home: Home, trees: Trees, pool: Waves, flag: Flag, cart: ShoppingCart, bag: ShoppingBag, layers: Layers, building: Building2, gate: ShieldCheck, beach: Umbrella, train: TrainFront, landmark: Landmark, mountain: Mountain, park: TreePine, receipt: Receipt, tennis: Trophy };
@@ -126,7 +127,8 @@ export default async function NeighborhoodGuide({ params }) {
         ]}
       />
 
-      <section className="relative min-h-[70vh] bg-cover bg-center flex flex-col" style={{ backgroundImage: `url('${n.image}')` }}>
+      <section className="relative min-h-[70vh] flex flex-col">
+        <PhotoRotator photos={n.gallery && n.gallery.length ? n.gallery : [{ src: n.image, alt: n.imageAlt }]} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/30 z-10" />
         <Navigation />
         <div className="relative z-20 text-white text-center max-w-4xl mx-auto px-6 mt-auto mb-20 pt-40">
