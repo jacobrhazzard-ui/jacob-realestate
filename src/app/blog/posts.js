@@ -7,6 +7,10 @@
 //   { type: 'p', text: '...' }
 //   { type: 'list', items: ['...', '...'] }
 //   { type: 'source', text: 'Source: ...', href: 'https://...' }
+//   { type: 'spotlight', neighborhood: 'talega', text: '...' }  -> links to the neighborhood guide
+//
+// neighborhoods: list every guide slug a post features. The guide page lists the post
+// automatically, so blog <-> neighborhood links always go both ways.
 
 export const posts = [
   {
@@ -14,13 +18,14 @@ export const posts = [
     published: false, // awaiting Jacob's approval
     date: '2026-10-26',
     category: 'Market Update',
-    title: 'San Clemente Market Update: September Numbers + Día de los Muertos',
+    title: 'San Clemente Market Update: September Numbers, a Talega Spotlight + Día de los Muertos',
     excerpt:
-      'More sales, faster sales, and fewer price cuts than last September. Plus a free community celebration at Max Berg Plaza Park on November 2.',
+      'More sales, faster sales, and fewer price cuts than last September, a closer look at Talega, and a free community celebration at Max Berg Plaza Park on November 2.',
+    neighborhoods: ['talega'],
     image: '/ameno2.jpeg',
     imageAlt: 'San Clemente coastline',
     body: [
-      { type: 'p', text: "Happy Monday! Here's a quick look at how San Clemente's housing market finished September, plus a community event worth putting on your calendar." },
+      { type: 'p', text: "Happy Monday! Here's a quick look at how San Clemente's housing market finished September, a closer look at Talega, and a community event worth putting on your calendar." },
       { type: 'h2', text: 'The September Numbers' },
       {
         type: 'list',
@@ -36,6 +41,10 @@ export const posts = [
       { type: 'source', text: 'Source: Redfin, San Clemente housing market data, September 2026', href: 'https://www.redfin.com/city/16690/CA/San-Clemente/housing-market' },
       { type: 'h2', text: 'What It Means' },
       { type: 'p', text: 'Compared with a year ago, more homes sold, they sold faster, and fewer sellers had to cut their price. For sellers, that rewards pricing right from day one. For buyers, the 98.6% sale-to-list ratio means the typical home still sold a little under asking, so there is often some room to talk.' },
+      { type: 'h2', text: 'Neighborhood Spotlight: Talega' },
+      { type: 'p', text: "Up in the northeast corner of town, Talega is one of San Clemente's newer communities, with homes built from 1999 on. It's known for its open space (about 2,000 acres and more than 19 miles of trails), the Talega Swim & Athletic Club, and the public Talega Golf Club, designed by Fred Couples. Homes range from two- and three-story townhomes to 7-bedroom estates, plus Talega Gallery, a gated 55+ community." },
+      { type: 'p', text: 'As of October 17, 2026, there were 26 homes for sale in Talega with a median list price of $1,974,500, according to Ruby Home.' },
+      { type: 'spotlight', neighborhood: 'talega', text: 'Home types, prices, HOA and Mello-Roos, schools, and getting around.' },
       { type: 'h2', text: 'Local Highlight: Día de los Muertos at Max Berg' },
       { type: 'p', text: "The City of San Clemente is hosting its free Día de los Muertos celebration on Monday, November 2, from 2 to 5 PM at Max Berg Plaza Park (1100 Calle Puente). Expect a community altar and ofrenda, sugar skull crafts, face painting, Ballet Folklórico and Danza Azteca performances, local vendors, and food trucks. There's also a plein air art contest with youth, teen, and adult categories." },
       { type: 'p', text: 'The community altar opens October 30, and residents are welcome to bring photos of loved ones to place there.' },
@@ -51,6 +60,10 @@ export function getPublishedPosts() {
   return posts
     .filter((p) => p.published || showDrafts)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+export function getPostsForNeighborhood(slug) {
+  return getPublishedPosts().filter((p) => (p.neighborhoods || []).includes(slug));
 }
 
 export function getPost(slug) {

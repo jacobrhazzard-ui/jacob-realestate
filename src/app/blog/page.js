@@ -31,6 +31,10 @@ export default function BlogIndex() {
       </section>
 
       <section className="max-w-5xl mx-auto px-6 py-16">
+        <p className="text-center f2 text-gray-700 mb-10">
+          Looking for a specific area? See the{' '}
+          <Link href="/san-clemente-neighborhoods" className="underline">San Clemente neighborhood guides</Link>.
+        </p>
         {posts.length === 0 ? (
           <div className="bg-white p-10 shadow-sm text-center f2">
             <h2 className="text-2xl f1 font-light mb-4">The first update is on its way</h2>

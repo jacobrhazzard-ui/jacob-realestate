@@ -29,7 +29,8 @@ const Navigation = () => {
                 { label: 'Buyers Guide', href: '/buy#buyers-guide' },
                 { label: 'Mortgage Calculator', href: '/buy#mortgage-calculator' }, 
                 { label: 'Recent Sales', href: '/buy#buy-listings' },
-                { label: 'OC Relocation Guide', href: '/oc-relocation-guide' }
+                { label: 'OC Relocation Guide', href: '/oc-relocation-guide' },
+                { label: 'San Clemente Neighborhoods', href: '/san-clemente-neighborhoods' }
             ]
         },
         { label: 'Search Homes', href: 'https://jacobhazzardrealestate.idxbroker.com/idx/map/mapsearch' },

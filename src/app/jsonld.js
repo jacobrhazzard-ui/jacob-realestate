@@ -1,0 +1,65 @@
+// Structured data (schema.org JSON-LD) that Google and AI search tools read
+// to understand who wrote a page and what place it is about.
+
+export const SITE = 'https://jacobhazzardrealestate.com';
+
+export const agent = {
+  '@type': 'RealEstateAgent',
+  '@id': `${SITE}/#agent`,
+  name: 'Jacob Hazzard, REALTOR® | Luxre Realty',
+  url: SITE,
+  telephone: '+1-949-291-9395',
+  email: 'jacob@hazzardestates.com',
+  image: `${SITE}/headshot1.jpg`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '222 Avenida Del Mar',
+    addressLocality: 'San Clemente',
+    addressRegion: 'CA',
+    postalCode: '92672',
+    addressCountry: 'US',
+  },
+  areaServed: ['San Clemente, CA', 'Orange County, CA'],
+  parentOrganization: { '@type': 'Organization', name: 'Luxre Realty, Inc.' },
+};
+
+export const author = {
+  '@type': 'Person',
+  '@id': `${SITE}/#jacob`,
+  name: 'Jacob Hazzard',
+  jobTitle: 'REALTOR®',
+  url: `${SITE}/about`,
+  worksFor: { '@type': 'Organization', name: 'Luxre Realty, Inc.' },
+};
+
+export function placeFor(n) {
+  return {
+    '@type': 'Place',
+    '@id': `${SITE}/san-clemente-neighborhoods/${n.slug}#place`,
+    name: `${n.name}, San Clemente, CA`,
+    url: `${SITE}/san-clemente-neighborhoods/${n.slug}`,
+    containedInPlace: { '@type': 'City', name: 'San Clemente, CA' },
+  };
+}
+
+export function breadcrumbs(items) {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((it, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: it.name,
+      item: `${SITE}${it.path}`,
+    })),
+  };
+}
+
+export function JsonLd({ data }) {
+  return (
+    <script
+      type="application/ld+json"
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': data }) }}
+    />
+  );
+}

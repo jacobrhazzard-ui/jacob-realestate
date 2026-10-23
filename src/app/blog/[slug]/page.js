@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import Footer from '../../footer';
 import Navigation from '../../navbar';
 import { getPublishedPosts, getPost, formatDate } from '../posts';
+import { getNeighborhood } from '../../san-clemente-neighborhoods/neighborhoods';
+import { JsonLd, SITE, agent, author, placeFor, breadcrumbs } from '../../jsonld';
 
 export const dynamicParams = false;
 
@@ -39,6 +41,20 @@ function Block({ b }) {
           {b.items.map((i) => <li key={i}>{i}</li>)}
         </ul>
       );
+    case 'spotlight': {
+      const n = getNeighborhood(b.neighborhood);
+      if (!n) return null;
+      return (
+        <Link
+          href={`/san-clemente-neighborhoods/${n.slug}`}
+          className="block bg-white shadow-sm hover:shadow-md transition p-6 mb-8 border-l-4 border-gray-900 not-italic"
+        >
+          <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">Neighborhood Guide</p>
+          <p className="text-2xl f1 mb-2 text-gray-900">Read the full {n.name} guide &rarr;</p>
+          <p className="text-base text-gray-600">{b.text}</p>
+        </Link>
+      );
+    }
     case 'source':
       return (
         <p className="text-sm text-gray-500 mb-6">
@@ -54,9 +70,35 @@ export default async function BlogPost({ params }) {
   const { slug } = await params;
   const p = getPost(slug);
   if (!p) notFound();
+  const featured = (p.neighborhoods || []).map(getNeighborhood).filter(Boolean);
+  const url = `${SITE}/blog/${p.slug}`;
 
   return (
     <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+      <JsonLd
+        data={[
+          {
+            '@type': 'BlogPosting',
+            '@id': `${url}#post`,
+            headline: p.title,
+            description: p.excerpt,
+            datePublished: p.date,
+            dateModified: p.updated || p.date,
+            url,
+            mainEntityOfPage: url,
+            image: `${SITE}${p.image || '/ameno2.jpeg'}`,
+            author,
+            publisher: agent,
+            about: [{ '@type': 'City', name: 'San Clemente, CA' }, ...featured.map(placeFor)],
+            ...(featured.length ? { mentions: featured.map((n) => ({ '@type': 'WebPage', name: `${n.name} Neighborhood Guide`, url: `${SITE}/san-clemente-neighborhoods/${n.slug}` })) } : {}),
+          },
+          breadcrumbs([
+            { name: 'Home', path: '/' },
+            { name: 'Market Notes', path: '/blog' },
+            { name: p.title, path: `/blog/${p.slug}` },
+          ]),
+        ]}
+      />
       <section
         className="relative min-h-[60vh] bg-cover bg-center flex flex-col"
         style={{ backgroundImage: `url('${p.image || '/ameno2.jpeg'}')` }}
@@ -74,6 +116,23 @@ export default async function BlogPost({ params }) {
 
       <article className="max-w-3xl mx-auto px-6 py-16 f2 text-lg leading-relaxed text-gray-800">
         {p.body.map((b, i) => <Block key={i} b={b} />)}
+        {featured.length > 0 && (
+          <div className="mt-12 pt-8 border-t border-gray-300">
+            <p className="text-sm uppercase tracking-widest text-gray-500 mb-3">Neighborhoods in this update</p>
+            <ul className="flex flex-wrap gap-3">
+              {featured.map((n) => (
+                <li key={n.slug}>
+                  <Link href={`/san-clemente-neighborhoods/${n.slug}`} className="inline-block bg-white px-4 py-2 shadow-sm hover:shadow-md text-base">
+                    {n.name} Guide
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/san-clemente-neighborhoods" className="inline-block px-4 py-2 underline text-base">All San Clemente neighborhoods</Link>
+              </li>
+            </ul>
+          </div>
+        )}
       </article>
 
       <section className="bg-gray-900 text-white py-20 px-6 text-center">
