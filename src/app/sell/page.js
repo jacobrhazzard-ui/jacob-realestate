@@ -188,6 +188,20 @@ export default function SellHomePage() {
                                     <p className="text-gray-600 font-light leading-relaxed">
                                         Receive your comprehensive market analysis within 24 hours
                                     </p>
+                                    {/* Instant estimate via Homebot */}
+                                    <a
+                                        href="https://hmbt.co/kchWWZ"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mt-6 flex items-center justify-between gap-4 border border-slate-900 px-5 py-4 hover:bg-slate-900 hover:text-white transition group"
+                                    >
+                                        <span>
+                                            <span className="block text-sm font-medium uppercase tracking-[0.15em]">Just curious? Get an instant estimate</span>
+                                            <span className="block text-xs text-gray-500 group-hover:text-gray-300 mt-1">Free automated home value report, updated monthly</span>
+                                        </span>
+                                        <span aria-hidden="true" className="text-xl">&rarr;</span>
+                                    </a>
+                                    <p className="mt-4 text-xs text-gray-500 uppercase tracking-[0.15em]">Or get a precise valuation from Jacob below</p>
                                 </div>
 
                                 {!isSubmitted ? (
