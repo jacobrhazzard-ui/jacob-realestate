@@ -29,11 +29,13 @@ const Navigation = () => {
                 { label: 'Buyers Guide', href: '/buy#buyers-guide' },
                 { label: 'Mortgage Calculator', href: '/buy#mortgage-calculator' }, 
                 { label: 'Recent Sales', href: '/buy#buy-listings' },
-                { label: 'OC Relocation Guide', href: '/oc-relocation-guide' }
+                { label: 'OC Relocation Guide', href: '/oc-relocation-guide' },
+                { label: 'San Clemente Neighborhoods', href: '/san-clemente-neighborhoods' }
             ]
         },
         { label: 'Search Homes', href: 'https://jacobhazzardrealestate.idxbroker.com/idx/map/mapsearch' },
         { label: 'Listings', href: '/listings' },
+        { label: 'Blog', href: '/blog' },
         { label: 'About', href: '/about' }
     ];
 
@@ -81,7 +83,7 @@ const Navigation = () => {
                 <Link href='/'>
                     <Image
                         src="/jg-logo-2.png"
-                        alt="Logo"
+                        alt="Jacob Hazzard Real Estate logo"
                         width={400}
                         height={250}
                         className="w-full max-w-[200px] object-contain"
@@ -177,7 +179,7 @@ const Navigation = () => {
             <div className="absolute top-0 left-0 right-0 z-40 px-6 py-6 flex justify-between items-center md:hidden">
                 <Image
                     src="/jg-logo-2.png"
-                    alt="Logo"
+                    alt="Jacob Hazzard Real Estate logo"
                     width={130}
                     height={70}
                     className="object-contain"

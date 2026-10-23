@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Head from 'next/head';
+import { JsonLd, SITE, agent, author } from './jsonld';
 import "./globals.css";
 import { Inter, Montserrat, Roboto, Playfair_Display, Merriweather } from 'next/font/google'
 import 'swiper/css';
@@ -17,13 +17,13 @@ const merriweather = Merriweather({ subsets: ['latin'], weight: ['300', '400', '
 // app/layout.js (or a separate metadata file imported by layout)
 export const metadata = {
   metadataBase: new URL("https://jacobhazzardrealestate.com"),
-  alternates: { canonical: "/" },
   title: {
-    default: "Jacob Hazzard | Luxre Realty — San Clemente & Orange County Realtor",
+    default: "Jacob Hazzard | San Clemente & Orange County Realtor, Luxre Realty",
     template: "%s | Jacob Hazzard, Luxre Realty"
   },
-  description: "Jacob Hazzard — Luxury & investment real estate agent at Luxre Realty in San Clemente, CA. Specializing in renovations, selling, buying, rentals, and investment opportunities across Orange County.",
-  keywords: ["Jacob Hazzard", "Luxre Realty", "San Clemente realtor", "Orange County real estate", "property renovations", "investment property OC"],
+  description: "Jacob Hazzard is a San Clemente-born REALTOR® with Luxre Realty helping buyers, sellers, and families relocating across San Clemente and Orange County, CA.",
+  keywords: ["Jacob Hazzard", "Luxre Realty", "San Clemente realtor", "Orange County realtor", "San Clemente real estate agent", "South Orange County real estate", "relocating to Orange County"],
+  robots: { index: true, follow: true, "max-image-preview": "large" },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
@@ -35,10 +35,8 @@ export const metadata = {
     siteName: "Jacob Hazzard — Luxre Realty",
     images: [
       {
-        url: "/jg-logo-2.png",
-        width: 1200,
-        height: 630,
-        alt: "Beautiful coastal home with ocean view",
+        url: "/cordoba5.jpeg",
+        alt: "San Clemente home sold by Jacob Hazzard, Luxre Realty",
       },
     ],
     locale: "en_US",
@@ -48,7 +46,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Jacob Hazzard | Luxre Realty",
     description: "San Clemente based realtor specializing in renovations, selling, buying and investment properties in Orange County.",
-    images: ["https://jacobhazzardrealestate.com/images/twitter-card.jpg"]
+    images: ["https://jacobhazzardrealestate.com/cordoba5.jpeg"]
   }
 };
 
@@ -56,14 +54,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://jacobhazzardrealestate.com" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-      </Head>
       <body
         className={`${inter.variable} ${montserrat.variable}`}
       >
+        <JsonLd
+          data={[
+            agent,
+            author,
+            {
+              '@type': 'WebSite',
+              '@id': `${SITE}/#website`,
+              url: SITE,
+              name: 'Jacob Hazzard Real Estate',
+              publisher: { '@id': `${SITE}/#agent` },
+            },
+          ]}
+        />
         {children}
       </body>
     </html>

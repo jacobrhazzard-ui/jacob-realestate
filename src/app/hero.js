@@ -55,11 +55,11 @@ function HeroSlideshow() {
             {/* Hero Content */}
             <div className="relative z-30 flex flex-col items-center justify-center h-full text-center px-6">
                 <h1 className="text-6xl md:text-7xl font-bold tracking-widest mb-4 drop-shadow-lg" style={{ fontFamily: 'Playfair Display, serif' }}>
-                    Jacob Hazzard
+                    Jacob Hazzard<span className="sr-only">, San Clemente &amp; Orange County Realtor</span>
                 </h1>
-                <h2 className="text-lg md:text-xl tracking-wide uppercase font-light text-gray-200 max-w-xl" style={{ fontFamily: 'Inter, sans-serif' }}>
-                    Luxury Real Estate • Renovation Specialist • Client-First Approach
-                </h2>
+                <p className="text-lg md:text-xl tracking-wide uppercase font-light text-gray-200 max-w-xl" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    San Clemente &amp; Orange County Realtor • Luxre Realty • Renovation Specialist
+                </p>
                 <Link
                     href="/contact"
                     className="mt-10 inline-flex items-center gap-2 text-white text-lg tracking-wider group transition-all duration-300"
