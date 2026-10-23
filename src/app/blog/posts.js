@@ -40,7 +40,6 @@ export const posts = [
       { type: 'p', text: "The City of San Clemente is hosting its free Día de los Muertos celebration on Monday, November 2, from 2 to 5 PM at Max Berg Plaza Park (1100 Calle Puente). Expect a community altar and ofrenda, sugar skull crafts, face painting, Ballet Folklórico and Danza Azteca performances, local vendors, and food trucks. There's also a plein air art contest with youth, teen, and adult categories." },
       { type: 'p', text: 'The community altar opens October 30, and residents are welcome to bring photos of loved ones to place there.' },
       { type: 'source', text: 'Event details: City of San Clemente', href: 'https://www.sanclemente.gov/Calendar.aspx?EID=1370' },
-      { type: 'p', text: "Curious what these numbers mean for your street? I'm always happy to put together a quick, no-pressure look at your home's value." },
     ],
   },
 ];
