@@ -68,7 +68,8 @@ export async function generateMetadata({ params }) {
   const { neighborhood } = await params;
   const n = getNeighborhood(neighborhood);
   if (!n) return {};
-  const title = `${n.name}, San Clemente: Homes, Prices & Neighborhood Guide`;
+  const place = n.name.includes('San Clemente') ? n.name : `${n.name}, San Clemente`;
+  const title = `${place}: Homes, Prices & Neighborhood Guide`;
   return {
     title,
     description: n.summary,
@@ -101,7 +102,7 @@ export default async function NeighborhoodGuide({ params }) {
           {
             '@type': 'Article',
             '@id': `${url}#guide`,
-            headline: `${n.name}, San Clemente Neighborhood Guide`,
+            headline: `${n.name.includes('San Clemente') ? n.name : `${n.name}, San Clemente`} Neighborhood Guide`,
             description: n.summary,
             dateModified: updated,
             url,
@@ -135,7 +136,7 @@ export default async function NeighborhoodGuide({ params }) {
           <p className="uppercase text-sm tracking-widest mb-4 f2 text-white/70">
             <Link href="/san-clemente-neighborhoods" className="hover:underline">San Clemente Neighborhoods</Link> / {n.name}
           </p>
-          <h1 className="text-4xl md:text-6xl font-light f1 tracking-tight mb-6">Living in {n.name}, San Clemente</h1>
+          <h1 className="text-4xl md:text-6xl font-light f1 tracking-tight mb-6">Living in {n.name.includes('San Clemente') ? n.name : `${n.name}, San Clemente`}</h1>
           <p className="text-lg md:text-xl f2 font-light text-white/85">{n.tagline}</p>
           <p className="f2 text-sm text-white/60 mt-6">Updated {formatDate(updated)} &middot; Jacob Hazzard, Luxre Realty</p>
         </div>

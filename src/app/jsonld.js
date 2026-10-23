@@ -52,7 +52,7 @@ export function placeFor(n) {
   return {
     '@type': 'Place',
     '@id': `${SITE}/san-clemente-neighborhoods/${n.slug}#place`,
-    name: `${n.name}, San Clemente, CA`,
+    name: n.name.includes('San Clemente') ? `${n.name}, CA` : `${n.name}, San Clemente, CA`,
     url: `${SITE}/san-clemente-neighborhoods/${n.slug}`,
     containedInPlace: { '@type': 'City', name: 'San Clemente, CA' },
   };
