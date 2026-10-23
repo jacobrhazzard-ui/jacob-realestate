@@ -72,7 +72,7 @@ export const neighborhoods = [
       'About 2 miles east of I-5, roughly 3 miles from the coast',
       'Main roads: Avenida Pico, Avenida Talega, Avenida Vista Hermosa, and Camino La Pedriza',
     ],
-    localTip: null, // Jacob to add one line in his own words
+    localTip: "I spent a lot of my childhood at Talega's parks and at friends' houses here back when the community was first being built, so I've watched it grow up.",
     faqs: [
       {
         q: 'Why do people move to Talega in San Clemente?',
@@ -162,7 +162,7 @@ export const neighborhoods = [
       'Pacific Surfliner trains stop at the San Clemente Pier station, 615 Avenida Victoria',
       'The San Clemente Coastal Trail connects the pier area with North Beach and Calafia Beach',
     ],
-    localTip: null,
+    localTip: "This is where I live. You can walk to downtown and the beach, and there's always a fun neighborhood event going on.",
     faqs: [
       {
         q: 'What is the Pier Bowl in San Clemente?',
@@ -244,7 +244,7 @@ export const neighborhoods = [
       'About two miles from San Clemente’s beaches',
       'The Ridgeline Trail starts at the Camino Vera Cruz entrance',
     ],
-    localTip: null,
+    localTip: "I grew up in Forster Ranch starting in 2001, and some of my best memories are from these streets and parks. It's a neighborhood I know inside and out.",
     faqs: [
       {
         q: 'Does Forster Ranch have Mello-Roos?',
@@ -395,7 +395,7 @@ export const neighborhoods = [
       'Starts just east of I-5 in North San Clemente',
       'About a couple of miles from the beach and 1.5 miles from Vista Hermosa Sports Park',
     ],
-    localTip: null,
+    localTip: "Marblehead has some of the cleanest, best-kept homes in town, and the front-gate staff are some of the friendliest people you'll meet. You're also close to the freeway and downtown.",
     faqs: [
       {
         q: 'Is Marblehead in San Clemente gated?',
@@ -469,7 +469,7 @@ export const neighborhoods = [
       'Trails lead down to PCH and San Clemente beach, and a long stairway at the front of the community goes to the beach',
       'The Outlets at San Clemente are part of the same development',
     ],
-    localTip: null,
+    localTip: "One of San Clemente's newest neighborhoods, right in the middle of town and close to everything, with ocean-view homes across from the Outlets.",
     faqs: [
       {
         q: 'When was Sea Summit in San Clemente built?',
@@ -538,7 +538,7 @@ export const neighborhoods = [
     schools:
       'Shorecliffs is in Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
     gettingAround: ['Close to the beach and Pacific Coast Highway', 'Shorecliffs Golf Club is on Avenida Vaquero'],
-    localTip: null,
+    localTip: "A great coastal neighborhood with private beach access and plenty of ocean-view homes.",
     faqs: [
       {
         q: 'When was Shorecliffs in San Clemente built?',
@@ -609,7 +609,7 @@ export const neighborhoods = [
       'Shared gated entrance off Avenida Del Presidente',
       'At the south end of San Clemente near Cotton Point and Trestles',
     ],
-    localTip: null,
+    localTip: "This is one of my favorite neighborhoods in town: exclusive, private, and full of history. President Richard Nixon's Western White House, La Casa Pacifica, sits on Calle Isabella, and that street is my dream address.",
     faqs: [
       {
         q: 'Are Cyprus Shore and Cyprus Cove the same neighborhood?',
@@ -675,7 +675,7 @@ export const neighborhoods = [
     schools:
       'Broadmoor is in Capistrano Unified School District and sits just above San Clemente High School. Always confirm the assigned schools for a specific address with the district.',
     gettingAround: ['Reached by climbing up from San Clemente High School on Avenida Presidio', 'Close to Downtown San Clemente and Verde Park'],
-    localTip: null,
+    localTip: "One of my favorite neighborhoods: single-loaded streets, one-story homes, and ocean views, right above San Clemente High School.",
     faqs: [
       {
         q: 'Are Broadmoor homes in San Clemente single-story?',
@@ -729,7 +729,7 @@ export const neighborhoods = [
     schools:
       'Misty Ridge is in Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
     gettingAround: ['Just off Avenida Salvador, east of I-5', 'Avenida Presidio leads down to downtown'],
-    localTip: null,
+    localTip: "Misty Ridge wraps around what locals call the \"Top of the World\" in San Clemente: custom homes and big ocean views.",
     faqs: [
       {
         q: 'Where is Misty Ridge in San Clemente?',
@@ -787,7 +787,7 @@ export const neighborhoods = [
     schools:
       'Sea Ridge Estates is in Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
     gettingAround: ['In the hills of Southeast San Clemente, east of I-5', 'Close to hiking trails, beaches, and downtown'],
-    localTip: null,
+    localTip: "My grandparents lived in Sea Ridge Estates, and I spent a lot of time and holidays here growing up. It's a small enclave of about 40 custom homes on one of the highest points in San Clemente.",
     faqs: [
       {
         q: 'Is Sea Ridge Estates in San Clemente gated?',
@@ -851,7 +851,7 @@ export const neighborhoods = [
     schools:
       'Sea Pointe Estates is in Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
     gettingAround: ['Under a mile from I-5', 'Near shopping centers on Camino De Los Mares, a couple of miles from the beach'],
-    localTip: null,
+    localTip: "Beautiful custom homes with ocean views, and you're minutes from Trader Joe's, Handel's Ice Cream, and the freeway.",
     faqs: [
       {
         q: 'Is Sea Pointe Estates in San Clemente guard-gated?',
@@ -919,7 +919,7 @@ export const neighborhoods = [
       'San Clemente Municipal Golf Course: 150 E Avenida Magdalena',
       'East of I-5, close to the south-end beaches and San Onofre State Beach',
     ],
-    localTip: null,
+    localTip: "A quieter pocket near the municipal golf course and Trestles, and one of the better values you'll find in San Clemente.",
     faqs: [
       {
         q: 'What neighborhoods are near the San Clemente Municipal Golf Course?',
