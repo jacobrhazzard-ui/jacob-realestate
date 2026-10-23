@@ -16,7 +16,7 @@ const merriweather = Merriweather({ subsets: ['latin'], weight: ['300', '400', '
 
 // app/layout.js (or a separate metadata file imported by layout)
 export const metadata = {
-  metadataBase: new URL("https://jacobhazzardrealestate.com"),
+  metadataBase: new URL("https://www.jacobhazzardrealestate.com"),
   title: {
     default: "Jacob Hazzard | San Clemente & Orange County Realtor, Luxre Realty",
     template: "%s | Jacob Hazzard, Luxre Realty"
@@ -31,7 +31,7 @@ export const metadata = {
   openGraph: {
     title: "Jacob Hazzard | Luxre Realty — San Clemente & Orange County",
     description: "Luxury real estate, renovations, investments, rentals, and sales across Orange County, California. Based in San Clemente.",
-    url: "https://jacobhazzardrealestate.com",
+    url: "https://www.jacobhazzardrealestate.com",
     siteName: "Jacob Hazzard — Luxre Realty",
     images: [
       {
@@ -46,7 +46,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Jacob Hazzard | Luxre Realty",
     description: "San Clemente based realtor specializing in renovations, selling, buying and investment properties in Orange County.",
-    images: ["https://jacobhazzardrealestate.com/cordoba5.jpeg"]
+    images: ["https://www.jacobhazzardrealestate.com/cordoba5.jpeg"]
   }
 };
 

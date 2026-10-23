@@ -1,7 +1,7 @@
 // Structured data (schema.org JSON-LD) that Google and AI search tools read
 // to understand who wrote a page and what place it is about.
 
-export const SITE = 'https://jacobhazzardrealestate.com';
+export const SITE = 'https://www.jacobhazzardrealestate.com';
 
 export const agent = {
   '@type': 'RealEstateAgent',

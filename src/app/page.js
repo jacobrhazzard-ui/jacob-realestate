@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     title: "Jacob Hazzard | San Clemente & Orange County Realtor",
     description: "San Clemente-born REALTOR® with Luxre Realty. Free home valuations, neighborhood guides, and relocation help across Orange County.",
-    url: "https://jacobhazzardrealestate.com",
+    url: "https://www.jacobhazzardrealestate.com",
     siteName: "Jacob Hazzard Real Estate",
     images: [
       {

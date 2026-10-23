@@ -3,7 +3,7 @@ export async function GET() {
 User-agent: *
 Allow: /
 
-Sitemap: https://jacobhazzardrealestate.com/sitemap.xml
+Sitemap: https://www.jacobhazzardrealestate.com/sitemap.xml
 `;
   return new Response(robots, {
     headers: {

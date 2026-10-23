@@ -2,7 +2,7 @@
 import { getPublishedPosts } from '../blog/posts';
 import { getNeighborhoods } from '../san-clemente-neighborhoods/neighborhoods';
 
-const SITE = 'https://jacobhazzardrealestate.com';
+const SITE = 'https://www.jacobhazzardrealestate.com';
 
 export async function GET() {
   const guides = getNeighborhoods()
