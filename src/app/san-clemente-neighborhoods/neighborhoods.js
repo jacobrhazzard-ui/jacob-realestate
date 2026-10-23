@@ -104,8 +104,8 @@ export const neighborhoods = [
     published: true,
     name: 'Pier Bowl',
     updated: '2026-10-23',
-    image: '/ameno1.jpeg',
-    imageAlt: 'San Clemente coastal home',
+    image: '/photos/san-clemente/pier-bowl-aerial-dusk.jpg',
+    imageAlt: 'Aerial view of the San Clemente Pier and Pier Bowl at dusk',
     tagline: 'Walk to the pier, the beach trail, and the train, in the heart of the original "Spanish Village by the Sea."',
     summary:
       'The Pier Bowl surrounds the San Clemente Pier below downtown, with walkable access to the beach, the San Clemente Coastal Trail, the pier train stop, and Casa Romantica.',
@@ -120,7 +120,14 @@ export const neighborhoods = [
       { value: 'Coastal', label: 'Trail along the sand' },
     ],
     map: { bbox: [-117.632, 33.412, -117.607, 33.428], marker: [33.4196, -117.6197] },
-    gallery: [],
+    gallery: [
+      { src: '/photos/san-clemente/pier-bowl-aerial-dusk.jpg', alt: 'Aerial view of the San Clemente Pier and Pier Bowl at dusk', caption: 'The Pier Bowl at dusk' },
+      { src: '/photos/san-clemente/pier-lifeguard-tower.jpg', alt: 'San Clemente Pier lifeguard tower on a sunny day', caption: 'The lifeguard tower on the pier' },
+      { src: '/photos/san-clemente/pier-sunset-palms.jpg', alt: 'San Clemente Pier at sunset framed by palm trees', caption: 'Sunset over the pier' },
+      { src: '/photos/san-clemente/pier-bowl-aerial-golden-hour.jpg', alt: 'San Clemente coastline and pier at golden hour', caption: 'The coastline from above' },
+      { src: '/photos/san-clemente/pier-lifeguard-tower-sunset.jpg', alt: 'San Clemente Pier lifeguard tower silhouetted at sunset', caption: 'Golden hour on the pier' },
+      { src: '/photos/san-clemente/pier-through-palms.jpg', alt: 'San Clemente Pier seen through palm trees', caption: 'Looking down on the pier' },
+    ],
     whyPeopleMove: [
       { icon: 'beach', title: 'The pier at your door', text: 'A roughly 1,296-foot pier known for fishing, with a restaurant and a bait and tackle shop' },
       { icon: 'train', title: 'Train at the pier', text: 'The San Clemente Pier station (615 Avenida Victoria) is a stop on the Pacific Surfliner' },

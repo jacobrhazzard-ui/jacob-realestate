@@ -1,4 +1,5 @@
 import { JsonLd } from './jsonld';
+import ReviewQuote from './reviewQuote';
 import HeroSlideshow from './hero';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -179,6 +180,8 @@ export default function Home() {
         <LuxreStats />
         {/* Current Listings */}
         <FeaturedListings />
+        <ReviewQuote />
+
         {/* Explore + FAQ (internal links and answers for search and AI tools) */}
         <section className="bg-white py-20 px-6">
           <div className="max-w-6xl mx-auto">

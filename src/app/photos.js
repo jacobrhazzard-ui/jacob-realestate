@@ -3,8 +3,9 @@
 // Neighborhood-specific photos go in that neighborhood's `gallery` in san-clemente-neighborhoods/neighborhoods.js.
 
 export const sanClementePhotos = [
-  { src: '/ameno2.jpeg', alt: 'San Clemente home interior with ocean light' },
-  { src: '/cordoba5.jpeg', alt: 'Spanish-style San Clemente home sold by Jacob Hazzard' },
-  { src: '/ameno1.jpeg', alt: 'San Clemente coastal home' },
-  { src: '/cordoba4.jpeg', alt: 'San Clemente home on Avenida Cordoba' },
+  { src: '/photos/san-clemente/pier-bowl-aerial-dusk.jpg', alt: 'Aerial view of the San Clemente Pier and Pier Bowl at dusk' },
+  { src: '/photos/san-clemente/pier-sunset-palms.jpg', alt: 'San Clemente Pier at sunset framed by palm trees' },
+  { src: '/photos/san-clemente/pier-bowl-aerial-golden-hour.jpg', alt: 'San Clemente coastline and pier at golden hour' },
+  { src: '/photos/san-clemente/san-clemente-park-aerial.jpg', alt: 'Aerial view of a palm-lined park in San Clemente' },
+  { src: '/photos/san-clemente/pier-through-palms.jpg', alt: 'San Clemente Pier seen through palm trees at sunset' },
 ];
