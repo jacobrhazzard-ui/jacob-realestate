@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home, Trees, Waves, Flag, ShoppingCart, Layers, Building2, ShieldCheck, Car, GraduationCap, Receipt, MapPin } from 'lucide-react';
+import { Home, Trees, Waves, Flag, ShoppingCart, ShoppingBag, Layers, Building2, ShieldCheck, Car, GraduationCap, Receipt, MapPin, Umbrella, TrainFront, Landmark, Mountain, TreePine, Trophy } from 'lucide-react';
 
-const ICONS = { home: Home, trees: Trees, pool: Waves, flag: Flag, cart: ShoppingCart, layers: Layers, building: Building2, gate: ShieldCheck };
+const ICONS = { home: Home, trees: Trees, pool: Waves, flag: Flag, cart: ShoppingCart, bag: ShoppingBag, layers: Layers, building: Building2, gate: ShieldCheck, beach: Umbrella, train: TrainFront, landmark: Landmark, mountain: Mountain, park: TreePine, receipt: Receipt, tennis: Trophy };
 
 const money = (v) => `$${v.toLocaleString('en-US')}`;
 
@@ -166,7 +166,7 @@ export default async function NeighborhoodGuide({ params }) {
               title={`Map of ${n.name}, San Clemente`}
               className="w-full h-80 border-0 shadow-sm"
               loading="lazy"
-              src={`https://www.openstreetmap.org/export/embed.html?bbox=${n.map.bbox.join('%2C')}&layer=mapnik&marker=${n.map.marker.join('%2C')}`}
+              src={`https://www.openstreetmap.org/export/embed.html?bbox=${n.map.bbox.join('%2C')}&layer=mapnik${n.map.marker ? `&marker=${n.map.marker.join('%2C')}` : ''}`}
             />
             <figcaption className="f2 text-xs text-gray-500 mt-2">
               Map &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="underline">OpenStreetMap</a> contributors
