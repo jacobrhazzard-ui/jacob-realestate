@@ -31,7 +31,7 @@ export const agent = {
   ],
   knowsAbout: ['San Clemente neighborhoods', 'Home valuation', 'Selling a home', 'Buying a home', 'Relocating to Orange County', 'Home renovation before selling', 'Investment property'],
   identifier: { '@type': 'PropertyValue', propertyID: 'California DRE License', value: '02222037' },
-  sameAs: ['https://www.linkedin.com/in/jacob-hazzard-ocrealtor', 'https://www.instagram.com/jacobrhazzard/', 'https://www.youtube.com/@jacobhazzardrealestate', 'https://www.zillow.com/profile/Jacob%20Hazzard', 'https://www.realtor.com/realestateagents/65085efa1345711a4a7dba6c'],
+  sameAs: ['https://www.linkedin.com/in/jacob-hazzard-ocrealtor', 'https://www.instagram.com/jacobrhazzard/', 'https://www.youtube.com/@jacobhazzardrealestate', 'https://www.zillow.com/profile/Jacob%20Hazzard', 'https://www.realtor.com/realestateagents/65085efa1345711a4a7dba6c', 'https://maps.google.com/?cid=12781239509503242915', 'https://www.homes.com/real-estate-agents/jacob-hazzard/c5q9yxe/'],
   employee: { '@id': `${SITE}/#jacob` },
   parentOrganization: { '@type': 'Organization', name: 'Luxre Realty, Inc.', identifier: 'CA DRE #01897290' },
 };
@@ -46,7 +46,7 @@ export const author = {
   telephone: '+1-949-291-9395',
   email: 'jacob@hazzardestates.com',
   homeLocation: { '@type': 'City', name: 'San Clemente, CA' },
-  sameAs: ['https://www.linkedin.com/in/jacob-hazzard-ocrealtor', 'https://www.instagram.com/jacobrhazzard/', 'https://www.youtube.com/@jacobhazzardrealestate', 'https://www.zillow.com/profile/Jacob%20Hazzard', 'https://www.realtor.com/realestateagents/65085efa1345711a4a7dba6c'],
+  sameAs: ['https://www.linkedin.com/in/jacob-hazzard-ocrealtor', 'https://www.instagram.com/jacobrhazzard/', 'https://www.youtube.com/@jacobhazzardrealestate', 'https://www.zillow.com/profile/Jacob%20Hazzard', 'https://www.realtor.com/realestateagents/65085efa1345711a4a7dba6c', 'https://maps.google.com/?cid=12781239509503242915', 'https://www.homes.com/real-estate-agents/jacob-hazzard/c5q9yxe/'],
   worksFor: { '@type': 'Organization', name: 'Luxre Realty, Inc.' },
 };
 

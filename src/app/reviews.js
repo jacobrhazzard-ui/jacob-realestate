@@ -1,3 +1,7 @@
+// Google Business Profile review link (opens the "write a review" box)
+export const GOOGLE_REVIEW_URL = 'https://g.page/r/CaPyILGdFWCxEBM/review';
+export const GOOGLE_PROFILE_URL = 'https://maps.google.com/?cid=12781239509503242915';
+
 // Real client reviews only, in the client's own words. Add new ones at the top.
 export const reviews = [
   {

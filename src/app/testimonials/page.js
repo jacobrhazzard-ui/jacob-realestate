@@ -3,7 +3,7 @@ import Footer from '../footer';
 import Navigation from '../navbar';
 import PhotoRotator from '../photoRotator';
 import { sanClementePhotos } from '../photos';
-import { reviews } from '../reviews';
+import { reviews, GOOGLE_REVIEW_URL } from '../reviews';
 
 export default function TestimonialsPage() {
   return (
@@ -26,6 +26,10 @@ export default function TestimonialsPage() {
               <figcaption className="mt-6 text-sm uppercase tracking-widest f2 text-gray-500">— {r.name}, {r.role}</figcaption>
             </figure>
           ))}
+          <div className="text-center pt-4">
+            <p className="f2 text-gray-700 mb-5">Worked with Jacob? He&rsquo;d be grateful for a few words about your experience.</p>
+            <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-gray-900 text-white px-8 py-4 f2 tracking-wide hover:bg-gray-700 transition">Leave a Google Review</a>
+          </div>
         </div>
       </section>
 

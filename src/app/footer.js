@@ -1,3 +1,4 @@
+import { GOOGLE_REVIEW_URL } from './reviews';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -40,6 +41,12 @@ export default function Footer() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
                             <a href="tel:+19492919395" className="hover:text-white transition">(949) 291-9395</a>
+                        </li>
+                        <li className="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.48 3.5a.56.56 0 011.04 0l2.13 5.11 5.52.44c.5.04.7.66.32.98l-4.2 3.6 1.28 5.38a.56.56 0 01-.84.61L12 16.73l-4.73 2.89a.56.56 0 01-.84-.6l1.28-5.39-4.2-3.6a.56.56 0 01.32-.98l5.52-.44 2.13-5.11z" />
+                            </svg>
+                            <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Leave a Google review</a>
                         </li>
                         <li className="flex items-start gap-3">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
