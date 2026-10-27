@@ -64,7 +64,7 @@ export default function ContactPage() {
                                 Let&apos;s Connect
                             </h1>
                             <p className="text-lg md:text-2xl font-light f2 text-white/90 max-w-2xl mx-auto mb-12">
-                                Ready to make your next move? Reach out for consultations, property showings, or renovation strategies.
+                                Ready to make your next move? Reach out for a consultation, a home valuation or a showing.
                             </p>
 
                             {/* CTA Button to Form */}

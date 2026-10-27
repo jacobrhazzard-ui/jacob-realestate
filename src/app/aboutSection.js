@@ -44,9 +44,9 @@ export default function AboutSection() {
         <div className="max-w-md text-left">
           <h2 className="text-4xl font-heading mb-6 text-center f1">Meet Jacob Hazzard</h2>
           <p className="text-lg text-gray-700 leading-relaxed font-body text-center f2">
-            With years of experience in high-end real estate and a sharp eye for profitable renovations,
-            Jacob delivers tailored service and stunning results. From strategic upgrades to record-breaking sales,
-            his client-first approach ensures luxury with impact.
+            A San Clemente native and full-service REALTOR®, Jacob pairs local market knowledge with practical
+            experience preparing homes for sale, so clients know which updates are worth it before they list.
+            Honest advice, careful pricing and a clear plan, from first conversation to closing.
           </p>
         </div>
       </div>

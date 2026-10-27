@@ -158,8 +158,8 @@ export default function SellHomePage() {
                                     <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Custom marketing for every home</div>
                                 </div>
                                 <div className="border-l-2 border-blue-400 pl-4">
-                                    <div className="text-lg font-medium font-normal text-blue-400 mb-1">Design Expertise</div>
-                                    <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Renovations that maximize value</div>
+                                    <div className="text-lg font-medium font-normal text-blue-400 mb-1">Pre-Sale Know-How</div>
+                                    <div className="text-xs text-gray-400 uppercase tracking-[0.2em]">Updates that add value</div>
                                 </div>
                                 <div className="border-l-2 border-blue-400 pl-4">
                                     <div className="text-lg font-medium font-normal text-blue-400 mb-1">Trusted Network</div>

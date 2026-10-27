@@ -27,7 +27,7 @@ export default function About() {
                 <title>About Jacob Hazzard | San Clemente Real Estate</title>
                 <meta
                     name="description"
-                    content="Learn more about Jacob Hazzard, a real estate expert based in San Clemente, CA. Specializing in renovations and high-value sales."
+                    content="Learn more about Jacob Hazzard, a real estate expert based in San Clemente, CA. Helping buyers and sellers across San Clemente and Orange County."
                 />
             </Head>
             <main className="text-gray-900 bg-[#faf8f4] font-sans">
@@ -58,7 +58,7 @@ export default function About() {
                         </h1>
 
                         <p className="text-lg md:text-2xl font-light f2 text-white/90">
-                            A real estate strategist with a builder&apos;s eye and a designer&apos;s touch — serving San Clemente and the CA coast.
+                            A San Clemente native helping buyers and sellers across Orange County, with honest advice and a clear plan.
                         </p>
                     </motion.div>
 
@@ -256,7 +256,7 @@ export default function About() {
                     >
                         <h2 className="text-4xl md:text-5xl font-heading f1 mb-6">Ready to Make a Move?</h2>
                         <p className="text-lg md:text-xl f2 font-light mb-10">
-                            Whether buying, selling, or renovating — Jacob brings vision, clarity, and market mastery.
+                            Whether you&apos;re buying or selling, Jacob brings local knowledge, honest advice and a clear plan.
                         </p>
                         <button
                             className="inline-flex items-center gap-3 text-white border border-white px-10 py-4 text-lg tracking-wide shadow-md font-light hover:shadow-xl hover:scale-105 hover:bg-white hover:text-black transition-all duration-300 ease-in-out"

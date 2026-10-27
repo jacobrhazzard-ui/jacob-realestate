@@ -13,16 +13,16 @@ import 'swiper/css/pagination';
 const listings = [
     {
         title: 'Sold Over Asking',
-        subtitle: 'Strategic Full Remodel Success',
+        subtitle: 'Strategic Pre-Sale Preparation',
         address: '433 E Avenida Cordoba, San Clemente',
         price: '$2,600,000',
         netGain: '$400,000+',
         highlights: [
-            'Seller netted an additional $400,000+ from strategic upgrades',
-            'Full remodel through white glove services',
-            'Renovation and transition funds fronted upfront',
+            'Seller netted an additional $400,000+ from pre-sale updates',
+            'Pre-sale updates coordinated with trusted local pros',
+            'Update and transition costs fronted upfront',
             'Successfully transitioned seller into new home',
-            'Complete turnkey process management'
+            'Hands-on guidance from prep to closing'
         ],
         image: '/cordoba4.jpeg',
         badge: 'PREMIUM SERVICE'

@@ -34,7 +34,7 @@ export const metadata = {
 const faqs = [
   {
     q: 'Who is Jacob Hazzard?',
-    a: 'Jacob Hazzard is a REALTOR® with Luxre Realty (CA DRE #02222037) who was born and raised in San Clemente. His office is at 222 Avenida Del Mar in San Clemente, and he helps clients buy, sell, renovate, and invest across Orange County.',
+    a: 'Jacob Hazzard is a REALTOR® with Luxre Realty (CA DRE #02222037) who was born and raised in San Clemente. His office is at 222 Avenida Del Mar in San Clemente, and he helps clients buy, sell, and invest across Orange County, with practical guidance on which pre-sale updates add value.',
   },
   {
     q: 'What areas does Jacob Hazzard serve?',
@@ -66,10 +66,10 @@ const explore = [
   { href: '/sell#property-valuation', title: 'What’s My Home Worth?', text: 'A free valuation, personally reviewed in 24 hours.' },
 ];
 
-const renovationSteps = [
-  { n: '01', title: 'Plan the upgrades', text: 'We walk the home together and choose only the improvements that should pay for themselves at sale.' },
-  { n: '02', title: 'Funds fronted, work managed', text: 'Renovation and transition funds can be fronted upfront, and I manage the contractors start to finish.' },
-  { n: '03', title: 'Launch and sell', text: 'Professional photos, video and targeted marketing put the finished home in front of the right buyers.' },
+const sellSteps = [
+  { n: '01', title: 'Price it right', text: 'A clear, data-backed pricing strategy built on recent sales and what buyers are paying right now.' },
+  { n: '02', title: 'Prepare with purpose', text: 'Practical advice on which updates are worth making, and which aren\u2019t, with trusted local pros ready to help.' },
+  { n: '03', title: 'Market and negotiate', text: 'Professional photos, video and targeted marketing, then careful negotiation from first offer to closing.' },
 ];
 
 export default function Home() {
@@ -95,7 +95,7 @@ export default function Home() {
             {[
               { value: 'Born & Raised', label: 'In San Clemente' },
               { value: 'Listing & Buyer', label: 'Representation' },
-              { value: 'Renovation', label: 'To-sale specialist' },
+              { value: 'Pre-Sale Guidance', label: 'Updates that add value' },
               { value: 'Luxre Realty', label: 'San Clemente office' },
             ].map((s, i) => (
               <Reveal key={s.label} delay={i * 120}>
@@ -118,7 +118,7 @@ export default function Home() {
                 Guided by home.<br />Driven by results.
               </h2>
               <p className="f2 text-lg text-gray-700 leading-relaxed mb-6">
-                I grew up in Forster Ranch, live in the Pier Bowl, and have spent my life in these neighborhoods. That local knowledge, paired with the eye of a builder and renovator, is what I bring to every sale and every search.
+                I grew up in Forster Ranch, live in the Pier Bowl, and have spent my life in these neighborhoods. That local knowledge, paired with hands-on experience preparing homes for market, is what I bring to every sale and every search.
               </p>
               <p className="f2 text-lg text-gray-700 leading-relaxed mb-10">
                 Honest advice, careful pricing, and a plan built around your goals, whether you&apos;re selling, buying or transforming a home.
@@ -160,26 +160,26 @@ export default function Home() {
               </div>
               <div>
                 <p className="f1 font-extralight text-4xl">$400K+</p>
-                <p className="f2 text-[11px] uppercase tracking-[0.25em] text-white/60 mt-2">Added to the seller&apos;s net from upgrades</p>
+                <p className="f2 text-[11px] uppercase tracking-[0.25em] text-white/60 mt-2">Added to the seller&apos;s net from pre-sale updates</p>
               </div>
               <div>
-                <p className="f1 font-extralight text-4xl">Full remodel</p>
-                <p className="f2 text-[11px] uppercase tracking-[0.25em] text-white/60 mt-2">Funds fronted, fully managed</p>
+                <p className="f1 font-extralight text-4xl">Prepared to sell</p>
+                <p className="f2 text-[11px] uppercase tracking-[0.25em] text-white/60 mt-2">Pre-sale updates, coordinated</p>
               </div>
             </div>
           </Reveal>
         </section>
 
-        {/* Renovation to sale */}
+        {/* How I sell */}
         <section className="bg-white py-24 px-6">
           <div className="max-w-6xl mx-auto">
             <Reveal className="text-center mb-16">
               <p className="f2 text-xs uppercase tracking-[0.35em] text-gray-500 mb-4">What sets me apart</p>
-              <h2 className="f1 font-extralight uppercase tracking-[0.08em] text-4xl md:text-5xl text-black">Renovate. Then sell for more.</h2>
-              <p className="f2 text-lg text-gray-600 mt-6 max-w-2xl mx-auto">For sellers who want top dollar without the stress of managing a remodel themselves.</p>
+              <h2 className="f1 font-extralight uppercase tracking-[0.08em] text-4xl md:text-5xl text-black">Prepared to sell for more.</h2>
+              <p className="f2 text-lg text-gray-600 mt-6 max-w-2xl mx-auto">Full-service representation, plus the know-how to spot which updates are worth making before you list, and which aren&apos;t.</p>
             </Reveal>
             <div className="grid md:grid-cols-3 gap-10">
-              {renovationSteps.map((st, i) => (
+              {sellSteps.map((st, i) => (
                 <Reveal key={st.n} delay={i * 150} className="border-t border-black pt-8">
                   <p className="f1 font-extralight text-5xl text-gray-300 mb-6">{st.n}</p>
                   <h3 className="f1 text-2xl text-black mb-3">{st.title}</h3>
@@ -275,7 +275,7 @@ export default function Home() {
               Make your next move exceptional
             </h2>
             <p className="text-lg md:text-lg font-light text-gray-700 f2 mb-10">
-              Whether you’re buying, selling, or transforming a property, Jacob Hazzard brings precision, vision, and proven results. Let’s talk about your goals.
+              Whether you’re buying or selling, I’ll bring local knowledge, honest advice and a clear plan. Let’s talk about your goals.
             </p>
             <a
               href="/contact"

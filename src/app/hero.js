@@ -58,7 +58,7 @@ function HeroSlideshow() {
                     Jacob Hazzard<span className="sr-only">, San Clemente &amp; Orange County Realtor</span>
                 </h1>
                 <p className="text-lg md:text-xl tracking-wide uppercase font-light text-gray-200 max-w-xl" style={{ fontFamily: 'Inter, sans-serif' }}>
-                    San Clemente &amp; Orange County Realtor • Luxre Realty • Renovation Specialist
+                    San Clemente &amp; Orange County Realtor • Luxre Realty
                 </p>
                 <Link
                     href="/contact"
