@@ -6,6 +6,7 @@ import Footer from '../footer';
 import Link from 'next/link';
 import Navigation from '../navbar';
 import FeaturedListings from '../listingSection';
+import IdxCarousel, { IDX_SEARCH_URL } from '../home/idxCarousel';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -931,6 +932,17 @@ const BuyingPage = () => {
 
                 </div>
             </section>
+            {/* Live IDX listings */}
+            <section className="py-20 px-6 bg-[#faf8f4]">
+                <div className="max-w-7xl mx-auto">
+                    <p className="f2 text-xs uppercase tracking-[0.35em] text-gray-500 mb-4">On the market now</p>
+                    <h2 className="text-4xl font-light text-gray-900 mb-4">San Clemente Homes for Sale</h2>
+                    <p className="text-lg text-gray-600 mb-10 max-w-2xl">The newest listings, updated automatically from the MLS.</p>
+                    <IdxCarousel />
+                    <a href={IDX_SEARCH_URL} className="inline-block mt-8 bg-gray-900 text-white px-8 py-4 tracking-wide hover:bg-gray-700 transition">Search All Homes</a>
+                </div>
+            </section>
+
             {/* Current Listings */}
             <FeaturedListings id="buy-listings" />
 

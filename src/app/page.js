@@ -2,6 +2,7 @@ import { JsonLd } from './jsonld';
 import ReviewQuote from './reviewQuote';
 import VideoHero from './home/videoHero';
 import SalesCarousel from './home/salesCarousel';
+import IdxCarousel, { IDX_SEARCH_URL } from './home/idxCarousel';
 import Newsletter from './home/newsletter';
 import Reveal from './reveal';
 import Image from 'next/image';
@@ -128,6 +129,21 @@ export default function Home() {
                 About Jacob
               </Link>
             </Reveal>
+          </div>
+        </section>
+
+        {/* Live IDX listings */}
+        <section className="py-24 md:px-16 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <Reveal className="px-6 md:px-0 mb-10">
+              <p className="f2 text-xs uppercase tracking-[0.35em] text-gray-500 mb-4">On the market now</p>
+              <h2 className="f1 font-extralight uppercase tracking-[0.08em] text-4xl md:text-5xl text-black">San Clemente Homes</h2>
+              <p className="f2 text-lg text-gray-600 mt-4 max-w-2xl">The newest San Clemente listings, updated automatically from the MLS. Tap any home for photos and details.</p>
+            </Reveal>
+            <div className="px-6 md:px-0"><IdxCarousel /></div>
+            <div className="px-6 md:px-0 mt-8">
+              <a href={IDX_SEARCH_URL} className="f2 text-sm uppercase tracking-[0.2em] underline underline-offset-8 hover:text-black">Search all homes for sale</a>
+            </div>
           </div>
         </section>
 
