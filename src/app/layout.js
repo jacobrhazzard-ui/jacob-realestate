@@ -4,7 +4,7 @@ import "./globals.css";
 import Script from "next/script";
 
 // Google Analytics 4 measurement ID (G-XXXXXXX). Leave empty to turn GA off.
-const GA_ID = "";
+const GA_ID = "G-V771GFXRMT";
 import { Inter, Montserrat, Roboto, Playfair_Display, Merriweather } from 'next/font/google'
 import 'swiper/css';
 import 'swiper/css/navigation';
