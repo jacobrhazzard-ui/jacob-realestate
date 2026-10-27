@@ -40,7 +40,7 @@ export default async function BlogPost({ params }) {
   const url = `${SITE}/blog/${p.slug}`;
 
   return (
-    <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+    <main className="text-gray-900 bg-[#faf8f4] font-sans">
       <JsonLd
         data={[
           {
@@ -81,7 +81,7 @@ export default async function BlogPost({ params }) {
       </section>
 
       {p.body.filter((b) => b.type === 'h2').length > 2 && (
-        <nav aria-label="In this update" className="sticky top-0 z-30 bg-[#f1f0eb]/95 backdrop-blur border-b border-gray-300">
+        <nav aria-label="In this update" className="sticky top-0 z-30 bg-[#faf8f4]/95 backdrop-blur border-b border-gray-300">
           <div className="max-w-4xl mx-auto px-6 py-3 flex gap-2 overflow-x-auto f2 text-sm">
             {p.body.filter((b) => b.type === 'h2').map((b) => (
               <a key={b.text} href={`#${anchor(b.text)}`} className="whitespace-nowrap px-4 py-2 bg-white shadow-sm hover:bg-gray-900 hover:text-white transition">{b.text}</a>

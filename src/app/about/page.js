@@ -30,7 +30,7 @@ export default function About() {
                     content="Learn more about Jacob Hazzard, a real estate expert based in San Clemente, CA. Specializing in renovations and high-value sales."
                 />
             </Head>
-            <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+            <main className="text-gray-900 bg-[#faf8f4] font-sans">
                 {/* Navigation */}
 
                 {/* Hero Section */}

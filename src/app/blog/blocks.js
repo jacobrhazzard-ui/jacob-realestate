@@ -202,7 +202,7 @@ function Spotlight({ b }) {
           </div>
         )}
         {b.jacobsTake && (
-          <div className="bg-[#f1f0eb] p-5 mb-6">
+          <div className="bg-[#faf8f4] p-5 mb-6">
             <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">Jacob&apos;s take</p>
             <p className="f2 text-base text-gray-800 italic">{b.jacobsTake}</p>
           </div>

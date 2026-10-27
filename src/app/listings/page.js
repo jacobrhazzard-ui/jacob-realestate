@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function ListingsPage() {
     return (
-        <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+        <main className="text-gray-900 bg-[#faf8f4] font-sans">
             {/* Hero Section */}
             <section
                 className="relative min-h-[70vh] bg-cover bg-center flex flex-col justify-start px-0"
@@ -53,7 +53,7 @@ export default function ListingsPage() {
                 <section
                     key={section.id}
                     id={section.id}
-                    className={`px-6 py-20 md:py-24 scroll-mt-8 ${i % 2 === 0 ? 'bg-[#f1f0eb]' : 'bg-[#e2ded4]'}`}
+                    className={`px-6 py-20 md:py-24 scroll-mt-8 ${i % 2 === 0 ? 'bg-[#faf8f4]' : 'bg-[#e2ded4]'}`}
                 >
                     <div className="max-w-6xl mx-auto">
                         <div className="mb-12 text-center md:text-left">

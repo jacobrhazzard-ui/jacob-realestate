@@ -16,7 +16,7 @@ export default function BlogIndex() {
   const posts = getPublishedPosts();
 
   return (
-    <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+    <main className="text-gray-900 bg-[#faf8f4] font-sans">
       <section className="relative min-h-[60vh] flex flex-col">
         <PhotoRotator photos={sanClementePhotos} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/30 z-10" />

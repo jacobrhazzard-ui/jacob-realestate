@@ -48,7 +48,7 @@ function PriceRange({ r }) {
 import { notFound } from 'next/navigation';
 import Footer from '../../footer';
 import Navigation from '../../navbar';
-import { getNeighborhoods, getNeighborhood } from '../neighborhoods';
+import { getNeighborhoods, getNeighborhood, isCity, placeName } from '../neighborhoods';
 import { getPostsForNeighborhood, formatDate } from '../../blog/posts';
 import { JsonLd, SITE, agent, author, placeFor, breadcrumbs } from '../../jsonld';
 
@@ -69,8 +69,8 @@ export async function generateMetadata({ params }) {
   const { neighborhood } = await params;
   const n = getNeighborhood(neighborhood);
   if (!n) return {};
-  const place = n.name.includes('San Clemente') ? n.name : `${n.name}, San Clemente`;
-  const title = `${place}: Homes, Prices & Neighborhood Guide`;
+  const place = placeName(n);
+  const title = `${place}: Homes, Prices & ${isCity(n) ? 'Area' : 'Neighborhood'} Guide`;
   return {
     title,
     description: n.summary,
@@ -93,17 +93,17 @@ export default async function NeighborhoodGuide({ params }) {
   if (!n) notFound();
   const posts = getPostsForNeighborhood(n.slug);
   const updated = lastUpdated(n);
-  const others = getNeighborhoods().filter((o) => o.slug !== n.slug);
+  const others = getNeighborhoods().filter((o) => o.slug !== n.slug && isCity(o) === isCity(n));
   const url = `${SITE}/san-clemente-neighborhoods/${n.slug}`;
 
   return (
-    <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+    <main className="text-gray-900 bg-[#faf8f4] font-sans">
       <JsonLd
         data={[
           {
             '@type': 'Article',
             '@id': `${url}#guide`,
-            headline: `${n.name.includes('San Clemente') ? n.name : `${n.name}, San Clemente`} Neighborhood Guide`,
+            headline: `${placeName(n)} ${isCity(n) ? 'Area' : 'Neighborhood'} Guide`,
             description: n.summary,
             dateModified: updated,
             url,
@@ -123,7 +123,7 @@ export default async function NeighborhoodGuide({ params }) {
           },
           breadcrumbs([
             { name: 'Home', path: '/' },
-            { name: 'San Clemente Neighborhoods', path: '/san-clemente-neighborhoods' },
+            { name: isCity(n) ? 'Neighborhoods & Nearby Cities' : 'San Clemente Neighborhoods', path: '/san-clemente-neighborhoods' },
             { name: n.name, path: `/san-clemente-neighborhoods/${n.slug}` },
           ]),
         ]}
@@ -135,9 +135,9 @@ export default async function NeighborhoodGuide({ params }) {
         <Navigation />
         <div className="relative z-20 text-white text-center max-w-4xl mx-auto px-6 mt-auto mb-20 pt-40">
           <p className="uppercase text-sm tracking-widest mb-4 f2 text-white/70">
-            <Link href="/san-clemente-neighborhoods" className="hover:underline">San Clemente Neighborhoods</Link> / {n.name}
+            <Link href="/san-clemente-neighborhoods" className="hover:underline">{isCity(n) ? 'Nearby Cities' : 'San Clemente Neighborhoods'}</Link> / {n.name}
           </p>
-          <h1 className="text-4xl md:text-6xl font-light f1 tracking-tight mb-6">Living in {n.name.includes('San Clemente') ? n.name : `${n.name}, San Clemente`}</h1>
+          <h1 className="text-4xl md:text-6xl font-light f1 tracking-tight mb-6">Living in {placeName(n)}</h1>
           <p className="text-lg md:text-xl f2 font-light text-white/85">{n.tagline}</p>
           <p className="f2 text-sm text-white/60 mt-6">Updated {formatDate(updated)} &middot; Jacob Hazzard, Luxre Realty</p>
         </div>
@@ -167,7 +167,7 @@ export default async function NeighborhoodGuide({ params }) {
         {n.map && (
           <figure>
             <iframe
-              title={`Map of ${n.name}, San Clemente`}
+              title={`Map of ${placeName(n)}`}
               className="w-full h-80 border-0 shadow-sm"
               loading="lazy"
               src={`https://www.openstreetmap.org/export/embed.html?bbox=${n.map.bbox.join('%2C')}&layer=mapnik${n.map.marker ? `&marker=${n.map.marker.join('%2C')}` : ''}`}
@@ -204,7 +204,7 @@ export default async function NeighborhoodGuide({ params }) {
       <section className="bg-white py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl f1 font-light mb-10 text-center">Types of Homes</h2>
-          <IconCards items={n.homeTypes} bg="bg-[#f1f0eb]" />
+          <IconCards items={n.homeTypes} bg="bg-[#faf8f4]" />
         </div>
       </section>
 
@@ -260,7 +260,7 @@ export default async function NeighborhoodGuide({ params }) {
             <h2 className="text-3xl f1 font-light mb-8 text-center">Latest Market Notes on {n.name}</h2>
             <div className="space-y-4">
               {posts.slice(0, 6).map((p) => (
-                <Link key={p.slug} href={`/blog/${p.slug}`} className="block bg-[#f1f0eb] p-6 hover:shadow-md transition f2">
+                <Link key={p.slug} href={`/blog/${p.slug}`} className="block bg-[#faf8f4] p-6 hover:shadow-md transition f2">
                   <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">{formatDate(p.date)}</p>
                   <p className="text-xl f1 mb-1">{p.title}</p>
                   <p className="text-gray-600">{p.excerpt}</p>
@@ -297,10 +297,10 @@ export default async function NeighborhoodGuide({ params }) {
       {others.length > 0 && (
         <section className="bg-white py-16 px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl f1 font-light mb-8 text-center">More San Clemente Neighborhoods</h2>
+            <h2 className="text-2xl f1 font-light mb-8 text-center">{isCity(n) ? 'More Nearby Cities' : 'More San Clemente Neighborhoods'}</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {others.map((o) => (
-                <Link key={o.slug} href={`/san-clemente-neighborhoods/${o.slug}`} className="block bg-[#f1f0eb] p-6 hover:shadow-md transition">
+                <Link key={o.slug} href={`/san-clemente-neighborhoods/${o.slug}`} className="block bg-[#faf8f4] p-6 hover:shadow-md transition">
                   <h3 className="text-xl f1 mb-2">{o.name}</h3>
                   <p className="f2 text-sm text-gray-600">{o.tagline}</p>
                 </Link>
@@ -316,7 +316,7 @@ export default async function NeighborhoodGuide({ params }) {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl f1 font-light mb-6">Thinking About {n.name}?</h2>
           <p className="f2 text-lg text-white/80 mb-10">
-            I grew up in San Clemente and am happy to walk you through any home or street in {n.name}, no pressure.
+            {isCity(n) ? `I grew up in San Clemente, right next door, and am happy to walk you through any home or street in ${n.name}, no pressure.` : `I grew up in San Clemente and am happy to walk you through any home or street in ${n.name}, no pressure.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="bg-white text-gray-900 px-8 py-4 f2 tracking-wide hover:bg-gray-200 transition">Get In Touch</Link>

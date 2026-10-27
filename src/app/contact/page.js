@@ -35,7 +35,7 @@ export default function ContactPage() {
                     content="Get in touch with Jacob Hazzard for all your San Clemente real estate needs. Schedule a consultation today."
                 />
             </Head>
-            <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+            <main className="text-gray-900 bg-[#faf8f4] font-sans">
                 {/* Hero Section */}
                 <section
                     className="relative min-h-screen h-[135vh] md:h-[100vh] flex flex-col justify-start px-0"
