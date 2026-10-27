@@ -74,8 +74,6 @@ const renovationSteps = [
 
 export default function Home() {
   const sales = getMillionPlusSales();
-  const volume = sales.reduce((sum, s) => sum + Number(String(s.price).replace(/[^0-9]/g, '')), 0);
-  const volumeLabel = `$${Math.floor(volume / 100000) / 10}M+`;
   const posts = getPublishedPosts().slice(0, 2);
 
   return (
@@ -95,13 +93,13 @@ export default function Home() {
         <section id="proof" className="bg-black text-white py-14 px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
             {[
-              { value: volumeLabel, label: 'Sold in $1M+ homes' },
-              { value: String(sales.length), label: '$1M+ sales, listing & buyer side' },
-              { value: 'Born & raised', label: 'In San Clemente' },
+              { value: 'Born & Raised', label: 'In San Clemente' },
+              { value: 'Listing & Buyer', label: 'Representation' },
+              { value: 'Renovation', label: 'To-sale specialist' },
               { value: 'Luxre Realty', label: 'San Clemente office' },
             ].map((s, i) => (
               <Reveal key={s.label} delay={i * 120}>
-                <p className="f1 font-extralight text-3xl md:text-5xl tracking-wide">{s.value}</p>
+                <p className="f1 font-extralight text-2xl md:text-4xl tracking-wide">{s.value}</p>
                 <p className="f2 text-[11px] uppercase tracking-[0.25em] text-white/60 mt-3">{s.label}</p>
               </Reveal>
             ))}
@@ -137,8 +135,8 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <Reveal className="px-6 md:px-0 mb-4">
               <p className="f2 text-xs uppercase tracking-[0.35em] text-gray-500 mb-4">Proven results</p>
-              <h2 className="f1 font-extralight uppercase tracking-[0.08em] text-4xl md:text-5xl text-black">$1M+ Sales</h2>
-              <p className="f2 text-lg text-gray-600 mt-4 max-w-2xl">Every closed sale of $1 million or more, from both the listing and buyer side.</p>
+              <h2 className="f1 font-extralight uppercase tracking-[0.08em] text-4xl md:text-5xl text-black">Recent Sales</h2>
+              <p className="f2 text-lg text-gray-600 mt-4 max-w-2xl">A selection of closed sales from both the listing and buyer side.</p>
             </Reveal>
             <SalesCarousel sales={sales} />
             <div className="px-6 md:px-0 mt-8">
