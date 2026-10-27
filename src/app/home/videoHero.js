@@ -53,7 +53,7 @@ export default function VideoHero() {
         <h1 className="f1 font-extralight uppercase tracking-[0.12em] leading-[0.95] text-5xl sm:text-6xl md:text-8xl hero-rise" style={{ animationDelay: '0.25s' }}>
           Jacob<br />Hazzard<span className="sr-only">, San Clemente &amp; Orange County Realtor</span>
         </h1>
-        <p className="f1 font-light uppercase tracking-[0.3em] text-sm sm:text-lg md:text-xl mt-8 hero-rise" style={{ animationDelay: '0.45s' }}>
+        <p className="f1 font-light uppercase tracking-[0.16em] sm:tracking-[0.3em] text-[13px] sm:text-lg md:text-xl mt-8 hero-rise whitespace-nowrap" style={{ animationDelay: '0.45s' }}>
           Born here. Built here. Sold here.
         </p>
         <p className="f2 text-[11px] md:text-xs uppercase tracking-[0.3em] text-white/60 mt-4 hero-rise" style={{ animationDelay: '0.6s' }}>
