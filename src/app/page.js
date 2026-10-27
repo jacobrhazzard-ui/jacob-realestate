@@ -7,7 +7,6 @@ import Reveal from './reveal';
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from './footer';
-import LuxreStats from './luxreStats';
 import { getMillionPlusSales } from './listingsData';
 import { getPublishedPosts, formatDate } from './blog/posts';
 
@@ -90,13 +89,14 @@ export default function Home() {
         <VideoHero />
 
         {/* Proof strip */}
-        <section id="proof" className="bg-black text-white py-14 px-6">
+        <section id="proof" className="bg-black text-white pt-12 pb-10 px-6">
+          <p className="f2 text-[11px] uppercase tracking-[0.35em] text-white/50 text-center mb-10">Backed by my brokerage, Luxre Realty</p>
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
             {[
-              { value: 'Born & Raised', label: 'In San Clemente' },
-              { value: 'Listing & Buyer', label: 'Representation' },
-              { value: 'Pre-Sale Guidance', label: 'Updates that add value' },
-              { value: 'Luxre Realty', label: 'San Clemente office' },
+              { value: '$2B+', label: 'Total sales volume' },
+              { value: '14', label: 'Years in real estate' },
+              { value: '2', label: 'Offices: San Clemente & Huntington Beach' },
+              { value: 'Born & Raised', label: 'Jacob, in San Clemente' },
             ].map((s, i) => (
               <Reveal key={s.label} delay={i * 120}>
                 <p className="f1 font-extralight text-2xl md:text-4xl tracking-wide">{s.value}</p>
@@ -104,6 +104,7 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+          <p className="f2 text-[10px] text-white/40 text-center mt-10">Brokerage figures for Luxre Realty, Inc. (CA DRE# 01897290), as published at luxrerealty.com.</p>
         </section>
 
         {/* Introduction */}
@@ -236,8 +237,6 @@ export default function Home() {
             <Newsletter />
           </Reveal>
         </section>
-
-        <LuxreStats />
 
         {/* Explore + FAQ (internal links and answers for search and AI tools) */}
         <section className="bg-white py-20 px-6">
