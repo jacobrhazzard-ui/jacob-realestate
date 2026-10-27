@@ -1,6 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { JsonLd, SITE, agent, author } from './jsonld';
 import "./globals.css";
+import Script from "next/script";
+
+// Google Analytics 4 measurement ID (G-XXXXXXX). Leave empty to turn GA off.
+const GA_ID = "";
 import { Inter, Montserrat, Roboto, Playfair_Display, Merriweather } from 'next/font/google'
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -71,6 +75,14 @@ export default function RootLayout({ children }) {
           ]}
         />
         {children}
+        {/* Follow Up Boss Pixel: shows which pages known leads visit */}
+        <Script id="fub-pixel" strategy="afterInteractive">{`(function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function() {(w[g].q=w[g].q||[]).push(arguments);}),(w[g].ds=1*new Date());(e="script"), (t=d.createElement(e)),(e=d.getElementsByTagName(e)[0]);t.async=1;t.src=i; e.parentNode.insertBefore(t,e);}) (window,"https://widgetbe.com/agent",document,"widgetTracker"); window.widgetTracker("create", "WT-QGDJBQAE"); window.widgetTracker("send", "pageview");`}</Script>
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga4" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}</Script>
+          </>
+        )}
       </body>
     </html>
   );
