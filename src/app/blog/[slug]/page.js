@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Footer from '../../footer';
 import Navigation from '../../navbar';
 import { getPublishedPosts, getPost, formatDate } from '../posts';
-import { getNeighborhood } from '../../san-clemente-neighborhoods/neighborhoods';
+import { getNeighborhood, guideHref } from '../../san-clemente-neighborhoods/neighborhoods';
 import { Block, anchor } from '../blocks';
 import { JsonLd, SITE, agent, author, placeFor, breadcrumbs } from '../../jsonld';
 
@@ -56,7 +56,7 @@ export default async function BlogPost({ params }) {
             author,
             publisher: agent,
             about: [{ '@type': 'City', name: 'San Clemente, CA' }, ...featured.map(placeFor)],
-            ...(featured.length ? { mentions: featured.map((n) => ({ '@type': 'WebPage', name: `${n.name} Neighborhood Guide`, url: `${SITE}/san-clemente-neighborhoods/${n.slug}` })) } : {}),
+            ...(featured.length ? { mentions: featured.map((n) => ({ '@type': 'WebPage', name: `${n.name} Neighborhood Guide`, url: `${SITE}${guideHref(n)}` })) } : {}),
           },
           breadcrumbs([
             { name: 'Home', path: '/' },
@@ -104,7 +104,7 @@ export default async function BlogPost({ params }) {
             <ul className="flex flex-wrap gap-3">
               {featured.map((n) => (
                 <li key={n.slug}>
-                  <Link href={`/san-clemente-neighborhoods/${n.slug}`} className="inline-block bg-white px-4 py-2 shadow-sm hover:shadow-md text-base">
+                  <Link href={guideHref(n)} className="inline-block bg-white px-4 py-2 shadow-sm hover:shadow-md text-base">
                     {n.name} Guide
                   </Link>
                 </li>

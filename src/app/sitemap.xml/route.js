@@ -1,9 +1,9 @@
 import { getPublishedPosts } from "../blog/posts";
-import { getNeighborhoods } from "../san-clemente-neighborhoods/neighborhoods";
+import { getNeighborhoods, guideHref } from "../san-clemente-neighborhoods/neighborhoods";
 
 export async function GET() {
   const lastModified = "2026-10-23";
-  const pages = ["", "/sell", "/buy", "/listings", "/about", "/contact", "/blog", "/san-clemente-neighborhoods", "/oc-relocation-guide",
+  const pages = ["", "/sell", "/buy", "/listings", "/about", "/contact", "/blog", "/san-clemente-neighborhoods", "/orange-county-cities", "/oc-relocation-guide",
     "/oc-relocation-guide/south-oc",
     "/oc-relocation-guide/central-oc",
     "/oc-relocation-guide/north-oc",
@@ -14,7 +14,7 @@ export async function GET() {
     getNeighborhoods().map((n) => {
       const latest = getPublishedPosts().find((p) => (p.neighborhoods || []).includes(n.slug));
       const lm = latest && latest.date > n.updated ? latest.date : n.updated;
-      return { url: `https://www.jacobhazzardrealestate.com/san-clemente-neighborhoods/${n.slug}`, lastModified: lm };
+      return { url: `https://www.jacobhazzardrealestate.com${guideHref(n)}`, lastModified: lm };
     })
   );
 

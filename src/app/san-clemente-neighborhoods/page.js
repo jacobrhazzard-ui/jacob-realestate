@@ -3,7 +3,8 @@ import { sanClementePhotos } from '../photos';
 import Link from 'next/link';
 import Footer from '../footer';
 import Navigation from '../navbar';
-import { getNeighborhoods, isCity, placeName } from './neighborhoods';
+import { getNeighborhoods, isCity, placeName, guideHref } from './neighborhoods';
+import GuideGrid from './guideGrid';
 import { getPublishedPosts, formatDate } from '../blog/posts';
 import { JsonLd, SITE, agent, author, breadcrumbs } from '../jsonld';
 
@@ -14,33 +15,9 @@ export const metadata = {
   alternates: { canonical: '/san-clemente-neighborhoods' },
 };
 
-function GuideGrid({ items, card = 'bg-white' }) {
-  return (
-    <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-      {items.map((n) => (
-        <Link key={n.slug} href={`/san-clemente-neighborhoods/${n.slug}`} className={`group block ${card} shadow-sm hover:shadow-lg transition overflow-hidden`}>
-          <div className="h-56 overflow-hidden">
-            <div
-              className="h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              style={{ backgroundImage: `url('${n.image.startsWith('http') ? `${n.image}?w=900&q=70&auto=format&fit=crop` : n.image}')` }}
-              role="img"
-              aria-label={n.imageAlt}
-            />
-          </div>
-          <div className="p-8 f2">
-            <h3 className="text-2xl f1 mb-3 group-hover:underline">{n.name}</h3>
-            <p className="text-gray-700 leading-relaxed">{n.tagline}</p>
-          </div>
-        </Link>
-      ))}
-    </div>
-  );
-}
-
 export default function NeighborhoodsHub() {
   const all = getNeighborhoods();
   const list = all.filter((n) => !isCity(n));
-  const cities = all.filter(isCity);
   const posts = getPublishedPosts().filter((p) => (p.neighborhoods || []).length).slice(0, 3);
   const nameFor = Object.fromEntries(all.map((n) => [n.slug, n.name]));
 
@@ -58,11 +35,11 @@ export default function NeighborhoodsHub() {
             about: { '@type': 'City', name: 'San Clemente, CA' },
             mainEntity: {
               '@type': 'ItemList',
-              itemListElement: all.map((n, i) => ({
+              itemListElement: list.map((n, i) => ({
                 '@type': 'ListItem',
                 position: i + 1,
                 name: placeName(n),
-                url: `${SITE}/san-clemente-neighborhoods/${n.slug}`,
+                url: `${SITE}${guideHref(n)}`,
               })),
             },
           },
@@ -92,30 +69,22 @@ export default function NeighborhoodsHub() {
         </p>
       </section>
 
-      <nav aria-label="Jump to" className="flex flex-wrap justify-center gap-3 px-6 pb-10 f2 text-sm">
-        <a href="#san-clemente" className="px-5 py-2 bg-white shadow-sm hover:bg-gray-900 hover:text-white transition">San Clemente Neighborhoods ({list.length})</a>
-        {cities.length > 0 && (
-          <a href="#nearby-cities" className="px-5 py-2 bg-white shadow-sm hover:bg-gray-900 hover:text-white transition">Nearby Orange County Cities ({cities.length})</a>
-        )}
-      </nav>
-
-      <section id="san-clemente" className="px-6 pb-16 scroll-mt-8">
-        <h2 className="text-3xl md:text-4xl f1 font-light text-center mb-10">San Clemente Neighborhoods</h2>
+      <section className="px-6 pb-16">
         <GuideGrid items={list} />
         {list.length === 0 && (
           <p className="text-center f2 text-gray-600">Neighborhood guides are coming soon.</p>
         )}
       </section>
 
-      {cities.length > 0 && (
-        <section id="nearby-cities" className="bg-white px-6 py-16 scroll-mt-8">
-          <h2 className="text-3xl md:text-4xl f1 font-light text-center mb-4">Nearby Orange County Cities</h2>
-          <p className="f2 text-lg text-gray-700 text-center max-w-2xl mx-auto mb-10">
-            Looking a little beyond San Clemente? Here&apos;s what life is like in the coastal and canyon towns right next door.
-          </p>
-          <GuideGrid items={cities} card="bg-[#faf8f4]" />
-        </section>
-      )}
+      <section className="px-6 pb-16">
+        <Link href="/orange-county-cities" className="group max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 bg-gray-900 text-white p-8 md:p-10 hover:bg-gray-800 transition">
+          <div>
+            <p className="f2 text-xs uppercase tracking-widest text-white/60 mb-2">Looking beyond San Clemente?</p>
+            <p className="f1 text-2xl md:text-3xl font-light">Explore Dana Point, San Juan Capistrano, the Lagunas and more</p>
+          </div>
+          <span className="f2 tracking-wide whitespace-nowrap group-hover:underline">Orange County Cities &rarr;</span>
+        </Link>
+      </section>
 
       {posts.length > 0 && (
         <section className="bg-white py-16 px-6">

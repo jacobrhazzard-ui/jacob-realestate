@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight, ArrowDownRight, Minus, CalendarDays, MapPin, Clock, Ticket, Home, KeyRound } from 'lucide-react';
-import { getNeighborhood } from '../san-clemente-neighborhoods/neighborhoods';
+import { getNeighborhood, guideHref } from '../san-clemente-neighborhoods/neighborhoods';
 import MortgageCalc from './mortgageCalc';
 
 export const anchor = (t) => t.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -207,7 +207,7 @@ function Spotlight({ b }) {
             <p className="f2 text-base text-gray-800 italic">{b.jacobsTake}</p>
           </div>
         )}
-        <Link href={`/san-clemente-neighborhoods/${n.slug}`} className="inline-block bg-gray-900 text-white px-6 py-3 f2 tracking-wide hover:bg-gray-700 transition">
+        <Link href={guideHref(n)} className="inline-block bg-gray-900 text-white px-6 py-3 f2 tracking-wide hover:bg-gray-700 transition">
           Read the full {n.name} guide &rarr;
         </Link>
       </div>

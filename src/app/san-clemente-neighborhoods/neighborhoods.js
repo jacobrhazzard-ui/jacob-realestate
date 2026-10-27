@@ -1315,6 +1315,9 @@ export function getNeighborhoods() {
 
 // San Clemente neighborhoods vs. nearby Orange County cities
 export const isCity = (n) => n.kind === 'city';
+export const guideHref = (n) => `/${n.kind === 'city' ? 'orange-county-cities' : 'san-clemente-neighborhoods'}/${n.slug}`;
+export const getSanClementeNeighborhoods = () => getNeighborhoods().filter((n) => n.kind !== 'city');
+export const getCities = () => getNeighborhoods().filter((n) => n.kind === 'city');
 export const placeName = (n) => n.place || (n.name.includes('San Clemente') ? n.name : `${n.name}, San Clemente`);
 
 export function getNeighborhood(slug) {
