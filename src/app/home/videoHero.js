@@ -9,15 +9,20 @@ import Navigation from '../navbar';
 export default function VideoHero() {
   const ref = useRef(null);
   const [still, setStill] = useState(false);
+  const [src, setSrc] = useState(null);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setStill(true);
       return;
     }
-    const v = ref.current;
-    if (v) v.play().catch(() => setStill(true));
+    setSrc(window.innerWidth < 768 ? '/video/san-clemente-hero-mobile.mp4' : '/video/san-clemente-hero.mp4');
   }, []);
+
+  useEffect(() => {
+    const v = ref.current;
+    if (v && src) v.play().catch(() => setStill(true));
+  }, [src]);
 
   return (
     <section className="relative h-[100svh] min-h-[560px] overflow-hidden text-white bg-black">
@@ -34,10 +39,8 @@ export default function VideoHero() {
           preload="auto"
           poster="/video/san-clemente-hero-poster.jpg"
           aria-hidden="true"
-        >
-          <source src="/video/san-clemente-hero-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
-          <source src="/video/san-clemente-hero.mp4" type="video/mp4" />
-        </video>
+          src={src || undefined}
+        />
       )}
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/65" />
 
