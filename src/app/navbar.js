@@ -31,7 +31,8 @@ const Navigation = () => {
                 { label: 'Recent Sales', href: '/buy#buy-listings' },
                 { label: 'OC Relocation Guide', href: '/oc-relocation-guide' },
                 { label: 'San Clemente Neighborhoods', href: '/san-clemente-neighborhoods' },
-                { label: 'Orange County Cities', href: '/orange-county-cities' }
+                { label: 'Orange County Cities', href: '/orange-county-cities' },
+                { label: 'Buyer & Seller Guides', href: '/guides' }
             ]
         },
         { label: 'Search Homes', href: 'https://jacobhazzardrealestate.idxbroker.com/idx/map/mapsearch' },

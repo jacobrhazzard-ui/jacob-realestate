@@ -13,7 +13,7 @@ const OC_DTT = 'https://www.ocrecorder.com/sites/ocrecorder/files/import/data/fi
 export const guides = [
   {
     slug: 'dana-point-vs-san-clemente',
-    published: false,
+    published: true,
     updated: '2026-10-27',
     category: 'Compare',
     title: 'Dana Point vs. San Clemente: Which Beach Town Fits You?',
@@ -79,7 +79,7 @@ export const guides = [
 
   {
     slug: 'selling-a-home-in-san-clemente',
-    published: false,
+    published: true,
     updated: '2026-10-27',
     category: "Seller's Guide",
     title: "Selling a Home in San Clemente: A Local Seller's Guide",
@@ -149,7 +149,7 @@ export const guides = [
 
   {
     slug: 'buying-a-home-in-san-clemente',
-    published: false,
+    published: true,
     updated: '2026-10-27',
     category: "Buyer's Guide",
     title: "Buying a Home in San Clemente: A Local Buyer's Guide",
@@ -221,7 +221,7 @@ export const guides = [
 
   {
     slug: 'cost-of-living-in-san-clemente',
-    published: false,
+    published: true,
     updated: '2026-10-27',
     category: 'Living Here',
     title: 'Cost of Living in San Clemente: Housing, Taxes and Monthly Costs',

@@ -26,6 +26,7 @@ ${guides}
 
 ## Nearby Orange County city guides
 - [Orange County cities near San Clemente](${SITE}/orange-county-cities): hub linking every city guide
+- [Buyer and seller guides](${SITE}/guides): seller's guide, buyer's guide, Dana Point vs. San Clemente, cost of living in San Clemente
 ${cities}
 
 ## Weekly San Clemente market notes
