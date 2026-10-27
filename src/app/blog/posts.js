@@ -24,7 +24,7 @@
 export const posts = [
   {
     slug: 'san-clemente-market-update-october-2026',
-    published: false,
+    published: true,
     date: '2026-10-27',
     category: 'Market Update',
     title: 'San Clemente Market Update: Rates Ease to 7.32%, Price per Foot Up 9% + a Pier Bowl Spotlight',
