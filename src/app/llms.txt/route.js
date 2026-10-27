@@ -1,12 +1,15 @@
 // llms.txt: a plain-text map of the site for AI search tools (ChatGPT, Perplexity, Claude, etc.).
 import { getPublishedPosts } from '../blog/posts';
-import { getNeighborhoods } from '../san-clemente-neighborhoods/neighborhoods';
+import { getSanClementeNeighborhoods, getCities, guideHref } from '../san-clemente-neighborhoods/neighborhoods';
 
 const SITE = 'https://www.jacobhazzardrealestate.com';
 
 export async function GET() {
-  const guides = getNeighborhoods()
-    .map((n) => `- [${n.name}, San Clemente neighborhood guide](${SITE}/san-clemente-neighborhoods/${n.slug}): ${n.summary}`)
+  const guides = getSanClementeNeighborhoods()
+    .map((n) => `- [${n.name}, San Clemente neighborhood guide](${SITE}${guideHref(n)}): ${n.summary}`)
+    .join('\n');
+  const cities = getCities()
+    .map((n) => `- [${n.place} area guide](${SITE}${guideHref(n)}): ${n.summary}`)
     .join('\n');
   const posts = getPublishedPosts()
     .slice(0, 20)
@@ -20,6 +23,10 @@ export async function GET() {
 ## San Clemente neighborhood guides
 - [Best neighborhoods in San Clemente](${SITE}/san-clemente-neighborhoods): hub linking every neighborhood guide
 ${guides}
+
+## Nearby Orange County city guides
+- [Orange County cities near San Clemente](${SITE}/orange-county-cities): hub linking every city guide
+${cities}
 
 ## Weekly San Clemente market notes
 - [All market notes](${SITE}/blog)

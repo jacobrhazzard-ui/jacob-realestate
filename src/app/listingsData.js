@@ -71,3 +71,14 @@ export function formatDate(date) {
   const [year, month] = date.split('-');
   return `${MONTHS[Number(month) - 1]} ${year}`;
 }
+
+// Closed sales of $1M or more, listing and buyer side, newest first.
+export function getMillionPlusSales() {
+  const side = { 'sold-pending': 'Listing Side', 'represented-buyer': 'Buyer Side' };
+  return listingSections
+    .filter((section) => side[section.id])
+    .flatMap((section) => section.listings.map((l) => ({ ...l, side: side[section.id] })))
+    .filter((l) => l.status === 'Sold' && Number(String(l.price || '').replace(/[^0-9]/g, '')) >= 1000000)
+    .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+    .map((l) => ({ ...l, when: formatDate(l.date) }));
+}

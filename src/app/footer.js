@@ -76,6 +76,7 @@ export default function Footer() {
                 <p className="uppercase tracking-widest text-gray-400 mb-3">San Clemente &amp; Orange County Guides</p>
                 <ul className="flex flex-wrap gap-x-5 gap-y-2">
                     <li><Link href="/san-clemente-neighborhoods" className="hover:text-white transition">Best San Clemente Neighborhoods</Link></li>
+                    <li><Link href="/orange-county-cities" className="hover:text-white transition">Orange County Cities</Link></li>
                     <li><Link href="/san-clemente-neighborhoods/talega" className="hover:text-white transition">Talega</Link></li>
                     <li><Link href="/san-clemente-neighborhoods/pier-bowl" className="hover:text-white transition">Pier Bowl</Link></li>
                     <li><Link href="/san-clemente-neighborhoods/forster-ranch" className="hover:text-white transition">Forster Ranch</Link></li>

@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import Footer from '../../footer';
 import Navigation from '../../navbar';
 import { getPublishedPosts, getPost, formatDate } from '../posts';
-import { getNeighborhood } from '../../san-clemente-neighborhoods/neighborhoods';
+import { getNeighborhood, guideHref } from '../../san-clemente-neighborhoods/neighborhoods';
+import { Block, anchor } from '../blocks';
 import { JsonLd, SITE, agent, author, placeFor, breadcrumbs } from '../../jsonld';
 
 export const dynamicParams = false;
@@ -31,41 +32,6 @@ export async function generateMetadata({ params }) {
   };
 }
 
-function Block({ b }) {
-  switch (b.type) {
-    case 'h2':
-      return <h2 className="text-3xl f1 font-light mt-12 mb-5 text-gray-900">{b.text}</h2>;
-    case 'list':
-      return (
-        <ul className="list-disc pl-6 space-y-2 mb-6">
-          {b.items.map((i) => <li key={i}>{i}</li>)}
-        </ul>
-      );
-    case 'spotlight': {
-      const n = getNeighborhood(b.neighborhood);
-      if (!n) return null;
-      return (
-        <Link
-          href={`/san-clemente-neighborhoods/${n.slug}`}
-          className="block bg-white shadow-sm hover:shadow-md transition p-6 mb-8 border-l-4 border-gray-900 not-italic"
-        >
-          <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">Neighborhood Guide</p>
-          <p className="text-2xl f1 mb-2 text-gray-900">Read the full {n.name} guide &rarr;</p>
-          <p className="text-base text-gray-600">{b.text}</p>
-        </Link>
-      );
-    }
-    case 'source':
-      return (
-        <p className="text-sm text-gray-500 mb-6">
-          {b.href ? <a href={b.href} target="_blank" rel="noopener noreferrer" className="underline">{b.text}</a> : b.text}
-        </p>
-      );
-    default:
-      return <p className="mb-6">{b.text}</p>;
-  }
-}
-
 export default async function BlogPost({ params }) {
   const { slug } = await params;
   const p = getPost(slug);
@@ -74,7 +40,7 @@ export default async function BlogPost({ params }) {
   const url = `${SITE}/blog/${p.slug}`;
 
   return (
-    <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+    <main className="text-gray-900 bg-[#faf8f4] font-sans">
       <JsonLd
         data={[
           {
@@ -90,7 +56,7 @@ export default async function BlogPost({ params }) {
             author,
             publisher: agent,
             about: [{ '@type': 'City', name: 'San Clemente, CA' }, ...featured.map(placeFor)],
-            ...(featured.length ? { mentions: featured.map((n) => ({ '@type': 'WebPage', name: `${n.name} Neighborhood Guide`, url: `${SITE}/san-clemente-neighborhoods/${n.slug}` })) } : {}),
+            ...(featured.length ? { mentions: featured.map((n) => ({ '@type': 'WebPage', name: `${n.name} Neighborhood Guide`, url: `${SITE}${guideHref(n)}` })) } : {}),
           },
           breadcrumbs([
             { name: 'Home', path: '/' },
@@ -114,7 +80,23 @@ export default async function BlogPost({ params }) {
         </div>
       </section>
 
-      <article className="max-w-3xl mx-auto px-6 py-16 f2 text-lg leading-relaxed text-gray-800">
+      {p.body.filter((b) => b.type === 'h2').length > 2 && (
+        <nav aria-label="In this update" className="sticky top-0 z-30 bg-[#faf8f4]/95 backdrop-blur border-b border-gray-300">
+          <div className="max-w-4xl mx-auto px-6 py-3 flex gap-2 overflow-x-auto f2 text-sm">
+            {p.body.filter((b) => b.type === 'h2').map((b) => (
+              <a key={b.text} href={`#${anchor(b.text)}`} className="whitespace-nowrap px-4 py-2 bg-white shadow-sm hover:bg-gray-900 hover:text-white transition">{b.text}</a>
+            ))}
+          </div>
+        </nav>
+      )}
+
+      <article className="max-w-4xl mx-auto px-6 py-16 f2 text-lg leading-relaxed text-gray-800">
+        {p.summary && (
+          <div className="bg-white shadow-sm p-6 md:p-8 mb-6">
+            <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">This week in 30 seconds</p>
+            <p className="f1 text-2xl text-gray-900 leading-snug">{p.summary}</p>
+          </div>
+        )}
         {p.body.map((b, i) => <Block key={i} b={b} />)}
         {featured.length > 0 && (
           <div className="mt-12 pt-8 border-t border-gray-300">
@@ -122,7 +104,7 @@ export default async function BlogPost({ params }) {
             <ul className="flex flex-wrap gap-3">
               {featured.map((n) => (
                 <li key={n.slug}>
-                  <Link href={`/san-clemente-neighborhoods/${n.slug}`} className="inline-block bg-white px-4 py-2 shadow-sm hover:shadow-md text-base">
+                  <Link href={guideHref(n)} className="inline-block bg-white px-4 py-2 shadow-sm hover:shadow-md text-base">
                     {n.name} Guide
                   </Link>
                 </li>

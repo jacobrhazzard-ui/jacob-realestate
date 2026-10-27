@@ -24,7 +24,7 @@ function buildEvent(kind, d) {
     ...names,
     emails: d.email ? [{ value: d.email }] : [],
     phones: d.phone ? [{ value: d.phone }] : [],
-    tags: kind === 'seller' ? ['Seller Lead', 'Website - Home Value'] : ['Buyer Lead', 'Website - Buyer Inquiry'],
+    tags: kind === 'seller' ? ['Seller Lead', 'Website - Home Value'] : kind === 'newsletter' ? ['Newsletter - Market Notes', 'Website - Newsletter'] : ['Buyer Lead', 'Website - Buyer Inquiry'],
   };
   const lines = Object.entries(d)
     .filter(([k, v]) => v && !['firstName', 'lastName', 'name', 'email', 'phone', 'kind'].includes(k))
@@ -32,9 +32,9 @@ function buildEvent(kind, d) {
   const event = {
     source: 'jacobhazzardrealestate.com',
     system: 'JH Website',
-    type: kind === 'seller' ? 'Seller Inquiry' : 'General Inquiry',
+    type: kind === 'seller' ? 'Seller Inquiry' : kind === 'newsletter' ? 'Registration' : 'General Inquiry',
     message: lines.join('\n'),
-    description: kind === 'seller' ? 'Home value request from website' : 'Buyer inquiry from website',
+    description: kind === 'seller' ? 'Home value request from website' : kind === 'newsletter' ? 'Signed up for weekly market notes on the website' : 'Buyer inquiry from website',
     person,
   };
   if (kind === 'seller' && d.address) {
@@ -50,7 +50,7 @@ export async function POST(req) {
   } catch {
     return Response.json({ ok: false, error: 'bad request' }, { status: 400 });
   }
-  const kind = data.kind === 'buyer' ? 'buyer' : 'seller';
+  const kind = ['buyer', 'newsletter'].includes(data.kind) ? data.kind : 'seller';
   const results = {};
 
   const key = process.env.FUB_API_KEY;
@@ -72,10 +72,10 @@ export async function POST(req) {
   }
 
   try {
-    const r = await fetch(FORMSPREE[kind], {
+    const r = await fetch(FORMSPREE[kind === 'newsletter' ? 'buyer' : kind], {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ ...data, _subject: kind === 'seller' ? 'New Home Value Request' : 'New Home Buyer Inquiry' }),
+      body: JSON.stringify({ ...data, _subject: kind === 'seller' ? 'New Home Value Request' : kind === 'newsletter' ? 'New Market Notes Subscriber' : 'New Home Buyer Inquiry' }),
     });
     results.formspree = r.status;
   } catch (e) {

@@ -3,7 +3,8 @@ import { sanClementePhotos } from '../photos';
 import Link from 'next/link';
 import Footer from '../footer';
 import Navigation from '../navbar';
-import { getNeighborhoods } from './neighborhoods';
+import { getNeighborhoods, isCity, placeName, guideHref } from './neighborhoods';
+import GuideGrid from './guideGrid';
 import { getPublishedPosts, formatDate } from '../blog/posts';
 import { JsonLd, SITE, agent, author, breadcrumbs } from '../jsonld';
 
@@ -15,12 +16,13 @@ export const metadata = {
 };
 
 export default function NeighborhoodsHub() {
-  const list = getNeighborhoods();
+  const all = getNeighborhoods();
+  const list = all.filter((n) => !isCity(n));
   const posts = getPublishedPosts().filter((p) => (p.neighborhoods || []).length).slice(0, 3);
-  const nameFor = Object.fromEntries(list.map((n) => [n.slug, n.name]));
+  const nameFor = Object.fromEntries(all.map((n) => [n.slug, n.name]));
 
   return (
-    <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+    <main className="text-gray-900 bg-[#faf8f4] font-sans">
       <JsonLd
         data={[
           {
@@ -36,8 +38,8 @@ export default function NeighborhoodsHub() {
               itemListElement: list.map((n, i) => ({
                 '@type': 'ListItem',
                 position: i + 1,
-                name: `${n.name}, San Clemente`,
-                url: `${SITE}/san-clemente-neighborhoods/${n.slug}`,
+                name: placeName(n),
+                url: `${SITE}${guideHref(n)}`,
               })),
             },
           },
@@ -68,20 +70,20 @@ export default function NeighborhoodsHub() {
       </section>
 
       <section className="px-6 pb-16">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-          {list.map((n) => (
-            <Link key={n.slug} href={`/san-clemente-neighborhoods/${n.slug}`} className="group block bg-white shadow-sm hover:shadow-md transition overflow-hidden">
-              <div className="h-56 bg-cover bg-center" style={{ backgroundImage: `url('${n.image}')` }} role="img" aria-label={n.imageAlt} />
-              <div className="p-8 f2">
-                <h2 className="text-2xl f1 mb-3 group-hover:underline">{n.name}</h2>
-                <p className="text-gray-700 leading-relaxed">{n.tagline}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <GuideGrid items={list} />
         {list.length === 0 && (
           <p className="text-center f2 text-gray-600">Neighborhood guides are coming soon.</p>
         )}
+      </section>
+
+      <section className="px-6 pb-16">
+        <Link href="/orange-county-cities" className="group max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 bg-gray-900 text-white p-8 md:p-10 hover:bg-gray-800 transition">
+          <div>
+            <p className="f2 text-xs uppercase tracking-widest text-white/60 mb-2">Looking beyond San Clemente?</p>
+            <p className="f1 text-2xl md:text-3xl font-light">Explore Dana Point, San Juan Capistrano, the Lagunas and more</p>
+          </div>
+          <span className="f2 tracking-wide whitespace-nowrap group-hover:underline">Orange County Cities &rarr;</span>
+        </Link>
       </section>
 
       {posts.length > 0 && (
@@ -90,7 +92,7 @@ export default function NeighborhoodsHub() {
             <h2 className="text-3xl f1 font-light mb-8 text-center">Latest Neighborhood Spotlights</h2>
             <div className="space-y-4">
               {posts.map((p) => (
-                <Link key={p.slug} href={`/blog/${p.slug}`} className="block bg-[#f1f0eb] p-6 hover:shadow-md transition f2">
+                <Link key={p.slug} href={`/blog/${p.slug}`} className="block bg-[#faf8f4] p-6 hover:shadow-md transition f2">
                   <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">
                     {formatDate(p.date)} &middot; {p.neighborhoods.map((s) => nameFor[s]).filter(Boolean).join(', ')}
                   </p>

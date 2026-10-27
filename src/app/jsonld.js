@@ -53,10 +53,10 @@ export const author = {
 export function placeFor(n) {
   return {
     '@type': 'Place',
-    '@id': `${SITE}/san-clemente-neighborhoods/${n.slug}#place`,
-    name: n.name.includes('San Clemente') ? `${n.name}, CA` : `${n.name}, San Clemente, CA`,
-    url: `${SITE}/san-clemente-neighborhoods/${n.slug}`,
-    containedInPlace: { '@type': 'City', name: 'San Clemente, CA' },
+    '@id': `${SITE}/${n.kind === 'city' ? 'orange-county-cities' : 'san-clemente-neighborhoods'}/${n.slug}#place`,
+    name: n.kind === 'city' ? (n.place.endsWith(', CA') ? n.place : `${n.place}, CA`) : n.name.includes('San Clemente') ? `${n.name}, CA` : `${n.name}, San Clemente, CA`,
+    url: `${SITE}/${n.kind === 'city' ? 'orange-county-cities' : 'san-clemente-neighborhoods'}/${n.slug}`,
+    containedInPlace: n.kind === 'city' ? { '@type': 'AdministrativeArea', name: 'Orange County, CA' } : { '@type': 'City', name: 'San Clemente, CA' },
   };
 }
 

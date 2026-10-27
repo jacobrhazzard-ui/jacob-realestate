@@ -939,6 +939,372 @@ export const neighborhoods = [
       { label: 'City of San Clemente: Golf course information', href: 'https://www.sanclemente.gov/208' },
     ],
   },
+  // ---------------------------------------------------------------------------
+  // Nearby Orange County cities (kind: 'city'). Same format as the neighborhood guides.
+  // Photos: Unsplash (free license), each confirmed to show that city.
+  // ---------------------------------------------------------------------------
+  {
+    slug: 'dana-point',
+    kind: 'city',
+    place: 'Dana Point, CA',
+    published: true,
+    name: 'Dana Point',
+    updated: '2026-10-27',
+    image: 'https://images.unsplash.com/photo-1628961434939-30a5179c7e0d',
+    imageAlt: 'Aerial view of the Dana Point coastline and beach',
+    tagline: 'A harbor town next door to San Clemente, with surf breaks, bluff-top parks, and one of the few harbors on the Orange County coast.',
+    summary:
+      'Dana Point is a coastal city just north of San Clemente with a working harbor, Doheny State Beach, Salt Creek and Strands beaches, and the historic Lantern District.',
+    intro:
+      "Dana Point sits right next door to San Clemente along Pacific Coast Highway. It became a city in 1989, and 33,107 people lived here at the 2020 census. Life here centers on Dana Point Harbor, dedicated in 1971, with its marina, shops, restaurants, and the Catalina Express to Avalon. The city is named after Richard Henry Dana Jr., who described the headland in his 1840 memoir Two Years Before the Mast.",
+    atAGlance: [
+      { value: '33,107', label: 'Residents (2020 census)' },
+      { value: '1989', label: 'Became a city' },
+      { value: '1971', label: 'Harbor dedicated' },
+      { value: '6.8 sq mi', label: 'Total area' },
+      { value: '$2.1M', label: 'Median sale price' },
+      { value: '47', label: 'Median days on market' },
+    ],
+    map: { bbox: [-117.735, 33.445, -117.645, 33.5], marker: [33.4669721, -117.6981075] },
+    gallery: [
+      { src: 'https://images.unsplash.com/photo-1718145542654-d48bfc8fc05e', alt: 'Boats in Dana Point Harbor', caption: 'Dana Point Harbor' },
+      { src: 'https://images.unsplash.com/photo-1593449183239-7eba18f226aa', alt: 'Salt Creek Beach in Dana Point at sunset', caption: 'Salt Creek Beach' },
+      { src: 'https://images.unsplash.com/photo-1776660244774-eabab8cd1ae3', alt: 'Golf course overlooking the beach and ocean in Dana Point', caption: 'Ocean views along the coast' },
+    ],
+    whyPeopleMove: [
+      { icon: 'beach', title: 'Dana Point Harbor', text: 'A marina with shops and restaurants, and the Catalina Express to Avalon on Catalina Island' },
+      { icon: 'pool', title: 'Doheny State Beach', text: 'Known as the first state beach in the California state park system, with a popular surf break' },
+      { icon: 'trees', title: 'Salt Creek & Strands', text: 'Neighboring beaches below the headlands, with improved public stairs and access at Strands' },
+      { icon: 'landmark', title: 'Surf history', text: 'Hobie Alter opened the world’s first retail surf shop here in 1954' },
+      { icon: 'home', title: 'Lantern District', text: 'The historic core, with streets named for the colored lanterns ships once used in the harbor' },
+      { icon: 'train', title: 'Next door to San Clemente', text: 'Pacific Coast Highway connects Dana Point to San Clemente, Laguna Beach and Laguna Niguel' },
+    ],
+    homeTypes: [
+      { icon: 'home', title: 'Historic core', text: 'The Lantern District, where many of the early "Woodruff" houses are concentrated' },
+      { icon: 'gate', title: 'Coastal communities', text: 'Including Monarch Beach, Niguel Shores and the Strands at Headlands, a luxury development on the bluff' },
+      { icon: 'beach', title: 'Capistrano Beach', text: 'Bluff-top and beachfront homes on the south end of town (see the Capistrano Beach guide)' },
+    ],
+    market: {
+      cards: [
+        { value: '$2,099,000', label: 'Median sale price', detail: '3 months ending Sept 2026, +16.6% YoY', source: 'Redfin' },
+        { value: '$1.13K', label: 'Median price per sq ft', detail: '+23.9% vs. last year', source: 'Redfin' },
+        { value: '113', label: 'Homes sold in September', detail: 'Up from 110 a year earlier', source: 'Redfin' },
+      ],
+      figures: [
+        'Median sale price: $2,099,000 over the three months ending September 2026, up 16.6% from a year earlier (Redfin)',
+        'Median price per square foot: about $1,130, up 23.9% from a year earlier (Redfin)',
+        'Median days on market: 47, compared with 64 a year earlier (Redfin)',
+        'Homes sold in September 2026: 113, up from 110 (Redfin)',
+      ],
+      note: 'Redfin describes the Dana Point market as somewhat competitive. Prices vary a lot between harbor-area condos, bluff-top homes, and gated coastal communities.',
+    },
+    costsToKnow: [
+      'Many planned and gated communities have HOA dues, and amounts vary widely, so check the dues for any specific home',
+      'Some newer communities may also carry special taxes; always review the actual property tax bill',
+    ],
+    schools:
+      'Dana Point is served by Capistrano Unified School District. Boundaries can change, so always confirm the assigned schools for a specific address with the district.',
+    gettingAround: [
+      'Pacific Coast Highway (State Route 1) runs through town',
+      'The Catalina Express leaves from Dana Point Harbor for Avalon',
+      'Borders San Clemente and Capistrano Beach to the south and Laguna Niguel and Laguna Beach to the north',
+    ],
+    localTip: null,
+    faqs: [
+      { q: 'What is Dana Point known for?', a: 'Dana Point Harbor, Doheny State Beach, the surf breaks at Salt Creek and Strands, and its surf history; Hobie Alter opened the first retail surf shop here in 1954.' },
+      { q: 'How much do homes cost in Dana Point?', a: 'Redfin reported a median sale price of $2,099,000 for the three months ending September 2026, up 16.6% from a year earlier.' },
+      { q: 'How far is Dana Point from San Clemente?', a: 'They are next-door neighbors. Capistrano Beach, the south end of Dana Point, borders San Clemente.' },
+      { q: 'What school district serves Dana Point?', a: 'Capistrano Unified School District. Confirm the assigned schools for a specific address with the district.' },
+    ],
+    sources: [
+      { label: 'Redfin: Dana Point housing market', href: 'https://www.redfin.com/city/4641/CA/Dana-Point/housing-market' },
+      { label: 'Wikipedia: Dana Point, California', href: 'https://en.wikipedia.org/wiki/Dana_Point,_California' },
+      { label: 'Wikipedia: Doheny State Beach', href: 'https://en.wikipedia.org/wiki/Doheny_State_Beach' },
+    ],
+  },
+  {
+    slug: 'capistrano-beach',
+    kind: 'city',
+    place: 'Capistrano Beach, Dana Point',
+    published: true,
+    name: 'Capistrano Beach',
+    updated: '2026-10-27',
+    image: 'https://images.unsplash.com/photo-1705104909766-8e00f80770db',
+    imageAlt: 'Sunset over the sand in Dana Point near Capistrano Beach',
+    tagline: 'Bluff-top homes and a beach road on the south end of Dana Point, right on the San Clemente border.',
+    summary:
+      'Capistrano Beach ("Capo Beach") is the southern coastal neighborhood of Dana Point, between San Clemente and Doheny State Beach, with bluff-top homes, Beach Road, and Capistrano Beach Park.',
+    intro:
+      'Capistrano Beach, or "Capo Beach," is the southern coastal neighborhood of Dana Point, bordered by San Clemente to the south and Doheny State Beach to the north. Homes were first built on the bluff in 1925, and Capo Beach became part of the City of Dana Point in 1989. Some homes sit atop the cliff overlooking Coast Highway and Capistrano Beach Park, and Beach Road, where Hobie Alter conceived the Hobie Cat catamaran, runs right along the sand.',
+    atAGlance: [
+      { value: '1925', label: 'Bluff homes first built' },
+      { value: '1989', label: 'Joined Dana Point' },
+      { value: '41.4', label: 'Acres given for Doheny State Beach (1931)' },
+      { value: '$2.07M', label: 'Median sale price' },
+      { value: '46', label: 'Median days on market' },
+      { value: '23', label: 'Homes sold in September' },
+    ],
+    map: { bbox: [-117.69, 33.439, -117.645, 33.474], marker: [33.4587166, -117.66857] },
+    gallery: [],
+    whyPeopleMove: [
+      { icon: 'beach', title: 'Capistrano Beach Park', text: 'A beach park along Coast Highway, below the bluff-top homes' },
+      { icon: 'pool', title: 'Doheny next door', text: 'Doheny State Beach borders Capo Beach to the north' },
+      { icon: 'home', title: 'Bluff-top views', text: 'Some homes sit atop the cliff overlooking Coast Highway and the ocean' },
+      { icon: 'landmark', title: 'Beach Road', text: 'The beachfront street where Hobie Alter conceived the Hobie Cat' },
+      { icon: 'train', title: 'Close to San Clemente', text: 'Borders San Clemente to the south' },
+      { icon: 'layers', title: 'Spanish-style roots', text: "Early Spanish-style homes built by the Doheny family's Capistrano Beach Company" },
+    ],
+    homeTypes: [
+      { icon: 'home', title: 'Bluff-top homes', text: 'Homes on the bluff, where development started in 1925' },
+      { icon: 'beach', title: 'Beach Road', text: 'Homes right on the sand along Beach Road' },
+      { icon: 'building', title: 'Spanish-style houses', text: 'Red-tile, Spanish-style homes from the area’s early development' },
+    ],
+    market: {
+      cards: [
+        { value: '$2,074,419', label: 'Median sale price', detail: '3 months ending Sept 2026, +29.9% YoY', source: 'Redfin' },
+        { value: '$844', label: 'Median price per sq ft', detail: '-8.7% vs. last year', source: 'Redfin' },
+        { value: '46', label: 'Median days on market', detail: 'Compared with 45 a year earlier', source: 'Redfin' },
+      ],
+      figures: [
+        'Median sale price: $2,074,419 over the three months ending September 2026, up 29.9% from a year earlier (Redfin)',
+        'Median price per square foot: $844, down 8.7% from a year earlier (Redfin)',
+        'Homes sold in September 2026: 23, the same as a year earlier (Redfin)',
+      ],
+      note: 'With only about two dozen sales a month, a few large or small homes can move the median a lot. Price per square foot fell even as the median rose.',
+    },
+    costsToKnow: ['Some streets and gated sections have HOA dues; check the dues and the property tax bill for any specific home'],
+    schools:
+      'Capistrano Beach is served by Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
+    gettingAround: [
+      'Pacific Coast Highway runs along the base of the bluff',
+      'San Clemente borders the neighborhood to the south; Dana Point Harbor is just north past Doheny',
+    ],
+    localTip: null,
+    faqs: [
+      { q: 'Is Capistrano Beach part of Dana Point or San Clemente?', a: 'Dana Point. Capistrano Beach became part of the City of Dana Point in 1989. It borders San Clemente to the south.' },
+      { q: 'How much do homes cost in Capistrano Beach?', a: 'Redfin reported a median sale price of $2,074,419 for the three months ending September 2026, up 29.9% from a year earlier.' },
+      { q: 'What is Beach Road in Capistrano Beach?', a: 'A street of homes right on the sand, where Hobie Alter conceived the Hobie Cat catamaran.' },
+    ],
+    sources: [
+      { label: 'Redfin: Capistrano Beach housing market', href: 'https://www.redfin.com/neighborhood/14730/CA/Dana-Point/Capistrano-Beach/housing-market' },
+      { label: 'Wikipedia: Capistrano Beach, Dana Point', href: 'https://en.wikipedia.org/wiki/Capistrano_Beach,_Dana_Point,_California' },
+      { label: 'Wikipedia: Dana Point (Capistrano Beach history)', href: 'https://en.wikipedia.org/wiki/Dana_Point,_California' },
+    ],
+  },
+  {
+    slug: 'san-juan-capistrano',
+    kind: 'city',
+    place: 'San Juan Capistrano, CA',
+    published: true,
+    name: 'San Juan Capistrano',
+    updated: '2026-10-27',
+    image: 'https://images.unsplash.com/photo-1577992798157-3fc368469168',
+    imageAlt: 'Bell tower at Mission San Juan Capistrano',
+    tagline: 'A historic mission town just inland, with California’s oldest neighborhood and a train station downtown.',
+    summary:
+      'San Juan Capistrano grew up around Mission San Juan Capistrano (founded 1776), with the historic Los Rios district, a walkable downtown, and an Amtrak and Metrolink station.',
+    intro:
+      "San Juan Capistrano grew up around Mission San Juan Capistrano, founded in 1776 by Father Junípero Serra as the seventh of California's Spanish missions. The city incorporated in 1961, covers 14.4 square miles, and had 35,253 residents at the 2020 census. The mission's Serra Chapel is the oldest building in California still in use, and the nearby Los Rios neighborhood is considered the oldest residential neighborhood in the state.",
+    atAGlance: [
+      { value: '1776', label: 'Mission founded' },
+      { value: '1961', label: 'Incorporated' },
+      { value: '35,253', label: 'Residents (2020 census)' },
+      { value: '14.4 sq mi', label: 'Total area' },
+      { value: '$1.41M', label: 'Median sale price' },
+      { value: '98', label: 'Homes sold in September' },
+    ],
+    map: { bbox: [-117.687, 33.466, -117.611, 33.546], marker: [33.5016932, -117.6625509] },
+    gallery: [
+      { src: 'https://images.unsplash.com/photo-1706363009245-dd58066a6f18', alt: 'Mission bells at Mission San Juan Capistrano', caption: 'The mission bells' },
+      { src: 'https://images.unsplash.com/photo-1533563997972-a04f420ffc2a', alt: 'Mission San Juan Capistrano grounds', caption: 'Mission San Juan Capistrano' },
+    ],
+    whyPeopleMove: [
+      { icon: 'landmark', title: 'Mission San Juan Capistrano', text: 'Founded in 1776; its Serra Chapel is the oldest building in California still in use' },
+      { icon: 'home', title: 'Los Rios Historic District', text: 'Considered the oldest residential neighborhood in California, with original adobes still standing' },
+      { icon: 'flag', title: 'Swallows Day traditions', text: 'The annual Swallows Day Parade and Fiesta de las Golondrinas celebrate the swallows’ return' },
+      { icon: 'train', title: 'Train downtown', text: 'Amtrak and Metrolink stop one block from the mission' },
+      { icon: 'park', title: 'Small-town downtown', text: 'A historic, walkable center around the mission and Los Rios Street' },
+      { icon: 'beach', title: 'Minutes from the coast', text: 'Borders Dana Point and San Clemente, a short drive to the beach' },
+    ],
+    homeTypes: [
+      { icon: 'landmark', title: 'Historic homes', text: 'Adobe and board-and-batten structures in the Los Rios district near the mission' },
+      { icon: 'home', title: 'Single-family neighborhoods', text: 'Neighborhoods spread across the city’s 14.4 square miles' },
+      { icon: 'building', title: 'Condos & townhomes', text: 'Attached homes are also part of the mix' },
+    ],
+    market: {
+      cards: [
+        { value: '$1,410,828', label: 'Median sale price', detail: '3 months ending Sept 2026, +3.4% YoY', source: 'Redfin' },
+        { value: '$666', label: 'Median price per sq ft', detail: '-2.3% vs. last year', source: 'Redfin' },
+        { value: '98', label: 'Homes sold in September', detail: 'Up from 83 a year earlier', source: 'Redfin' },
+      ],
+      figures: [
+        'Median sale price: $1,410,828 over the three months ending September 2026, up 3.4% from a year earlier (Redfin)',
+        'Median days on market: 49, compared with 48 a year earlier (Redfin)',
+        'Homes received 5 offers on average over the three months (Redfin)',
+      ],
+      note: 'Redfin describes the San Juan Capistrano market as somewhat competitive.',
+    },
+    costsToKnow: ['HOA dues and any special taxes vary by community; check the dues and the property tax bill for any specific home'],
+    schools:
+      'San Juan Capistrano is served by Capistrano Unified School District. Mission Basilica School (K-8) is a private school on the mission grounds. Always confirm the assigned public schools for a specific address with the district.',
+    gettingAround: [
+      'I-5 runs through the city',
+      'Amtrak and Metrolink stop at the San Juan Capistrano station, one block from the mission',
+    ],
+    localTip: null,
+    faqs: [
+      { q: 'What is San Juan Capistrano known for?', a: 'Mission San Juan Capistrano (founded 1776), the Los Rios Historic District, and the annual Swallows Day Parade.' },
+      { q: 'How much do homes cost in San Juan Capistrano?', a: 'Redfin reported a median sale price of $1,410,828 for the three months ending September 2026, up 3.4% from a year earlier.' },
+      { q: 'Does San Juan Capistrano have a train station?', a: 'Yes. Amtrak and Metrolink both stop at the downtown station, one block from the mission.' },
+    ],
+    sources: [
+      { label: 'Redfin: San Juan Capistrano housing market', href: 'https://www.redfin.com/city/17431/CA/San-Juan-Capistrano/housing-market' },
+      { label: 'Wikipedia: San Juan Capistrano, California', href: 'https://en.wikipedia.org/wiki/San_Juan_Capistrano,_California' },
+      { label: 'Wikipedia: Los Rios Historic District', href: 'https://en.wikipedia.org/wiki/Los_Rios_Street_Historic_District' },
+    ],
+  },
+  {
+    slug: 'laguna-niguel',
+    kind: 'city',
+    place: 'Laguna Niguel, CA',
+    published: true,
+    name: 'Laguna Niguel',
+    updated: '2026-10-27',
+    image: 'https://images.unsplash.com/photo-1694934035962-65b00f676bb4',
+    imageAlt: 'Ocean view from a Laguna Niguel hillside trail',
+    tagline: 'One of California’s first master-planned communities, with parks, trails, and canyon and ocean views.',
+    summary:
+      'Laguna Niguel is a master-planned city in the San Joaquin Hills, inland from Dana Point and Laguna Beach, known for its parks, public trails, and neighborhoods with city, canyon and ocean views.',
+    intro:
+      "Laguna Niguel sits in the San Joaquin Hills, just inland from Dana Point and Laguna Beach. It began in 1959 as one of California's first master-planned communities, with nearly a third of the planned land set aside for parks and open space, and it incorporated in 1989 as Orange County's 29th city. The city covers 14.8 square miles and had 64,355 residents at the 2020 census.",
+    atAGlance: [
+      { value: '64,355', label: 'Residents (2020 census)' },
+      { value: '1959', label: 'Master plan began' },
+      { value: '1989', label: 'Incorporated' },
+      { value: '14.8 sq mi', label: 'Total area' },
+      { value: '$1.37M', label: 'Median sale price' },
+      { value: '179', label: 'Homes sold in September' },
+    ],
+    map: { bbox: [-117.74, 33.487, -117.673, 33.571], marker: [33.5225261, -117.7075526] },
+    gallery: [],
+    whyPeopleMove: [
+      { icon: 'trees', title: 'Parks & trails', text: 'Nearly a third of the original plan was set aside for parks and open space' },
+      { icon: 'park', title: 'Laguna Niguel Regional Park', text: 'A lake, open space, and the city’s annual 4th of July fireworks' },
+      { icon: 'mountain', title: 'Wilderness next door', text: 'Borders the 4,500-acre Aliso and Wood Canyons Wilderness Park' },
+      { icon: 'home', title: 'View neighborhoods', text: 'Hillside neighborhoods with city, canyon and ocean views' },
+      { icon: 'train', title: 'Easy commuting', text: 'Two I-5 interchanges, plus the 73 toll road toward I-405' },
+      { icon: 'beach', title: 'Close to the coast', text: 'Crown Valley Parkway runs from I-5 down to Pacific Coast Highway' },
+    ],
+    homeTypes: [
+      { icon: 'home', title: 'View neighborhoods', text: 'Bear Brand Ranch, Ocean Ranch, Palmilla, Beacon Hill, Monarch Point and the Highlands, among others' },
+      { icon: 'layers', title: 'Established neighborhoods', text: 'Rancho Niguel, Marina Hills, Niguel West, Kite Hill and more' },
+      { icon: 'gate', title: 'Master-planned layout', text: 'Neighborhoods built around parks and open space since the 1960s' },
+    ],
+    market: {
+      cards: [
+        { value: '$1,370,847', label: 'Median sale price', detail: '3 months ending Sept 2026, -5.5% YoY', source: 'Redfin' },
+        { value: '$733', label: 'Median price per sq ft', detail: '-3.9% vs. last year', source: 'Redfin' },
+        { value: '45', label: 'Median days on market', detail: 'Down from 62 a year earlier', source: 'Redfin' },
+      ],
+      figures: [
+        'Median sale price: $1,370,847 over the three months ending September 2026, down 5.5% from a year earlier (Redfin)',
+        'Homes sold in September 2026: 179, up from 177 (Redfin)',
+        'Homes received 2 offers on average over the three months (Redfin)',
+      ],
+      note: 'Redfin describes the Laguna Niguel market as somewhat competitive. Prices were down slightly from a year ago, while homes sold faster.',
+    },
+    costsToKnow: ['Most planned neighborhoods have HOA dues, and some have special taxes; check both for any specific home'],
+    schools:
+      'Laguna Niguel is served by Capistrano Unified School District. Always confirm the assigned schools for a specific address with the district.',
+    gettingAround: [
+      'I-5 has two interchanges in the city',
+      'The 73 San Joaquin Hills toll road links Laguna Niguel to I-405',
+      'Crown Valley Parkway connects I-5 to Pacific Coast Highway',
+    ],
+    localTip: null,
+    faqs: [
+      { q: 'What is Laguna Niguel known for?', a: 'Its master-planned layout from 1959, its many parks and public trails, Laguna Niguel Regional Park, and hillside neighborhoods with canyon and ocean views.' },
+      { q: 'How much do homes cost in Laguna Niguel?', a: 'Redfin reported a median sale price of $1,370,847 for the three months ending September 2026, down 5.5% from a year earlier.' },
+      { q: 'Is Laguna Niguel on the beach?', a: 'No. It sits in the hills just inland, bordering Dana Point and Laguna Beach; Crown Valley Parkway runs down to Pacific Coast Highway.' },
+    ],
+    sources: [
+      { label: 'Redfin: Laguna Niguel housing market', href: 'https://www.redfin.com/city/9965/CA/Laguna-Niguel/housing-market' },
+      { label: 'Wikipedia: Laguna Niguel, California', href: 'https://en.wikipedia.org/wiki/Laguna_Niguel,_California' },
+      { label: 'Wikipedia: Aliso and Wood Canyons Wilderness Park', href: 'https://en.wikipedia.org/wiki/Aliso_and_Wood_Canyons_Wilderness_Park' },
+    ],
+  },
+  {
+    slug: 'laguna-beach',
+    kind: 'city',
+    place: 'Laguna Beach, CA',
+    published: true,
+    name: 'Laguna Beach',
+    updated: '2026-10-27',
+    image: 'https://images.unsplash.com/photo-1558996923-e575015e76fb',
+    imageAlt: 'Laguna Beach coastline and hillside homes',
+    tagline: 'An art-colony beach town with 27 beaches and coves, protected hills, and its own school district.',
+    summary:
+      'Laguna Beach is a coastal arts town with 7 miles of coastline, 27 beaches and coves, state marine reserves, a dedicated greenbelt, and annual events like the Pageant of the Masters.',
+    intro:
+      "Laguna Beach was founded in 1887 and incorporated as a city in 1927, and it had 23,032 residents at the 2020 census. Plein-air painters arrived in the early 1900s and formed the Laguna Beach Art Association, and the town is still known for its art festivals. Its 7 miles of coastline include 27 beaches and coves, protected by state marine reserves, and it is the only Orange County city with a dedicated greenbelt in the hills behind it.",
+    atAGlance: [
+      { value: '23,032', label: 'Residents (2020 census)' },
+      { value: '1927', label: 'Incorporated' },
+      { value: '7 mi', label: 'Of coastline' },
+      { value: '27', label: 'Beaches and coves' },
+      { value: '7,000', label: 'Acres of wilderness park' },
+      { value: '$3.29M', label: 'Median sale price' },
+    ],
+    map: { bbox: [-117.865, 33.443, -117.731, 33.61], marker: [33.5426975, -117.785366] },
+    gallery: [
+      { src: 'https://images.unsplash.com/photo-1495171081156-cc1209ddf6a0', alt: 'Laguna Beach coves from above at sunset', caption: 'The coves' },
+      { src: 'https://images.unsplash.com/photo-1761835305808-5a00b0c7e515', alt: 'Sunset over a cliffside in Laguna Beach', caption: 'Sunset on the cliffs' },
+      { src: 'https://images.unsplash.com/photo-1615470479605-cc37a627dc0e', alt: 'Laguna Beach shoreline and hillside at dusk', caption: 'Laguna Beach at dusk' },
+    ],
+    whyPeopleMove: [
+      { icon: 'beach', title: '27 beaches & coves', text: 'Seven miles of coastline, protected by state marine reserves' },
+      { icon: 'landmark', title: 'Art colony roots', text: 'The Festival of Arts, Pageant of the Masters and Sawdust Art Festival each year' },
+      { icon: 'mountain', title: 'Protected hills', text: 'A dedicated greenbelt, including the 7,000-acre Laguna Coast Wilderness Park' },
+      { icon: 'park', title: 'Crystal Cove next door', text: 'Crystal Cove State Park borders the city to the northwest' },
+      { icon: 'flag', title: 'Its own school district', text: 'Laguna Beach Unified: one high school, one middle school, two elementary schools' },
+      { icon: 'home', title: 'Small-town feel', text: 'Surrounding hills and limited highway access have kept the town compact' },
+    ],
+    homeTypes: [
+      { icon: 'mountain', title: 'Hillside homes', text: 'Neighborhoods like Top of the World, where Temple Hill reaches 1,007 feet' },
+      { icon: 'beach', title: 'Coastal homes', text: 'Homes near the beaches and coves along the 7-mile coastline' },
+      { icon: 'gate', title: 'Nearby coastal enclaves', text: 'Emerald Bay, an unincorporated community, borders the city’s north coast' },
+    ],
+    market: {
+      cards: [
+        { value: '$3,285,935', label: 'Median sale price', detail: '3 months ending Sept 2026, +17.4% YoY', source: 'Redfin' },
+        { value: '$1.62K', label: 'Median price per sq ft', detail: '-7.8% vs. last year', source: 'Redfin' },
+        { value: '71', label: 'Median days on market', detail: 'Down from 103 a year earlier', source: 'Redfin' },
+      ],
+      figures: [
+        'Median sale price: $3,285,935 over the three months ending September 2026, up 17.4% from a year earlier (Redfin)',
+        'Homes sold in September 2026: 89, up from 84 (Redfin)',
+        'Median days on market: 71, compared with 103 a year earlier (Redfin)',
+      ],
+      note: 'The median rose while price per square foot fell, which can happen when more large homes sell in a given period.',
+    },
+    costsToKnow: ['Some communities have HOA dues; check the dues and the property tax bill for any specific home'],
+    schools:
+      'Laguna Beach Unified School District serves the city, with Laguna Beach High School, Thurston Middle School, and El Morro and Top of the World elementary schools. Always confirm the assigned schools for a specific address with the district.',
+    gettingAround: [
+      'Pacific Coast Highway runs along the coast through town',
+      'Borders Dana Point to the southeast and Laguna Niguel and Aliso Viejo to the east',
+    ],
+    localTip: null,
+    faqs: [
+      { q: 'What is Laguna Beach known for?', a: 'Its 27 beaches and coves, its art colony history and festivals like the Pageant of the Masters, and the protected hills of its greenbelt.' },
+      { q: 'How much do homes cost in Laguna Beach?', a: 'Redfin reported a median sale price of $3,285,935 for the three months ending September 2026, up 17.4% from a year earlier.' },
+      { q: 'What school district serves Laguna Beach?', a: 'Laguna Beach Unified School District, with one high school, one middle school and two elementary schools.' },
+    ],
+    sources: [
+      { label: 'Redfin: Laguna Beach housing market', href: 'https://www.redfin.com/city/9948/CA/Laguna-Beach/housing-market' },
+      { label: 'Wikipedia: Laguna Beach, California', href: 'https://en.wikipedia.org/wiki/Laguna_Beach,_California' },
+    ],
+  },
 ];
 
 const showDrafts = process.env.VERCEL_ENV === 'preview';
@@ -946,6 +1312,13 @@ const showDrafts = process.env.VERCEL_ENV === 'preview';
 export function getNeighborhoods() {
   return neighborhoods.filter((n) => n.published || showDrafts);
 }
+
+// San Clemente neighborhoods vs. nearby Orange County cities
+export const isCity = (n) => n.kind === 'city';
+export const guideHref = (n) => `/${n.kind === 'city' ? 'orange-county-cities' : 'san-clemente-neighborhoods'}/${n.slug}`;
+export const getSanClementeNeighborhoods = () => getNeighborhoods().filter((n) => n.kind !== 'city');
+export const getCities = () => getNeighborhoods().filter((n) => n.kind === 'city');
+export const placeName = (n) => n.place || (n.name.includes('San Clemente') ? n.name : `${n.name}, San Clemente`);
 
 export function getNeighborhood(slug) {
   return getNeighborhoods().find((n) => n.slug === slug);

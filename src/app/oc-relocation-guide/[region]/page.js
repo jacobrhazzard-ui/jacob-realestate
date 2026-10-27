@@ -29,7 +29,7 @@ export default async function RegionGuide({ params }) {
   const others = regions.filter((o) => o.slug !== r.slug);
 
   return (
-    <main className="text-gray-900 bg-[#f1f0eb] font-sans">
+    <main className="text-gray-900 bg-[#faf8f4] font-sans">
       <section className="relative min-h-[70vh] flex flex-col">
         <PhotoRotator photos={r.photos && r.photos.length ? r.photos : [{ src: r.image, alt: `${r.name}, Orange County` }]} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/30 z-10" />

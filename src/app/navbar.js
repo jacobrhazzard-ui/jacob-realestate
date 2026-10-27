@@ -30,7 +30,8 @@ const Navigation = () => {
                 { label: 'Mortgage Calculator', href: '/buy#mortgage-calculator' }, 
                 { label: 'Recent Sales', href: '/buy#buy-listings' },
                 { label: 'OC Relocation Guide', href: '/oc-relocation-guide' },
-                { label: 'San Clemente Neighborhoods', href: '/san-clemente-neighborhoods' }
+                { label: 'San Clemente Neighborhoods', href: '/san-clemente-neighborhoods' },
+                { label: 'Orange County Cities', href: '/orange-county-cities' }
             ]
         },
         { label: 'Search Homes', href: 'https://jacobhazzardrealestate.idxbroker.com/idx/map/mapsearch' },
