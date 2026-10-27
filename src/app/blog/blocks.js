@@ -244,6 +244,23 @@ function Event({ b }) {
   );
 }
 
+// Numbered steps, e.g. how a sale works from first call to closing.
+function Steps({ b }) {
+  return (
+    <ol className="my-10 space-y-4">
+      {b.items.map((t, i) => (
+        <li key={t.title} className="bg-white shadow-sm p-6 flex gap-5">
+          <span className="f1 text-4xl font-light text-gray-300 leading-none w-10 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3 className="text-xl f1 text-gray-900 mb-1">{t.title}</h3>
+            <p className="f2 text-base text-gray-700 leading-relaxed">{t.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 function Callout({ b }) {
   return (
     <div className="my-10 border-l-4 border-gray-900 bg-white p-6 shadow-sm">
@@ -272,6 +289,7 @@ export function Block({ b }) {
     case 'spotlight': return <Spotlight b={b} />;
     case 'event': return <Event b={b} />;
     case 'callout': return <Callout b={b} />;
+    case 'steps': return <Steps b={b} />;
     case 'source': return <Source text={b.text} href={b.href} />;
     default:
       return <p className="mb-6">{b.text}</p>;

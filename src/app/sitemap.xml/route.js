@@ -1,4 +1,5 @@
 import { getPublishedPosts } from "../blog/posts";
+import { getGuides } from "../guides/guides";
 import { getNeighborhoods, guideHref } from "../san-clemente-neighborhoods/neighborhoods";
 
 export async function GET() {
@@ -11,6 +12,8 @@ export async function GET() {
     (path) => ({ url: `https://www.jacobhazzardrealestate.com${path}`, lastModified })
   ).concat(
     getPublishedPosts().map((p) => ({ url: `https://www.jacobhazzardrealestate.com/blog/${p.slug}`, lastModified: p.date })),
+    getGuides().length ? [{ url: "https://www.jacobhazzardrealestate.com/guides", lastModified }] : [],
+    getGuides().map((g) => ({ url: `https://www.jacobhazzardrealestate.com/guides/${g.slug}`, lastModified: g.updated })),
     getNeighborhoods().map((n) => {
       const latest = getPublishedPosts().find((p) => (p.neighborhoods || []).includes(n.slug));
       const lm = latest && latest.date > n.updated ? latest.date : n.updated;
