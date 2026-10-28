@@ -6,7 +6,8 @@ const nextConfig = {
   async redirects() {
     return [
       { source: '/home-value', destination: '/sell#property-valuation', permanent: false },
-      { source: '/reviews', destination: '/review', permanent: false },
+      { source: '/review', destination: 'https://g.page/r/CaPyILGdFWCxEBM/review', permanent: false },
+      { source: '/reviews', destination: 'https://g.page/r/CaPyILGdFWCxEBM/review', permanent: false },
       { source: '/whats-my-home-worth', destination: '/sell#property-valuation', permanent: false },
     ];
   },
