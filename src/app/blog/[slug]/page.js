@@ -52,7 +52,7 @@ export default async function BlogPost({ params }) {
             dateModified: p.updated || p.date,
             url,
             mainEntityOfPage: url,
-            image: `${SITE}${p.image || '/ameno2.jpeg'}`,
+            image: `${SITE}${p.image || '/photos/san-clemente/pier-bowl-aerial-dusk.jpg'}`,
             author,
             publisher: agent,
             about: [{ '@type': 'City', name: 'San Clemente, CA' }, ...featured.map(placeFor)],
@@ -67,7 +67,7 @@ export default async function BlogPost({ params }) {
       />
       <section
         className="relative min-h-[60vh] bg-cover bg-center flex flex-col"
-        style={{ backgroundImage: `url('${p.image || '/ameno2.jpeg'}')` }}
+        style={{ backgroundImage: `url('${p.image || '/photos/san-clemente/pier-bowl-aerial-dusk.jpg'}')` }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/30 z-10" />
         <Navigation />

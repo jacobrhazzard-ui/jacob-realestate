@@ -40,7 +40,7 @@ export default function ContactPage() {
                 <section
                     className="relative min-h-screen h-[135vh] md:h-[100vh] flex flex-col justify-start px-0"
                     style={{
-                        backgroundImage: "url('/ameno-ariel1.jpeg')",
+                        backgroundImage: "url('/luxre-office-222-avenida-del-mar.jpg')",
                         backgroundPosition: "center top"
                     }}
                     key={`contact-hero-${pathname}`}

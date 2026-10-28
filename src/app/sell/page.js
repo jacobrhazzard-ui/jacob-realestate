@@ -100,7 +100,7 @@ export default function SellHomePage() {
                 {/* Background Image */}
                 <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url('/ameno2.jpeg')" }}
+                    style={{ backgroundImage: "url('/cordoba8.jpeg')" }}
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-blue-900/70"></div>
 
@@ -413,7 +413,7 @@ export default function SellHomePage() {
             <section className="relative py-40 overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url('/ameno2.jpeg')" }}
+                    style={{ backgroundImage: "url('/cordoba2.jpeg')" }}
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/70 to-blue-900/80"></div>
                 </div>

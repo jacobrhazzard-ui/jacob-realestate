@@ -418,8 +418,8 @@ export const neighborhoods = [
     published: true,
     name: 'Sea Summit',
     updated: '2026-10-23',
-    image: '/ameno3.jpeg',
-    imageAlt: 'Coastal home in San Clemente',
+    image: '/photos/san-clemente/san-clemente-park-aerial.jpg',
+    imageAlt: 'Aerial view of San Clemente neighborhoods and the coast',
     tagline: 'Newer homes on the coastal bluffs, with a private clubhouse, trails down to the beach, and the Outlets next door.',
     summary:
       'Sea Summit (formerly Marblehead Coastal) is a Taylor Morrison community on San Clemente’s coastal bluffs that opened in 2015, with 309 homes, a clubhouse, about four miles of trails, a 116-acre preserve, and the Outlets at San Clemente next door.',
@@ -495,8 +495,8 @@ export const neighborhoods = [
     published: true,
     name: 'Shorecliffs',
     updated: '2026-10-23',
-    image: '/ameno4.jpeg',
-    imageAlt: 'Coastal home in San Clemente',
+    image: '/photos/san-clemente/pier-lifeguard-tower-sunset.jpg',
+    imageAlt: 'San Clemente lifeguard tower at sunset',
     tagline: 'Classic 1960s single-family homes near the beach, next to a golf course, with a private beach club.',
     summary:
       'Shorecliffs is a North San Clemente neighborhood built in the 1960s and early 1970s, with one- and two-story single-family homes, a private residents’ beach club, and Shorecliffs Golf Club next door.',
@@ -748,8 +748,8 @@ export const neighborhoods = [
     published: true,
     name: 'Sea Ridge Estates',
     updated: '2026-10-23',
-    image: '/ameno3.jpeg',
-    imageAlt: 'Ocean-view home in San Clemente',
+    image: '/photos/san-clemente/pier-through-palms.jpg',
+    imageAlt: 'San Clemente Pier seen through the palms',
     tagline: 'A small gated enclave of 1990s villa-style homes on one of the highest points in San Clemente.',
     summary:
       'Sea Ridge Estates is a gated community of about 43 villa-style custom homes built from 1990 on, on one of the highest points in Southeast San Clemente, with panoramic ocean and canyon views.',

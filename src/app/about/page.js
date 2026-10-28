@@ -36,7 +36,7 @@ export default function About() {
                 {/* Hero Section */}
                 <section
                     className="relative min-h-screen h-[130h] md:h-[100vh] bg-cover bg-center flex flex-col justify-start px-0 "
-                    style={{ backgroundImage: "url('/ameno3.jpeg')" }}
+                    style={{ backgroundImage: "url('/photos/san-clemente/pier-bowl-aerial-golden-hour.jpg')" }}
                     key={`about-hero-${pathname}`}
                 >
                     {/* Dark overlay */}
