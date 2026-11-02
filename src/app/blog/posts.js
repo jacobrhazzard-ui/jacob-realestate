@@ -4,6 +4,7 @@
 //
 // body blocks:
 //   { type: 'h2', text: '...' }
+//   { type: 'lede', text: '...' }   -> opening paragraph with a drop cap (use once, first)
 //   { type: 'p', text: '...' }
 //   { type: 'list', items: ['...', '...'] }
 //   { type: 'source', text: 'Source: ...', href: 'https://...' }
@@ -23,6 +24,100 @@
 
 export const posts = [
   {
+    slug: 'san-clemente-market-update-november-2026',
+    published: true,
+    date: '2026-11-02',
+    category: 'Market Update',
+    title: 'Rates Ease to 7.24% as San Clemente Homes Sell in a Median 15 Days',
+    excerpt:
+      "The 30-year average fell for a second straight week. Here's what that means for a payment in San Clemente, how the city compares with the country, and a closer look at Forster Ranch.",
+    summary:
+      'Rates dipped to their lowest level this month, and San Clemente homes that closed in October sold in a median 15 days at 99.3% of list price, according to CRMLS.',
+    neighborhoods: ['forster-ranch'],
+    image: 'https://images.unsplash.com/photo-1693160206330-b13007e04dd5',
+    imageAlt: 'Palm trees along the beach with the San Clemente Pier in the distance',
+    body: [
+      { type: 'lede', text: 'For the second week in a row, borrowing got a little cheaper. The average 30-year fixed mortgage rate slipped to 7.24% last Thursday, its lowest level this month, according to Freddie Mac.' },
+      { type: 'p', text: "The move is small, but at San Clemente prices it shows up in the monthly payment. And the local market hasn't been waiting on rates. In October, homes here closed in a median of 15 days, down from 20 a year earlier, according to CRMLS, the regional MLS where local agents list and report sales." },
+      { type: 'h2', text: 'Mortgage Rates' },
+      { type: 'p', text: 'The 30-year average was 7.32% the week before and 6.17% a year ago, so rates are still about a point higher than last fall. The 15-year fixed fell to 6.60%.' },
+      {
+        type: 'rates',
+        items: [
+          { label: '30-year fixed', value: 7.24, prev: 7.32, yearAgo: 6.17 },
+          { label: '15-year fixed', value: 6.60, prev: 6.68, yearAgo: 5.41 },
+        ],
+        source: 'Source: Freddie Mac Primary Mortgage Market Survey, October 29, 2026',
+        href: 'https://www.globenewswire.com/news-release/2026/10/29/3391637/0/en/mortgage-rates-decline-further-to-7-24.html',
+      },
+      { type: 'calculator', price: 1749000, rate: 7.24, rate15: 6.60, source: 'Freddie Mac weekly average, October 29, 2026' },
+      { type: 'h2', text: 'San Clemente Snapshot' },
+      {
+        type: 'snapshot',
+        title: 'San Clemente, all home types, October 2026',
+        items: [
+          { value: '$1.75M', label: 'Median sale price', change: '+6.0% vs. October 2025 ($1.65M)', dir: 'up' },
+          { value: '$773', label: 'Median price per sq ft', change: '+3.4% vs. last year ($747)', dir: 'up' },
+          { value: '15', label: 'Median days on market', change: 'Down from 20 a year ago', dir: 'down' },
+          { value: '45', label: 'Homes sold', change: 'Down from 49 a year ago', dir: 'down' },
+          { value: '99.3%', label: 'Median sale-to-list', change: 'Up from 99.0% a year ago', dir: 'up' },
+          { value: '$600K–$4.3M', label: 'Range of October sales', change: 'Lowest to highest closed price', dir: 'flat' },
+        ],
+        source: 'Source: CRMLS (California Regional MLS), closed residential sales in San Clemente, October 1–31, 2026 vs. October 2025. Pulled November 2, 2026; a few late-reported closings can still be added.',
+      },
+      { type: 'h2', text: 'San Clemente vs. the U.S.' },
+      { type: 'p', text: "The October national numbers come out later this month, so here is September side by side. One early signal: NAR's pending home sales, which track contracts signed, fell 7.3% in September from August, and 9.2% in the West. With about 50 sales a month in San Clemente, the local median can swing with the mix of homes that close, so it's worth watching the trend over a few months." },
+      {
+        type: 'compare',
+        rows: [
+          { label: 'Median price', local: '$2,200,000', localNote: '+16.6% year over year', other: '$417,500', otherNote: '+1.3% year over year' },
+          { label: 'Median days on market', local: '13 days', localNote: 'Down from 37', other: '33 days', otherNote: 'Same as a year ago' },
+          { label: 'Sales', local: '55 homes sold', localNote: 'Down from 58', other: '3.99M annual pace', otherNote: '+1.5% from August, -2.2% year over year' },
+        ],
+        source: 'Sources: CRMLS closed residential sales, San Clemente, September 2026 vs. September 2025; National Association of REALTORS® existing-home sales, September 2026',
+      },
+      {
+        type: 'snapshot',
+        title: 'National market, September 2026',
+        items: [
+          { value: '1.60M', label: 'Homes for sale', change: '+4.6% vs. last year', dir: 'up' },
+          { value: '4.8', label: "Months' supply", change: 'Unchanged from August', dir: 'flat' },
+          { value: '31%', label: 'First-time buyers', change: 'Share of sales', dir: 'flat' },
+          { value: '$613,600', label: 'West median price', change: '-0.3% vs. last year', dir: 'down' },
+          { value: '-7.3%', label: 'Pending home sales', change: 'September vs. August', dir: 'down' },
+        ],
+        source: 'Source: National Association of REALTORS®, September 2026 existing-home sales and pending home sales (released October 20, 2026)',
+        href: 'https://www.nar.realtor/newsroom/existing-home-sales-increased-1-5-in-september-according-to-nar-report',
+      },
+      { type: 'h2', text: 'What It Means' },
+      {
+        type: 'takeaways',
+        items: [
+          { who: 'sellers', title: 'If you are selling', text: 'Homes that closed here in October sold in a median of 15 days at 99.3% of list price, according to CRMLS. A well-priced home still tends to move without much waiting.' },
+          { who: 'buyers', title: 'If you are buying', text: "Two weeks of easing rates trims the monthly payment a little. Try the calculator above with your own numbers, and it's a good time to check in with your lender if you've been waiting." },
+        ],
+      },
+      { type: 'h2', text: 'Neighborhood Spotlight' },
+      {
+        type: 'spotlight',
+        neighborhood: 'forster-ranch',
+        text: 'Forster Ranch spreads across the hills about two miles from the beach, with about twenty single-family tracts and five condo communities built from the early 1970s on. Many homes have views, and the 3.2-mile Forster Ridgeline Trail looks out over the ocean and city lights.',
+        jacobsTake: "I grew up in Forster Ranch starting in 2001, and some of my best memories are from these streets and parks. It's a neighborhood I know inside and out.",
+      },
+      { type: 'h2', text: 'Around Town' },
+      {
+        type: 'event',
+        date: '2026-11-07',
+        label: 'Coming up Saturday',
+        title: 'San Clemente Village Art Faire',
+        time: '10 AM to 4 PM',
+        where: 'San Clemente Library and Community Center lawns, 242 Avenida Del Mar',
+        text: 'A long-running juried art faire where Southern California artisans sell their own handmade work, from photography and fine art to jewelry, ceramics, woodwork, glass and home decor. It happens on the first Saturday of most months, right in the heart of downtown.',
+        href: 'https://scdba.org/Village-Art-Faire',
+      },
+    ],
+  },
+  {
     slug: 'san-clemente-market-update-october-2026',
     published: true,
     date: '2026-10-27',
@@ -33,8 +128,8 @@ export const posts = [
     summary:
       'Rates dipped this week, San Clemente homes are selling in half the time they did a year ago, and price per square foot is climbing faster than the median price.',
     neighborhoods: ['pier-bowl'],
-    image: '/photos/san-clemente/pier-bowl-aerial-dusk.jpg',
-    imageAlt: 'Aerial view of the San Clemente Pier and Pier Bowl at dusk',
+    image: 'https://images.unsplash.com/photo-1732150213654-13a4346525e8',
+    imageAlt: 'Spanish-style hotels and shops on a palm-lined street in San Clemente',
     body: [
       { type: 'h2', text: 'Mortgage Rates' },
       { type: 'p', text: "After two weeks at 7.40%, the average 30-year fixed rate eased to 7.32% this week, according to Freddie Mac. It's still more than a point higher than a year ago, so every bit of movement matters on San Clemente price points." },
@@ -141,8 +236,8 @@ export const posts = [
       'More sales, faster sales, and fewer price cuts than last September, a closer look at Talega, and a free community celebration at Max Berg Plaza Park on November 2.',
     summary: 'More homes sold, they sold faster, and fewer sellers had to cut their price than a year ago.',
     neighborhoods: ['talega'],
-    image: '/photos/san-clemente/pier-bowl-aerial-dusk.jpg',
-    imageAlt: 'Aerial view of the San Clemente Pier at dusk',
+    image: 'https://images.unsplash.com/photo-1612523910555-fd45d6f9e00f',
+    imageAlt: 'Evening stroll on the San Clemente Pier',
     body: [
       { type: 'h2', text: 'The September Numbers' },
       {

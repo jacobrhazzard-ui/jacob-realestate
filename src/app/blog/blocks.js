@@ -1,58 +1,73 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, ArrowDownRight, Minus, CalendarDays, MapPin, Clock, Ticket, Home, KeyRound } from 'lucide-react';
+import { ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
 import { getNeighborhood, guideHref } from '../san-clemente-neighborhoods/neighborhoods';
 import MortgageCalc from './mortgageCalc';
+import { display, sans, kicker, kickerSm } from './fonts';
 
 export const anchor = (t) => t.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
+// Column widths: reading text stays narrow like a newspaper column,
+// charts and cards break out a little wider.
+const NARROW = 'max-w-[680px] mx-auto';
+const WIDE = 'max-w-[880px] mx-auto';
+
 function Trend({ dir, text, dark }) {
   const Icon = dir === 'up' ? ArrowUpRight : dir === 'down' ? ArrowDownRight : Minus;
-  const color = dark ? 'text-white/70' : 'text-gray-600';
   return (
-    <span className={`inline-flex items-center gap-1 text-sm ${color}`}>
-      <Icon className="h-4 w-4" aria-hidden="true" />
+    <span className={`${sans.className} inline-flex items-center gap-1 text-[13px] ${dark ? 'text-white/70' : 'text-[#5b6168]'}`}>
+      <Icon className="h-3.5 w-3.5" aria-hidden="true" />
       {text}
     </span>
   );
 }
 
-function Source({ text, href }) {
+function Source({ text, href, dark }) {
   if (!text) return null;
+  const color = dark ? 'text-white/60' : 'text-[#6b7178]';
   return (
-    <p className="f2 text-xs text-gray-500 mt-4">
-      {href ? <a href={href} target="_blank" rel="noopener noreferrer" className="underline">{text}</a> : text}
+    <p className={`${sans.className} text-[12px] leading-snug mt-3 ${color}`}>
+      {href ? <a href={href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 decoration-[#b9b2a4] hover:decoration-current">{text}</a> : text}
     </p>
   );
 }
 
-// Dark stat strip, same look as the neighborhood guides.
-function Snapshot({ b }) {
+// A figure with a ruled label on top, like a newspaper chart.
+function Figure({ label, children, source, href, className = '' }) {
   return (
-    <section className="my-10 -mx-6 md:mx-0">
-      <div className="bg-gray-900 text-white px-6 py-10 md:px-10">
-        {b.title && <p className="text-xs uppercase tracking-widest text-white/60 mb-6">{b.title}</p>}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8">
-          {b.items.map((s) => (
-            <div key={s.label}>
-              <p className="text-3xl md:text-4xl f1 font-light text-blue-300">{s.value}</p>
-              <p className="f2 text-xs uppercase tracking-widest text-white/70 mt-2 mb-2">{s.label}</p>
-              {s.change && <Trend dir={s.dir} text={s.change} dark />}
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="px-6 md:px-0"><Source text={b.source} href={b.href} /></div>
-    </section>
+    <figure className={`${WIDE} my-12 ${className}`}>
+      {label && (
+        <figcaption className={`${kicker} text-[#14181c] border-t-2 border-[#14181c] pt-3 mb-5`}>{label}</figcaption>
+      )}
+      {children}
+      <Source text={source} href={href} />
+    </figure>
   );
 }
 
-// Mortgage rate cards with a this week / last week / year ago bar for each.
+// Stat grid with hairline dividers.
+function Snapshot({ b }) {
+  return (
+    <Figure label={b.title} source={b.source} href={b.href}>
+      <div className="grid grid-cols-2 md:grid-cols-3 border-l border-t border-[#d8d2c6] bg-white">
+        {b.items.map((s) => (
+          <div key={s.label} className="border-r border-b border-[#d8d2c6] p-5 md:p-6">
+            <p className={`${display.className} text-[30px] md:text-[38px] leading-none text-[#14181c]`}>{s.value}</p>
+            <p className={`${kickerSm} text-[#5b6168] mt-3 mb-2 md:text-[11px]`}>{s.label}</p>
+            {s.change && <Trend dir={s.dir} text={s.change} />}
+          </div>
+        ))}
+      </div>
+    </Figure>
+  );
+}
+
+// Mortgage rates: big serif number with this week / last week / a year ago bars.
 function Rates({ b }) {
   const max = Math.max(...b.items.flatMap((r) => [r.value, r.prev, r.yearAgo].filter(Boolean)));
   return (
-    <div className="my-10">
-      <div className="grid md:grid-cols-2 gap-6">
+    <Figure label="Average mortgage rates this week" source={b.source} href={b.href}>
+      <div className="grid md:grid-cols-2 gap-px bg-[#d8d2c6] border border-[#d8d2c6]">
         {b.items.map((r) => {
           const diff = r.prev != null ? +(r.value - r.prev).toFixed(2) : null;
           const rows = [
@@ -61,21 +76,21 @@ function Rates({ b }) {
             r.yearAgo != null && { k: 'A year ago', v: r.yearAgo },
           ].filter(Boolean);
           return (
-            <div key={r.label} className="bg-white shadow-sm p-6">
-              <p className="text-xs uppercase tracking-widest text-gray-500">{r.label}</p>
-              <p className="text-5xl f1 font-light text-gray-900 my-2">{r.value.toFixed(2)}%</p>
+            <div key={r.label} className="bg-white p-6 md:p-7">
+              <p className={`${kicker} text-[#5b6168]`}>{r.label}</p>
+              <p className={`${display.className} text-[56px] leading-none text-[#14181c] mt-3 mb-2`}>{r.value.toFixed(2)}%</p>
               {diff != null && (
                 <Trend dir={diff > 0 ? 'up' : diff < 0 ? 'down' : 'flat'} text={`${diff > 0 ? '+' : ''}${diff.toFixed(2)} pts from last week`} />
               )}
               <div className="mt-6 space-y-3">
                 {rows.map((row) => (
-                  <div key={row.k} className="f2 text-sm">
-                    <div className="flex justify-between text-gray-600 mb-1">
+                  <div key={row.k} className={`${sans.className} text-[13px]`}>
+                    <div className="flex justify-between text-[#5b6168] mb-1">
                       <span>{row.k}</span>
-                      <span className={row.strong ? 'text-gray-900 font-medium' : ''}>{row.v.toFixed(2)}%</span>
+                      <span className={row.strong ? 'text-[#14181c] font-semibold' : ''}>{row.v.toFixed(2)}%</span>
                     </div>
-                    <div className="h-2 bg-gray-100">
-                      <div className={row.strong ? 'h-2 bg-gray-900' : 'h-2 bg-gray-400'} style={{ width: `${(row.v / max) * 100}%` }} />
+                    <div className="h-1.5 bg-[#efebe3]">
+                      <div className={row.strong ? 'h-1.5 bg-[#1f4e66]' : 'h-1.5 bg-[#b9b2a4]'} style={{ width: `${(row.v / max) * 100}%` }} />
                     </div>
                   </div>
                 ))}
@@ -84,35 +99,35 @@ function Rates({ b }) {
           );
         })}
       </div>
-      <Source text={b.source} href={b.href} />
-    </div>
+    </Figure>
   );
 }
 
-// San Clemente vs. the U.S. side by side.
+// San Clemente vs. the U.S., as a ruled table.
 function Compare({ b }) {
   return (
-    <div className="my-10 bg-white shadow-sm overflow-hidden">
-      <div className="grid grid-cols-3 bg-gray-900 text-white f2 text-xs uppercase tracking-widest">
-        <div className="p-4" />
-        <div className="p-4">{b.localLabel || 'San Clemente'}</div>
-        <div className="p-4">{b.otherLabel || 'United States'}</div>
-      </div>
-      {b.rows.map((r, i) => (
-        <div key={r.label} className={`grid grid-cols-3 f2 text-base ${i % 2 ? 'bg-gray-50' : ''}`}>
-          <div className="p-4 text-gray-600 text-sm md:text-base">{r.label}</div>
-          <div className="p-4 text-gray-900">
-            <p className="font-medium">{r.local}</p>
-            {r.localNote && <p className="text-sm text-gray-500">{r.localNote}</p>}
-          </div>
-          <div className="p-4 text-gray-900">
-            <p className="font-medium">{r.other}</p>
-            {r.otherNote && <p className="text-sm text-gray-500">{r.otherNote}</p>}
-          </div>
+    <Figure label={`${b.localLabel || 'San Clemente'} vs. ${b.otherLabel || 'the United States'}`} source={b.source}>
+      <div className="bg-white border border-[#d8d2c6]">
+        <div className={`grid grid-cols-[1fr_1.2fr_1.2fr] ${kickerSm} text-[#5b6168] border-b border-[#14181c]`}>
+          <div className="p-3 md:p-4" />
+          <div className="p-3 md:p-4">{b.localLabel || 'San Clemente'}</div>
+          <div className="p-3 md:p-4">{b.otherLabel || 'United States'}</div>
         </div>
-      ))}
-      <div className="px-4 pb-4"><Source text={b.source} /></div>
-    </div>
+        {b.rows.map((r, i) => (
+          <div key={r.label} className={`grid grid-cols-[1fr_1.2fr_1.2fr] ${i ? 'border-t border-[#e7e2d8]' : ''}`}>
+            <div className={`${sans.className} p-3 md:p-4 text-[13px] text-[#5b6168]`}>{r.label}</div>
+            <div className="p-3 md:p-4">
+              <p className={`${display.className} text-[18px] md:text-[22px] leading-tight text-[#14181c]`}>{r.local}</p>
+              {r.localNote && <p className={`${sans.className} text-[12px] text-[#6b7178] mt-1`}>{r.localNote}</p>}
+            </div>
+            <div className="p-3 md:p-4">
+              <p className={`${display.className} text-[18px] md:text-[22px] leading-tight text-[#14181c]`}>{r.other}</p>
+              {r.otherNote && <p className={`${sans.className} text-[12px] text-[#6b7178] mt-1`}>{r.otherNote}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </Figure>
   );
 }
 
@@ -120,49 +135,41 @@ function Compare({ b }) {
 function Bars({ b }) {
   const max = Math.max(...b.items.map((i) => i.value));
   return (
-    <div className="my-10 bg-white shadow-sm p-6 md:p-8">
-      {b.title && <p className="text-xs uppercase tracking-widest text-gray-500 mb-6">{b.title}</p>}
-      <div className="space-y-4">
+    <Figure label={b.title} source={b.source} href={b.href}>
+      <div className="bg-white border border-[#d8d2c6] p-6 md:p-7 space-y-4">
         {b.items.map((i) => (
-          <div key={i.label} className="f2">
-            <div className="flex justify-between text-sm text-gray-700 mb-1">
+          <div key={i.label} className={sans.className}>
+            <div className="flex justify-between text-[13px] text-[#3c4248] mb-1">
               <span>{i.label}</span>
-              <span className="text-gray-900 font-medium">{i.value.toLocaleString('en-US')}</span>
+              <span className="text-[#14181c] font-semibold">{i.value.toLocaleString('en-US')}</span>
             </div>
-            <div className="h-3 bg-gray-100">
-              <div className="h-3 bg-gradient-to-r from-gray-700 to-gray-900" style={{ width: `${(i.value / max) * 100}%` }} />
+            <div className="h-2 bg-[#efebe3]">
+              <div className="h-2 bg-[#1f4e66]" style={{ width: `${(i.value / max) * 100}%` }} />
             </div>
           </div>
         ))}
+        {b.note && <p className={`${sans.className} text-[13px] text-[#5b6168] pt-2`}>{b.note}</p>}
       </div>
-      {b.note && <p className="f2 text-sm text-gray-600 mt-6">{b.note}</p>}
-      <Source text={b.source} href={b.href} />
-    </div>
+    </Figure>
   );
 }
 
-// "What it means" for buyers and sellers, side by side.
+// "What it means": two columns split by a rule, like a paper's analysis box.
 function Takeaways({ b }) {
-  const icons = { buyers: KeyRound, sellers: Home };
   return (
-    <div className="my-10 grid md:grid-cols-2 gap-6">
-      {b.items.map((t) => {
-        const Icon = icons[t.who] || Home;
-        return (
-          <div key={t.title} className="bg-white shadow-sm p-6">
-            <div className="w-12 h-12 bg-gray-900 text-white flex items-center justify-center mb-4">
-              <Icon className="h-6 w-6" aria-hidden="true" />
-            </div>
-            <h3 className="text-xl f1 mb-2 text-gray-900">{t.title}</h3>
-            <p className="f2 text-base text-gray-700 leading-relaxed">{t.text}</p>
-          </div>
-        );
-      })}
+    <div className={`${WIDE} my-12 grid md:grid-cols-2 border-y border-[#14181c]`}>
+      {b.items.map((t, i) => (
+        <div key={t.title} className={`py-7 md:px-8 ${i ? 'border-t md:border-t-0 md:border-l border-[#d8d2c6]' : 'md:pl-0'}`}>
+          <p className={`${kicker} text-[#1f4e66] mb-3`}>{t.who === 'buyers' ? 'For buyers' : 'For sellers'}</p>
+          <h3 className={`${display.className} text-[24px] leading-snug text-[#14181c] mb-3`}>{t.title}</h3>
+          <p className="text-[17px] leading-[1.65] text-[#2b3036]">{t.text}</p>
+        </div>
+      ))}
     </div>
   );
 }
 
-// Neighborhood spotlight: pulls photo and quick facts straight from the guide,
+// Neighborhood spotlight: a magazine-style feature that pulls photo and facts from the guide,
 // so the post and the guide always match.
 function Spotlight({ b }) {
   const n = getNeighborhood(b.neighborhood);
@@ -170,73 +177,68 @@ function Spotlight({ b }) {
   const facts = (n.atAGlance || []).slice(0, 3);
   const why = (n.whyPeopleMove || []).slice(0, 3);
   return (
-    <div className="my-10 bg-white shadow-sm overflow-hidden">
-      <div className="relative h-64 md:h-80">
-        <Image src={n.image} alt={n.imageAlt || n.name} fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        <div className="absolute bottom-0 p-6 text-white">
-          <p className="text-xs uppercase tracking-widest text-white/70 mb-1">Neighborhood Spotlight</p>
-          <p className="text-3xl md:text-4xl f1 font-light">{n.name}</p>
-        </div>
+    <article className={`${WIDE} my-12 bg-white border border-[#d8d2c6]`}>
+      <div className="relative h-64 md:h-[380px]">
+        <Image src={n.image} alt={n.imageAlt || n.name} fill sizes="(max-width: 900px) 100vw, 880px" className="object-cover" />
       </div>
-      <div className="p-6 md:p-8">
-        <p className="f2 text-lg text-gray-700 mb-6">{b.text || n.tagline}</p>
+      <div className="p-6 md:p-10">
+        <p className={`${kicker} text-[#1f4e66] mb-2`}>Neighborhood Spotlight</p>
+        <h3 className={`${display.className} text-[34px] md:text-[44px] leading-tight text-[#14181c] mb-4`}>{n.name}</h3>
+        <p className="text-[18px] leading-[1.65] text-[#2b3036] mb-8 max-w-[640px]">{b.text || n.tagline}</p>
         {facts.length > 0 && (
-          <div className="grid grid-cols-3 gap-4 border-y border-gray-200 py-6 mb-6">
-            {facts.map((f) => (
-              <div key={f.label}>
-                <p className="text-2xl f1 text-gray-900">{f.value}</p>
-                <p className="f2 text-xs uppercase tracking-widest text-gray-500 mt-1">{f.label}</p>
+          <div className="grid grid-cols-3 border-y border-[#d8d2c6] py-5 mb-8">
+            {facts.map((f, i) => (
+              <div key={f.label} className={i ? 'pl-4 border-l border-[#e7e2d8]' : ''}>
+                <p className={`${display.className} text-[24px] md:text-[28px] text-[#14181c]`}>{f.value}</p>
+                <p className={`${kickerSm} text-[#5b6168] mt-1`}>{f.label}</p>
               </div>
             ))}
           </div>
         )}
         {why.length > 0 && (
-          <div className="grid md:grid-cols-3 gap-4 mb-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
             {why.map((w) => (
               <div key={w.title}>
-                <p className="f1 text-lg text-gray-900 mb-1">{w.title}</p>
-                <p className="f2 text-sm text-gray-600 leading-relaxed">{w.text}</p>
+                <p className={`${display.className} text-[19px] text-[#14181c] mb-1`}>{w.title}</p>
+                <p className={`${sans.className} text-[13px] leading-relaxed text-[#5b6168]`}>{w.text}</p>
               </div>
             ))}
           </div>
         )}
         {b.jacobsTake && (
-          <div className="bg-[#faf8f4] p-5 mb-6">
-            <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">Jacob&apos;s take</p>
-            <p className="f2 text-base text-gray-800 italic">{b.jacobsTake}</p>
-          </div>
+          <blockquote className="border-l-2 border-[#1f4e66] pl-5 mb-8">
+            <p className={`${display.className} italic text-[21px] leading-snug text-[#14181c]`}>&ldquo;{b.jacobsTake}&rdquo;</p>
+            <footer className={`${kickerSm} text-[#5b6168] mt-3`}>Jacob Hazzard</footer>
+          </blockquote>
         )}
-        <Link href={guideHref(n)} className="inline-block bg-gray-900 text-white px-6 py-3 f2 tracking-wide hover:bg-gray-700 transition">
-          Read the full {n.name} guide &rarr;
+        <Link href={guideHref(n)} className={`${sans.className} inline-block bg-[#14181c] text-white px-6 py-3 text-[13px] uppercase tracking-[0.16em] hover:bg-[#1f4e66] transition`}>
+          Read the {n.name} guide
         </Link>
       </div>
-    </div>
+    </article>
   );
 }
 
-// Local event card with a date badge.
+// Local event, set like a newspaper calendar listing.
 function Event({ b }) {
   const d = new Date(`${b.date}T12:00:00`);
   return (
-    <div className="my-10 bg-white shadow-sm flex flex-col md:flex-row">
-      <div className="bg-gray-900 text-white flex md:flex-col items-center justify-center gap-3 md:gap-0 p-6 md:w-40 shrink-0">
-        <p className="text-sm uppercase tracking-widest text-white/70">{d.toLocaleDateString('en-US', { month: 'short' })}</p>
-        <p className="text-5xl f1 font-light">{d.getDate()}</p>
-        <p className="text-sm uppercase tracking-widest text-white/70">{d.toLocaleDateString('en-US', { weekday: 'short' })}</p>
+    <div className={`${WIDE} my-12 border-y border-[#14181c] py-7 grid grid-cols-[88px_1fr] md:grid-cols-[120px_1fr] gap-5 md:gap-8`}>
+      <div className="text-center border-r border-[#d8d2c6] pr-5 md:pr-8">
+        <p className={`${kicker} text-[#1f4e66]`}>{d.toLocaleDateString('en-US', { month: 'short' })}</p>
+        <p className={`${display.className} text-[52px] md:text-[64px] leading-none text-[#14181c] my-1`}>{d.getDate()}</p>
+        <p className={`${kickerSm} text-[#5b6168]`}>{d.toLocaleDateString('en-US', { weekday: 'long' })}</p>
       </div>
-      <div className="p-6 md:p-8">
-        <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">{b.label || 'Around Town'}</p>
-        <h3 className="text-2xl f1 text-gray-900 mb-4">{b.title}</h3>
-        <div className="flex flex-wrap gap-x-6 gap-y-2 f2 text-sm text-gray-600 mb-4">
-          {b.time && <span className="inline-flex items-center gap-1"><Clock className="h-4 w-4" aria-hidden="true" />{b.time}</span>}
-          {b.where && <span className="inline-flex items-center gap-1"><MapPin className="h-4 w-4" aria-hidden="true" />{b.where}</span>}
-          {b.cost && <span className="inline-flex items-center gap-1"><Ticket className="h-4 w-4" aria-hidden="true" />{b.cost}</span>}
-        </div>
-        <p className="f2 text-base text-gray-700 leading-relaxed">{b.text}</p>
+      <div>
+        <p className={`${kicker} text-[#5b6168] mb-2`}>{b.label || 'Around Town'}</p>
+        <h3 className={`${display.className} text-[26px] md:text-[30px] leading-tight text-[#14181c] mb-3`}>{b.title}</h3>
+        <p className={`${sans.className} text-[13px] text-[#3c4248] mb-4`}>
+          {[b.time, b.where, b.cost].filter(Boolean).join('  ·  ')}
+        </p>
+        <p className="text-[17px] leading-[1.65] text-[#2b3036]">{b.text}</p>
         {b.href && (
-          <a href={b.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 f2 text-sm underline mt-4">
-            <CalendarDays className="h-4 w-4" aria-hidden="true" />Event details
+          <a href={b.href} target="_blank" rel="noopener noreferrer" className={`${sans.className} inline-block text-[13px] uppercase tracking-[0.14em] text-[#1f4e66] border-b border-[#1f4e66] mt-4`}>
+            Event details
           </a>
         )}
       </div>
@@ -247,13 +249,13 @@ function Event({ b }) {
 // Numbered steps, e.g. how a sale works from first call to closing.
 function Steps({ b }) {
   return (
-    <ol className="my-10 space-y-4">
+    <ol className={`${WIDE} my-12 border-t border-[#14181c]`}>
       {b.items.map((t, i) => (
-        <li key={t.title} className="bg-white shadow-sm p-6 flex gap-5">
-          <span className="f1 text-4xl font-light text-gray-300 leading-none w-10 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+        <li key={t.title} className="py-6 border-b border-[#d8d2c6] flex gap-6">
+          <span className={`${display.className} text-[40px] leading-none text-[#b9b2a4] w-12 shrink-0`}>{String(i + 1).padStart(2, '0')}</span>
           <div>
-            <h3 className="text-xl f1 text-gray-900 mb-1">{t.title}</h3>
-            <p className="f2 text-base text-gray-700 leading-relaxed">{t.text}</p>
+            <h3 className={`${display.className} text-[22px] text-[#14181c] mb-1`}>{t.title}</h3>
+            <p className="text-[17px] leading-[1.65] text-[#2b3036]">{t.text}</p>
           </div>
         </li>
       ))}
@@ -261,28 +263,40 @@ function Steps({ b }) {
   );
 }
 
+// Pull quote / "worth noticing" note.
 function Callout({ b }) {
   return (
-    <div className="my-10 border-l-4 border-gray-900 bg-white p-6 shadow-sm">
-      {b.title && <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">{b.title}</p>}
-      <p className="f1 text-2xl text-gray-900 leading-snug">{b.text}</p>
-    </div>
+    <aside className={`${NARROW} my-12 border-y border-[#d8d2c6] py-8 text-center`}>
+      {b.title && <p className={`${kicker} text-[#1f4e66] mb-4`}>{b.title}</p>}
+      <p className={`${display.className} italic text-[24px] md:text-[28px] leading-snug text-[#14181c]`}>{b.text}</p>
+    </aside>
   );
 }
 
-export function Block({ b }) {
+export function Block({ b, first }) {
   switch (b.type) {
     case 'h2':
-      return <h2 id={anchor(b.text)} className="text-3xl f1 font-light mt-16 mb-5 text-gray-900 scroll-mt-24">{b.text}</h2>;
+      return (
+        <h2 id={anchor(b.text)} className={`${NARROW} scroll-mt-28 mt-16 mb-5 pt-4 border-t border-[#14181c] ${display.className} text-[28px] md:text-[32px] leading-tight text-[#14181c]`}>
+          {b.text}
+        </h2>
+      );
+    case 'lede':
+      return (
+        <p className={`${NARROW} mb-6 text-[19px] md:text-[21px] leading-[1.7] text-[#1e2328] dropcap`}>
+          {b.text}
+        </p>
+      );
     case 'list':
       return (
-        <ul className="list-disc pl-6 space-y-2 mb-6">
+        <ul className={`${NARROW} list-disc pl-6 space-y-2 mb-6 text-[19px] leading-[1.7]`}>
           {b.items.map((i) => <li key={i}>{i}</li>)}
         </ul>
       );
     case 'snapshot': return <Snapshot b={b} />;
     case 'rates': return <Rates b={b} />;
-    case 'calculator': return <MortgageCalc price={b.price} rate={b.rate} rate15={b.rate15} source={b.source} />;
+    case 'calculator':
+      return <div className={WIDE}><MortgageCalc price={b.price} rate={b.rate} rate15={b.rate15} source={b.source} /></div>;
     case 'compare': return <Compare b={b} />;
     case 'bars': return <Bars b={b} />;
     case 'takeaways': return <Takeaways b={b} />;
@@ -290,8 +304,8 @@ export function Block({ b }) {
     case 'event': return <Event b={b} />;
     case 'callout': return <Callout b={b} />;
     case 'steps': return <Steps b={b} />;
-    case 'source': return <Source text={b.text} href={b.href} />;
+    case 'source': return <div className={NARROW}><Source text={b.text} href={b.href} /></div>;
     default:
-      return <p className="mb-6">{b.text}</p>;
+      return <p className={`${NARROW} mb-6 text-[19px] leading-[1.7] text-[#1e2328]`}>{b.text}</p>;
   }
 }
