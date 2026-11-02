@@ -34,8 +34,8 @@ export const posts = [
     summary:
       'Rates dipped to their lowest level this month, and San Clemente homes that closed in October sold in a median 15 days at 99.3% of list price, according to CRMLS.',
     neighborhoods: ['forster-ranch'],
-    image: '/photos/san-clemente/pier-sunset-palms.jpg',
-    imageAlt: 'The San Clemente Pier at sunset framed by palm trees',
+    image: 'https://images.unsplash.com/photo-1693160206330-b13007e04dd5',
+    imageAlt: 'Palm trees along the beach with the San Clemente Pier in the distance',
     body: [
       { type: 'lede', text: 'For the second week in a row, borrowing got a little cheaper. The average 30-year fixed mortgage rate slipped to 7.24% last Thursday, its lowest level this month, according to Freddie Mac.' },
       { type: 'p', text: "The move is small, but at San Clemente prices it shows up in the monthly payment. And the local market hasn't been waiting on rates. In October, homes here closed in a median of 15 days, down from 20 a year earlier, according to CRMLS, the regional MLS where local agents list and report sales." },
@@ -128,8 +128,8 @@ export const posts = [
     summary:
       'Rates dipped this week, San Clemente homes are selling in half the time they did a year ago, and price per square foot is climbing faster than the median price.',
     neighborhoods: ['pier-bowl'],
-    image: '/photos/san-clemente/pier-bowl-aerial-dusk.jpg',
-    imageAlt: 'Aerial view of the San Clemente Pier and Pier Bowl at dusk',
+    image: 'https://images.unsplash.com/photo-1732150213654-13a4346525e8',
+    imageAlt: 'Spanish-style hotels and shops on a palm-lined street in San Clemente',
     body: [
       { type: 'h2', text: 'Mortgage Rates' },
       { type: 'p', text: "After two weeks at 7.40%, the average 30-year fixed rate eased to 7.32% this week, according to Freddie Mac. It's still more than a point higher than a year ago, so every bit of movement matters on San Clemente price points." },
@@ -236,8 +236,8 @@ export const posts = [
       'More sales, faster sales, and fewer price cuts than last September, a closer look at Talega, and a free community celebration at Max Berg Plaza Park on November 2.',
     summary: 'More homes sold, they sold faster, and fewer sellers had to cut their price than a year ago.',
     neighborhoods: ['talega'],
-    image: '/photos/san-clemente/pier-bowl-aerial-dusk.jpg',
-    imageAlt: 'Aerial view of the San Clemente Pier at dusk',
+    image: 'https://images.unsplash.com/photo-1612523910555-fd45d6f9e00f',
+    imageAlt: 'Evening stroll on the San Clemente Pier',
     body: [
       { type: 'h2', text: 'The September Numbers' },
       {
