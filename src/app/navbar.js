@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 
-const Navigation = () => {
+const Navigation = ({ compact = false } = {}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -88,7 +88,7 @@ const Navigation = () => {
                         alt="Jacob Hazzard Real Estate logo"
                         width={400}
                         height={250}
-                        className="w-full max-w-[200px] object-contain"
+                        className={compact ? "h-24 w-auto object-contain" : "w-full max-w-[200px] object-contain"}
                     />
                 </Link>
 
@@ -178,13 +178,13 @@ const Navigation = () => {
             </nav>
 
             {/* Mobile Nav */}
-            <div className="absolute top-0 left-0 right-0 z-40 px-6 py-6 flex justify-between items-center md:hidden">
+            <div className={`absolute top-0 left-0 right-0 z-40 px-6 ${compact ? 'py-3' : 'py-6'} flex justify-between items-center md:hidden`}>
                 <Image
                     src="/jg-logo-2.png"
                     alt="Jacob Hazzard Real Estate logo"
                     width={130}
                     height={70}
-                    className="object-contain"
+                    className={compact ? "h-[72px] w-auto object-contain" : "object-contain"}
                 />
 
                 <button

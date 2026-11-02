@@ -190,8 +190,8 @@ export const neighborhoods = [
     published: true,
     name: 'Forster Ranch',
     updated: '2026-10-23',
-    image: '/cordoba3.jpeg',
-    imageAlt: 'Spanish-style home in San Clemente',
+    image: '/photos/san-clemente/san-clemente-park-aerial.jpg',
+    imageAlt: "Aerial view of San Clemente's hillside neighborhoods and the coast",
     tagline: 'Hillside homes with ocean and city-light views, a ridgeline trail, and no Mello-Roos.',
     summary:
       'Forster Ranch is a hillside San Clemente neighborhood of about twenty single-family tracts and five condo communities, built from the early 1970s on, with views, the Forster Ridgeline Trail, and no Mello-Roos bonds.',

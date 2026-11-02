@@ -19,7 +19,7 @@ export default function BlogIndex() {
   return (
     <main className={`${display.variable} text-[#14181c] bg-[#faf8f4]`}>
       <div className="relative h-24 md:h-28 bg-[#0f1a21]">
-        <Navigation />
+        <Navigation compact />
       </div>
 
       {/* Nameplate */}

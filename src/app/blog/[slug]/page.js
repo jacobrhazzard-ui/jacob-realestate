@@ -72,7 +72,7 @@ export default async function BlogPost({ params }) {
         ]}
       />
       <div className="relative h-24 md:h-28 bg-[#0f1a21]">
-        <Navigation />
+        <Navigation compact />
       </div>
 
       {/* Nameplate */}

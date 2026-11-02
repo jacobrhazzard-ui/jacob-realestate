@@ -66,7 +66,6 @@ export const posts = [
         source: 'Source: Redfin San Clemente housing market data, September 2026',
         href: 'https://www.redfin.com/city/16690/CA/San-Clemente/housing-market',
       },
-      { type: 'callout', title: 'Same month, still worth a look', text: "Redfin hasn't posted October numbers yet, so these are the September figures from last week. About one in four homes sold above list, and fewer sellers cut their price than a year ago. We'll update as soon as the new month is in." },
       { type: 'h2', text: 'San Clemente vs. the U.S.' },
       { type: 'p', text: "The October national numbers come out later this month. One early signal: NAR's pending home sales, which track contracts signed, fell 7.3% in September from August, and 9.2% in the West. Here in San Clemente, September closed sales were up 12.8% from a year ago, according to Redfin." },
       {
