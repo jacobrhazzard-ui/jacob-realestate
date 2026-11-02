@@ -22,7 +22,7 @@ export default function MortgageCalc({ price = 1800000, rate = 7, rate15, source
   const lower = monthlyPI(p, down, activeRate - 0.5, term);
 
   return (
-    <div className="bg-white shadow-sm p-6 md:p-8 my-10 not-prose">
+    <div className="bg-white border border-[#d8d2c6] p-6 md:p-8 my-12 not-prose">
       <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">Try it yourself</p>
       <h3 className="text-2xl f1 text-gray-900 mb-6">What would the payment be?</h3>
       <div className="grid md:grid-cols-2 gap-8">
@@ -32,14 +32,14 @@ export default function MortgageCalc({ price = 1800000, rate = 7, rate15, source
               <span>Home price</span>
               <span className="font-medium text-gray-900">{money(p)}</span>
             </span>
-            <input type="range" min={500000} max={5000000} step={25000} value={p} onChange={(e) => setP(Number(e.target.value))} className="w-full accent-gray-900" />
+            <input type="range" min={500000} max={5000000} step={25000} value={p} onChange={(e) => setP(Number(e.target.value))} className="w-full accent-[#1f4e66]" />
           </label>
           <label className="block">
             <span className="flex justify-between text-gray-700 mb-2">
               <span>Down payment</span>
               <span className="font-medium text-gray-900">{down}% ({money((p * down) / 100)})</span>
             </span>
-            <input type="range" min={5} max={50} step={5} value={down} onChange={(e) => setDown(Number(e.target.value))} className="w-full accent-gray-900" />
+            <input type="range" min={5} max={50} step={5} value={down} onChange={(e) => setDown(Number(e.target.value))} className="w-full accent-[#1f4e66]" />
           </label>
           <div>
             <span className="block text-gray-700 mb-2">Loan term</span>

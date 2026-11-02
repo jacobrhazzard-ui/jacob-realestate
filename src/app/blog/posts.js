@@ -4,6 +4,7 @@
 //
 // body blocks:
 //   { type: 'h2', text: '...' }
+//   { type: 'lede', text: '...' }   -> opening paragraph with a drop cap (use once, first)
 //   { type: 'p', text: '...' }
 //   { type: 'list', items: ['...', '...'] }
 //   { type: 'source', text: 'Source: ...', href: 'https://...' }
@@ -27,17 +28,19 @@ export const posts = [
     published: false,
     date: '2026-11-02',
     category: 'Market Update',
-    title: 'San Clemente Market Update: Rates Fall to 7.24%, Homes Selling in 34 Days + a Forster Ranch Spotlight',
+    title: 'Rates Ease to 7.24% as San Clemente Homes Keep Selling in 34 Days',
     excerpt:
-      'Mortgage rates eased for a second straight week, what that does to a payment on a San Clemente home, how we compare with the national market, a closer look at Forster Ranch, and the Village Art Faire this Saturday.',
+      "The 30-year average fell for a second straight week. Here's what that means for a payment in San Clemente, how the city compares with the country, and a closer look at Forster Ranch.",
     summary:
       'Rates dipped to their lowest level this month, while San Clemente homes are still selling in about half the time they took a year ago.',
     neighborhoods: ['forster-ranch'],
     image: '/photos/san-clemente/pier-sunset-palms.jpg',
     imageAlt: 'The San Clemente Pier at sunset framed by palm trees',
     body: [
+      { type: 'lede', text: 'For the second week in a row, borrowing got a little cheaper. The average 30-year fixed mortgage rate slipped to 7.24% last Thursday, its lowest level this month, according to Freddie Mac.' },
+      { type: 'p', text: "The move is small, but at San Clemente prices it shows up in the monthly payment. And the local market hasn't been waiting on rates. In September, the latest month Redfin has reported, homes here sold in a median of 34 days, about half the 71 days they took a year earlier." },
       { type: 'h2', text: 'Mortgage Rates' },
-      { type: 'p', text: "The average 30-year fixed rate eased again this week, to 7.24%, which Freddie Mac says is its lowest level this month. That's down from 7.32% last week, though still about a point higher than a year ago." },
+      { type: 'p', text: 'The 30-year average was 7.32% the week before and 6.17% a year ago, so rates are still about a point higher than last fall. The 15-year fixed fell to 6.60%.' },
       {
         type: 'rates',
         items: [
