@@ -23,6 +23,100 @@
 
 export const posts = [
   {
+    slug: 'san-clemente-market-update-november-2026',
+    published: false,
+    date: '2026-11-02',
+    category: 'Market Update',
+    title: 'San Clemente Market Update: Rates Fall to 7.24%, Homes Selling in 34 Days + a Forster Ranch Spotlight',
+    excerpt:
+      'Mortgage rates eased for a second straight week, what that does to a payment on a San Clemente home, how we compare with the national market, a closer look at Forster Ranch, and the Village Art Faire this Saturday.',
+    summary:
+      'Rates dipped to their lowest level this month, while San Clemente homes are still selling in about half the time they took a year ago.',
+    neighborhoods: ['forster-ranch'],
+    image: '/photos/san-clemente/pier-sunset-palms.jpg',
+    imageAlt: 'The San Clemente Pier at sunset framed by palm trees',
+    body: [
+      { type: 'h2', text: 'Mortgage Rates' },
+      { type: 'p', text: "The average 30-year fixed rate eased again this week, to 7.24%, which Freddie Mac says is its lowest level this month. That's down from 7.32% last week, though still about a point higher than a year ago." },
+      {
+        type: 'rates',
+        items: [
+          { label: '30-year fixed', value: 7.24, prev: 7.32, yearAgo: 6.17 },
+          { label: '15-year fixed', value: 6.60, prev: 6.68, yearAgo: 5.41 },
+        ],
+        source: 'Source: Freddie Mac Primary Mortgage Market Survey, October 29, 2026',
+        href: 'https://www.globenewswire.com/news-release/2026/10/29/3391637/0/en/mortgage-rates-decline-further-to-7-24.html',
+      },
+      { type: 'calculator', price: 1799143, rate: 7.24, rate15: 6.60, source: 'Freddie Mac weekly average, October 29, 2026' },
+      { type: 'h2', text: 'San Clemente Snapshot' },
+      {
+        type: 'snapshot',
+        title: 'San Clemente, all home types, September 2026',
+        items: [
+          { value: '$1.80M', label: 'Median sale price', change: '+4.0% vs. last year', dir: 'up' },
+          { value: '$815', label: 'Median price per sq ft', change: '+9.0% vs. last year', dir: 'up' },
+          { value: '34', label: 'Median days on market', change: 'Down from 71 a year ago', dir: 'down' },
+          { value: '184', label: 'Homes sold', change: 'Up from 163 a year ago', dir: 'up' },
+          { value: '26.0%', label: 'Sold above list', change: '+6.4 pts vs. last year', dir: 'up' },
+          { value: '24.2%', label: 'Had a price drop', change: '-10.5 pts vs. last year', dir: 'down' },
+        ],
+        source: 'Source: Redfin San Clemente housing market data, September 2026',
+        href: 'https://www.redfin.com/city/16690/CA/San-Clemente/housing-market',
+      },
+      { type: 'callout', title: 'Same month, still worth a look', text: "Redfin hasn't posted October numbers yet, so these are the September figures from last week. About one in four homes sold above list, and fewer sellers cut their price than a year ago. We'll update as soon as the new month is in." },
+      { type: 'h2', text: 'San Clemente vs. the U.S.' },
+      { type: 'p', text: "The October national numbers come out later this month. One early signal: NAR's pending home sales, which track contracts signed, fell 7.3% in September from August, and 9.2% in the West. Here in San Clemente, September closed sales were up 12.8% from a year ago, according to Redfin." },
+      {
+        type: 'compare',
+        rows: [
+          { label: 'Median price', local: '$1,799,143', localNote: '+4.0% year over year', other: '$417,500', otherNote: '+1.3% year over year' },
+          { label: 'Median days on market', local: '34 days', localNote: 'Down from 71', other: '33 days', otherNote: 'Same as a year ago' },
+          { label: 'Sales', local: '184 homes sold', localNote: 'Up from 163', other: '3.99M annual pace', otherNote: '+1.5% from August, -2.2% year over year' },
+        ],
+        source: 'Sources: Redfin (San Clemente, September 2026); National Association of REALTORS® existing-home sales, September 2026',
+      },
+      {
+        type: 'snapshot',
+        title: 'National market, September 2026',
+        items: [
+          { value: '1.60M', label: 'Homes for sale', change: '+4.6% vs. last year', dir: 'up' },
+          { value: '4.8', label: "Months' supply", change: 'Unchanged from August', dir: 'flat' },
+          { value: '31%', label: 'First-time buyers', change: 'Share of sales', dir: 'flat' },
+          { value: '$613,600', label: 'West median price', change: '-0.3% vs. last year', dir: 'down' },
+          { value: '-7.3%', label: 'Pending home sales', change: 'September vs. August', dir: 'down' },
+        ],
+        source: 'Source: National Association of REALTORS®, September 2026 existing-home sales and pending home sales (released October 20, 2026)',
+        href: 'https://www.nar.realtor/newsroom/existing-home-sales-increased-1-5-in-september-according-to-nar-report',
+      },
+      { type: 'h2', text: 'What It Means' },
+      {
+        type: 'takeaways',
+        items: [
+          { who: 'sellers', title: 'If you are selling', text: 'Homes here sold in a median of 34 days, and fewer sellers had to cut their price than a year ago. A well-priced home still tends to move without much waiting.' },
+          { who: 'buyers', title: 'If you are buying', text: "Two weeks of easing rates trims the monthly payment a little. Try the calculator above with your own numbers, and it's a good time to check in with your lender if you've been waiting." },
+        ],
+      },
+      { type: 'h2', text: 'Neighborhood Spotlight' },
+      {
+        type: 'spotlight',
+        neighborhood: 'forster-ranch',
+        text: 'Forster Ranch spreads across the hills about two miles from the beach, with about twenty single-family tracts and five condo communities built from the early 1970s on. Many homes have views, and the 3.2-mile Forster Ridgeline Trail looks out over the ocean and city lights.',
+        jacobsTake: "I grew up in Forster Ranch starting in 2001, and some of my best memories are from these streets and parks. It's a neighborhood I know inside and out.",
+      },
+      { type: 'h2', text: 'Around Town' },
+      {
+        type: 'event',
+        date: '2026-11-07',
+        label: 'Coming up Saturday',
+        title: 'San Clemente Village Art Faire',
+        time: '10 AM to 4 PM',
+        where: 'San Clemente Library and Community Center lawns, 242 Avenida Del Mar',
+        text: 'A long-running juried art faire where Southern California artisans sell their own handmade work, from photography and fine art to jewelry, ceramics, woodwork, glass and home decor. It happens on the first Saturday of most months, right in the heart of downtown.',
+        href: 'https://scdba.org/Village-Art-Faire',
+      },
+    ],
+  },
+  {
     slug: 'san-clemente-market-update-october-2026',
     published: true,
     date: '2026-10-27',
