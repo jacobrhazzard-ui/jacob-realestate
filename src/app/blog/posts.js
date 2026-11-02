@@ -25,7 +25,7 @@
 export const posts = [
   {
     slug: 'san-clemente-market-update-november-2026',
-    published: false,
+    published: true,
     date: '2026-11-02',
     category: 'Market Update',
     title: 'Rates Ease to 7.24% as San Clemente Homes Sell in a Median 15 Days',
