@@ -1,8 +1,9 @@
 import { reviews } from './reviews';
 
 // A client review band. Pass `dark` for use on dark backgrounds.
-export default function ReviewQuote({ dark = false, className = '' }) {
-  const r = reviews[0];
+// `index` picks which review to show, so different pages can show different clients.
+export default function ReviewQuote({ dark = false, className = '', index = 0 }) {
+  const r = reviews[index % reviews.length];
   if (!r) return null;
   return (
     <section className={`${dark ? 'bg-gray-900 text-white' : 'bg-[#e2ded4] text-gray-800'} py-16 px-6 text-center ${className}`}>

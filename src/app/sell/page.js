@@ -405,7 +405,7 @@ export default function SellHomePage() {
                     </div>
                 </div>
             </section>
-            <ReviewQuote />
+            <ReviewQuote index={1} />
             <MarketingSection />
             {/* Properties Showcase */}
             <SellPastSlide />
