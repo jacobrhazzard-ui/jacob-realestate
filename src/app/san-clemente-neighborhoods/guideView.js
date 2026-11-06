@@ -298,7 +298,7 @@ export default function GuideView({ n }) {
         </section>
       )}
 
-      <ReviewQuote />
+      <ReviewQuote index={2} />
 
       <section className="bg-gray-900 text-white py-20 px-6 text-center">
         <div className="max-w-2xl mx-auto">
