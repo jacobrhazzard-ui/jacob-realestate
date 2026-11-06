@@ -10,6 +10,11 @@ export const reviews = [
     quote: 'Jacob was extremely attentive and helpful on our quest to find a new home in Dana Point. He always kept us informed and stayed in touch through this process. I would recommend him to any homeowner selling the house or looking for your home.',
   },
   {
+    name: 'Joe Rowland',
+    role: 'Google review',
+    quote: 'He handled the sale of my condo in San Clemente and I highly recommend him.',
+  },
+  {
     name: 'Elana Benge',
     role: 'Google review',
     quote: 'We recommend Jacob Hazzard to anyone looking at buying or selling, especially in Orange County. He knows this business, works hard and communicates well. He has your best interest in mind and will do all he can to help you achieve your goals.',
