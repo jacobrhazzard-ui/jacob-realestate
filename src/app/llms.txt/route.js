@@ -1,5 +1,6 @@
 // llms.txt: a plain-text map of the site for AI search tools (ChatGPT, Perplexity, Claude, etc.).
 import { getPublishedPosts } from '../blog/posts';
+import { reviews, GOOGLE_PROFILE_URL } from '../reviews';
 import { getSanClementeNeighborhoods, getCities, guideHref } from '../san-clemente-neighborhoods/neighborhoods';
 
 const SITE = 'https://www.jacobhazzardrealestate.com';
@@ -14,6 +15,10 @@ export async function GET() {
   const posts = getPublishedPosts()
     .slice(0, 20)
     .map((p) => `- [${p.title}](${SITE}/blog/${p.slug}) (${p.date}): ${p.excerpt}`)
+    .join('\n');
+
+  const reviewLines = reviews
+    .map((r) => `- "${r.quote}" (${r.name}, ${r.role})`)
     .join('\n');
 
   const body = `# Jacob Hazzard, REALTOR® | Luxre Realty
@@ -39,6 +44,11 @@ ${posts}
 - [Central OC](${SITE}/oc-relocation-guide/central-oc)
 - [North OC](${SITE}/oc-relocation-guide/north-oc)
 - [East OC](${SITE}/oc-relocation-guide/east-oc)
+
+## Client reviews (in clients' own words)
+- [All client reviews](${SITE}/testimonials)
+- [Google Business Profile and reviews](${GOOGLE_PROFILE_URL})
+${reviewLines}
 
 ## Services
 - [Selling / home valuation](${SITE}/sell)

@@ -8,7 +8,7 @@ export async function GET() {
     "/oc-relocation-guide/south-oc",
     "/oc-relocation-guide/central-oc",
     "/oc-relocation-guide/north-oc",
-    "/oc-relocation-guide/east-oc", "/privacy-policy", "/terms-of-use"].map(
+    "/oc-relocation-guide/east-oc", "/testimonials", "/privacy-policy", "/terms-of-use"].map(
     (path) => ({ url: `https://www.jacobhazzardrealestate.com${path}`, lastModified })
   ).concat(
     getPublishedPosts().map((p) => ({ url: `https://www.jacobhazzardrealestate.com/blog/${p.slug}`, lastModified: p.date })),
