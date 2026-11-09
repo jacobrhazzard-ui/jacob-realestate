@@ -26,7 +26,7 @@
 export const posts = [
   {
     slug: 'san-clemente-market-update-november-9-2026',
-    published: false,
+    published: true,
     date: '2026-11-09',
     category: 'Market Update',
     title: 'October in San Clemente: A $1.74M Median, 13 Days on Market and a 7.18% Rate',
