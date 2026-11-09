@@ -8,7 +8,8 @@
 //   { type: 'p', text: '...' }
 //   { type: 'list', items: ['...', '...'] }
 //   { type: 'source', text: 'Source: ...', href: 'https://...' }
-//   { type: 'spotlight', neighborhood: 'talega', text: '...', jacobsTake: '...' }  -> card built from the guide
+//   { type: 'spotlight', neighborhood: 'talega', text: '...', jacobsTake: '...', hideImage }  -> card built from the guide
+//   { type: 'photo', src, alt, caption, credit, href }   -> a local San Clemente photo (free to use or Jacob's own)
 //   { type: 'snapshot', title, items: [{ value, label, change, dir: 'up'|'down'|'flat' }], source, href }
 //   { type: 'rates', items: [{ label, value, prev, yearAgo }], source, href }
 //   { type: 'calculator', price, rate, rate15, source }   -> interactive payment estimator
@@ -28,19 +29,38 @@ export const posts = [
     published: false,
     date: '2026-11-09',
     category: 'Market Update',
-    title: 'Rates Ease to 7.18% as San Clemente Homes Sell in a Median 13 Days',
+    title: 'October in San Clemente: A $1.74M Median, 13 Days on Market and a 7.18% Rate',
     excerpt:
-      "Mortgage rates fell for a third straight week. Here's what that means for a payment in San Clemente, October's local numbers, how the city compares with the country, and a closer look at Rancho San Clemente.",
+      "What's happening around town this week, October's local numbers, what a 7.18% rate means for a payment in San Clemente, and a closer look at Rancho San Clemente.",
     summary:
       'The 30-year average dipped to 7.18%, and San Clemente homes that closed in October sold in a median 13 days at 99.1% of list price, with the median sale price up 5.7% from a year ago, according to CRMLS.',
     neighborhoods: ['rancho-san-clemente'],
-    image: '/photos/san-clemente/pier-sunset-palms.jpg',
-    imageAlt: 'The San Clemente Pier at sunset, framed by palm trees',
+    image: 'https://images.unsplash.com/photo-1619062416814-bf0094fa1fb7',
+    imageAlt: 'Looking north from the San Clemente Pier at the beach, the waves and the coastal rail line',
     body: [
-      { type: 'lede', text: 'Borrowing got a little cheaper again. The average 30-year fixed mortgage rate eased to 7.18% last Thursday, its third weekly decline in a row, according to Freddie Mac.' },
+      { type: 'lede', text: 'The holiday season gets going in San Clemente this Saturday with the tree lighting at the Outlets. On the money side, borrowing got a little cheaper again: the average 30-year fixed mortgage rate came in at 7.18% last Thursday, down for the third week in a row, according to Freddie Mac.' },
       { type: 'p', text: 'Here in San Clemente, homes kept moving at a steady clip. Homes that closed in October sold in a median of 13 days, down from 20 a year earlier, according to CRMLS, the regional MLS where local agents list and report sales.' },
+      { type: 'h2', text: 'Around Town' },
+      {
+        type: 'event',
+        date: '2026-11-14',
+        label: 'Coming up Saturday',
+        title: 'Tree Lighting Celebration at the Outlets',
+        time: '5 PM',
+        where: 'Santa Clemente Village, Outlets at San Clemente, 101 W Avenida Vista Hermosa',
+        text: "The Outlets kick off the holiday season with an evening hosted by Josh Randall, a special performance by Orange County School of the Arts' Montage!, the Full Circle Boys headlining, and Santa on hand to help light the tree.",
+        href: 'https://www.outletsatsanclemente.com/event/32946-tree-lighting-celebration',
+      },
+      {
+        type: 'photo',
+        src: 'https://images.unsplash.com/photo-1622572090660-e2ac6db0bcbf',
+        alt: 'A surfer walking through the T Street beach tunnel in San Clemente',
+        caption: 'The T Street tunnel, one of the classic ways down to the sand.',
+        credit: 'Photo: Reed Naliboff on Unsplash',
+        href: 'https://unsplash.com/photos/man-in-black-shirt-walking-on-brown-concrete-bridge-during-daytime-yx9YSpX7JIE',
+      },
       { type: 'h2', text: 'Mortgage Rates' },
-      { type: 'p', text: 'The 30-year average was 7.24% the week before and 6.22% a year ago. The 15-year fixed slipped to 6.57%.' },
+      { type: 'p', text: 'The 30-year average was 7.24% the week before and 6.22% a year ago. The 15-year fixed came in at 6.57%.' },
       {
         type: 'rates',
         items: [
@@ -103,18 +123,8 @@ export const posts = [
       {
         type: 'spotlight',
         neighborhood: 'rancho-san-clemente',
+        hideImage: true,
         text: 'Rancho San Clemente is a hillside district overlooking the Pier Bowl, with eleven single-family tracts and three condo communities, mostly in Spanish and Mediterranean styles. Many homes look out over mountains, canyons and the Pacific, and on clear days Catalina Island.',
-      },
-      { type: 'h2', text: 'Around Town' },
-      {
-        type: 'event',
-        date: '2026-11-14',
-        label: 'Coming up Saturday',
-        title: 'Tree Lighting Celebration at the Outlets',
-        time: '5 PM',
-        where: 'Santa Clemente Village, Outlets at San Clemente, 101 W Avenida Vista Hermosa',
-        text: "The Outlets kick off the holiday season with an evening hosted by Josh Randall, a special performance by Orange County School of the Arts' Montage!, the Full Circle Boys headlining, and Santa on hand to help light the tree.",
-        href: 'https://www.outletsatsanclemente.com/event/32946-tree-lighting-celebration',
       },
     ],
   },
