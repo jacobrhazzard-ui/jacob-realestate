@@ -178,9 +178,11 @@ function Spotlight({ b }) {
   const why = (n.whyPeopleMove || []).slice(0, 3);
   return (
     <article className={`${WIDE} my-12 bg-white border border-[#d8d2c6]`}>
-      <div className="relative h-64 md:h-[380px]">
-        <Image src={n.image} alt={n.imageAlt || n.name} fill sizes="(max-width: 900px) 100vw, 880px" className="object-cover" />
-      </div>
+      {!b.hideImage && (
+        <div className="relative h-64 md:h-[380px]">
+          <Image src={n.image} alt={n.imageAlt || n.name} fill sizes="(max-width: 900px) 100vw, 880px" className="object-cover" />
+        </div>
+      )}
       <div className="p-6 md:p-10">
         <p className={`${kicker} text-[#1f4e66] mb-2`}>Neighborhood Spotlight</p>
         <h3 className={`${display.className} text-[34px] md:text-[44px] leading-tight text-[#14181c] mb-4`}>{n.name}</h3>
@@ -263,6 +265,29 @@ function Steps({ b }) {
   );
 }
 
+// A local photo with a caption and credit. Use only San Clemente photos that are
+// free to use (e.g. Unsplash License) or Jacob's own.
+function Photo({ b }) {
+  return (
+    <figure className={`${WIDE} my-12`}>
+      <div className="relative aspect-[3/2] bg-[#e7e2d8]">
+        <Image src={b.src} alt={b.alt || ''} fill sizes="(max-width: 900px) 100vw, 880px" className="object-cover" />
+      </div>
+      {(b.caption || b.credit) && (
+        <figcaption className={`${sans.className} text-[13px] leading-snug text-[#5b6168] mt-3`}>
+          {b.caption}
+          {b.credit && (
+            <span className="text-[#8a8f95]">
+              {b.caption ? ' · ' : ''}
+              {b.href ? <a href={b.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 decoration-[#b9b2a4]">{b.credit}</a> : b.credit}
+            </span>
+          )}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
 // Pull quote / "worth noticing" note.
 function Callout({ b }) {
   return (
@@ -303,6 +328,7 @@ export function Block({ b, first }) {
     case 'spotlight': return <Spotlight b={b} />;
     case 'event': return <Event b={b} />;
     case 'callout': return <Callout b={b} />;
+    case 'photo': return <Photo b={b} />;
     case 'steps': return <Steps b={b} />;
     case 'source': return <div className={NARROW}><Source text={b.text} href={b.href} /></div>;
     default:
