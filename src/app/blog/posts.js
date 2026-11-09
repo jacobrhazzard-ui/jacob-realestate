@@ -24,6 +24,101 @@
 
 export const posts = [
   {
+    slug: 'san-clemente-market-update-november-9-2026',
+    published: false,
+    date: '2026-11-09',
+    category: 'Market Update',
+    title: 'Rates Ease to 7.18% as San Clemente Homes Sell in a Median 13 Days',
+    excerpt:
+      "Mortgage rates fell for a third straight week. Here's what that means for a payment in San Clemente, October's local numbers, how the city compares with the country, and a closer look at Rancho San Clemente.",
+    summary:
+      'The 30-year average dipped to 7.18%, and San Clemente homes that closed in October sold in a median 13 days at 99.1% of list price, with the median sale price up 5.7% from a year ago, according to CRMLS.',
+    neighborhoods: ['rancho-san-clemente'],
+    image: '/photos/san-clemente/pier-sunset-palms.jpg',
+    imageAlt: 'The San Clemente Pier at sunset, framed by palm trees',
+    body: [
+      { type: 'lede', text: 'Borrowing got a little cheaper again. The average 30-year fixed mortgage rate eased to 7.18% last Thursday, its third weekly decline in a row, according to Freddie Mac.' },
+      { type: 'p', text: 'Here in San Clemente, homes kept moving at a steady clip. Homes that closed in October sold in a median of 13 days, down from 20 a year earlier, according to CRMLS, the regional MLS where local agents list and report sales.' },
+      { type: 'h2', text: 'Mortgage Rates' },
+      { type: 'p', text: 'The 30-year average was 7.24% the week before and 6.22% a year ago. The 15-year fixed slipped to 6.57%.' },
+      {
+        type: 'rates',
+        items: [
+          { label: '30-year fixed', value: 7.18, prev: 7.24, yearAgo: 6.22 },
+          { label: '15-year fixed', value: 6.57, prev: 6.60, yearAgo: 5.50 },
+        ],
+        source: 'Source: Freddie Mac Primary Mortgage Market Survey, November 5, 2026',
+        href: 'https://www.freddiemac.com/pmms',
+      },
+      { type: 'calculator', price: 1743250, rate: 7.18, rate15: 6.57, source: 'Freddie Mac weekly average, November 5, 2026' },
+      { type: 'h2', text: 'San Clemente Snapshot' },
+      {
+        type: 'snapshot',
+        title: 'San Clemente, all home types, October 2026',
+        items: [
+          { value: '$1.74M', label: 'Median sale price', change: '+5.7% vs. October 2025 ($1.65M)', dir: 'up' },
+          { value: '$775', label: 'Median price per sq ft', change: '+3.6% vs. last year ($747)', dir: 'up' },
+          { value: '13', label: 'Median days on market', change: 'Down from 20 a year ago', dir: 'down' },
+          { value: '46', label: 'Homes sold', change: 'Down from 49 a year ago', dir: 'down' },
+          { value: '99.1%', label: 'Median sale-to-list', change: 'Up from 99.0% a year ago', dir: 'up' },
+          { value: '$600K–$4.3M', label: 'Range of October sales', change: 'Lowest to highest closed price', dir: 'flat' },
+        ],
+        source: 'Source: CRMLS (California Regional MLS), closed residential sales in San Clemente, October 1–31, 2026 vs. October 2025. Pulled November 9, 2026.',
+      },
+      { type: 'h2', text: 'San Clemente vs. the U.S.' },
+      { type: 'p', text: "NAR's October national numbers come out on November 12, so September is still the latest side-by-side. With about 50 sales a month in San Clemente, the local median can swing with the mix of homes that close, so the trend over a few months tells the clearer story." },
+      {
+        type: 'compare',
+        rows: [
+          { label: 'Median price', local: '$2,200,000', localNote: '+16.6% year over year', other: '$417,500', otherNote: '+1.3% year over year' },
+          { label: 'Median days on market', local: '13 days', localNote: 'Down from 37', other: '33 days', otherNote: 'Same as a year ago' },
+          { label: 'Sales', local: '55 homes sold', localNote: 'Down from 58', other: '3.99M annual pace', otherNote: '+1.5% from August, -2.2% year over year' },
+        ],
+        source: 'Sources: CRMLS closed residential sales, San Clemente, September 2026 vs. September 2025; National Association of REALTORS® existing-home sales, September 2026',
+      },
+      {
+        type: 'snapshot',
+        title: 'National market, September 2026',
+        items: [
+          { value: '1.60M', label: 'Homes for sale', change: '+4.6% vs. last year', dir: 'up' },
+          { value: '4.8', label: "Months' supply", change: 'Unchanged from August', dir: 'flat' },
+          { value: '31%', label: 'First-time buyers', change: 'Share of September sales', dir: 'flat' },
+          { value: '$613,600', label: 'West median price', change: '-0.3% vs. last year', dir: 'down' },
+          { value: '-7.3%', label: 'Pending home sales', change: 'September vs. August', dir: 'down' },
+        ],
+        source: 'Source: National Association of REALTORS®, September 2026 existing-home sales (released October 13, 2026) and pending home sales (released October 20, 2026)',
+        href: 'https://www.nar.realtor/newsroom/existing-home-sales-increased-1-5-in-september-according-to-nar-report',
+      },
+      { type: 'callout', title: 'New from NAR this week', text: "NAR's 2026 Profile of Home Buyers and Sellers, released November 5, found first-time buyers made up 22% of purchases over the past year, up from a record-low 21%. The typical first-time buyer was 40 and put 9% down, and sellers had stayed in their homes a record 12 years before selling." },
+      { type: 'source', text: 'Source: National Association of REALTORS®, 2026 Profile of Home Buyers and Sellers, November 5, 2026', href: 'https://www.nar.realtor/newsroom/first-time-home-buyer-share-inches-up-to-22-median-age-remains-at-record-high-of-40' },
+      { type: 'h2', text: 'What It Means' },
+      {
+        type: 'takeaways',
+        items: [
+          { who: 'sellers', title: 'If you are selling', text: 'Homes that closed here in October sold in a median of 13 days at 99.1% of list price, according to CRMLS. Thoughtful pricing from the start still goes a long way.' },
+          { who: 'buyers', title: 'If you are buying', text: 'Three weeks of easing rates trims the monthly payment a little at a time. Try the calculator above with your own numbers, and a quick check-in with your lender can show where you stand.' },
+        ],
+      },
+      { type: 'h2', text: 'Neighborhood Spotlight' },
+      {
+        type: 'spotlight',
+        neighborhood: 'rancho-san-clemente',
+        text: 'Rancho San Clemente is a hillside district overlooking the Pier Bowl, with eleven single-family tracts and three condo communities, mostly in Spanish and Mediterranean styles. Many homes look out over mountains, canyons and the Pacific, and on clear days Catalina Island.',
+      },
+      { type: 'h2', text: 'Around Town' },
+      {
+        type: 'event',
+        date: '2026-11-14',
+        label: 'Coming up Saturday',
+        title: 'Tree Lighting Celebration at the Outlets',
+        time: '5 PM',
+        where: 'Santa Clemente Village, Outlets at San Clemente, 101 W Avenida Vista Hermosa',
+        text: "The Outlets kick off the holiday season with an evening hosted by Josh Randall, a special performance by Orange County School of the Arts' Montage!, the Full Circle Boys headlining, and Santa on hand to help light the tree.",
+        href: 'https://www.outletsatsanclemente.com/event/32946-tree-lighting-celebration',
+      },
+    ],
+  },
+  {
     slug: 'san-clemente-market-update-november-2026',
     published: true,
     date: '2026-11-02',
