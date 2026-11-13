@@ -9,13 +9,13 @@ import { JsonLd, SITE, agent, author, breadcrumbs } from '../jsonld';
 export const metadata = {
   title: 'Orange County Cities Near San Clemente: Area Guides',
   description:
-    'Local guides to the Orange County cities next to San Clemente: Dana Point, Capistrano Beach, San Juan Capistrano, Laguna Niguel and Laguna Beach. What each is known for, home prices, schools and getting around.',
+    'Local guides to the South Orange County cities near San Clemente: Dana Point, Capistrano Beach, San Juan Capistrano, Laguna Niguel, Laguna Beach, Mission Viejo, Laguna Hills, Aliso Viejo, Lake Forest, Rancho Santa Margarita and Ladera Ranch. What each is known for, home prices, schools and getting around.',
   alternates: { canonical: '/orange-county-cities' },
 };
 
 export default function CitiesHub() {
   const cities = getCities();
-  const photos = cities.map((c) => ({ src: c.image, alt: c.imageAlt }));
+  const photos = cities.filter((c) => c.image).map((c) => ({ src: c.image, alt: c.imageAlt }));
 
   return (
     <main className="text-gray-900 bg-[#faf8f4] font-sans">

@@ -6,13 +6,17 @@ export default function GuideGrid({ items, card = 'bg-white' }) {
     <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
       {items.map((n) => (
         <Link key={n.slug} href={guideHref(n)} className={`group block ${card} shadow-sm hover:shadow-lg transition overflow-hidden`}>
-          <div className="h-56 overflow-hidden">
+          <div className="h-56 overflow-hidden bg-gray-900">
+            {n.image ? (
             <div
               className="h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
               style={{ backgroundImage: `url('${n.image.startsWith('http') ? `${n.image}?w=900&q=70&auto=format&fit=crop` : n.image}')` }}
               role="img"
               aria-label={n.imageAlt}
             />
+            ) : (
+              <div className="h-full flex items-center justify-center text-white/80 f1 text-3xl tracking-tight">{n.name}</div>
+            )}
           </div>
           <div className="p-8 f2">
             <h3 className="text-2xl f1 mb-3 group-hover:underline">{n.name}</h3>

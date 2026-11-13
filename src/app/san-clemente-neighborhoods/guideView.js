@@ -65,7 +65,7 @@ export function guideMetadata(n) {
     title,
     description: n.summary,
     alternates: { canonical: guideHref(n) },
-    openGraph: { title, description: n.summary, type: 'article', images: [{ url: n.image.startsWith('http') ? `${n.image}?w=1200&q=75&auto=format&fit=crop` : n.image }] },
+    openGraph: { title, description: n.summary, type: 'article', ...(n.image ? { images: [{ url: n.image.startsWith('http') ? `${n.image}?w=1200&q=75&auto=format&fit=crop` : n.image }] } : {}) },
   };
 }
 
@@ -96,7 +96,7 @@ export default function GuideView({ n }) {
             dateModified: updated,
             url,
             mainEntityOfPage: url,
-            image: n.image.startsWith('http') ? n.image : `${SITE}${n.image}`,
+            ...(n.image ? { image: n.image.startsWith('http') ? n.image : `${SITE}${n.image}` } : {}),
             author,
             publisher: agent,
             about: placeFor(n),
@@ -117,8 +117,8 @@ export default function GuideView({ n }) {
         ]}
       />
 
-      <section className="relative min-h-[70vh] flex flex-col">
-        <PhotoRotator photos={n.gallery && n.gallery.length ? n.gallery : [{ src: n.image, alt: n.imageAlt }]} />
+      <section className="relative min-h-[70vh] flex flex-col bg-gray-900">
+        <PhotoRotator photos={n.gallery && n.gallery.length ? n.gallery : n.image ? [{ src: n.image, alt: n.imageAlt }] : []} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/30 z-10" />
         <Navigation />
         <div className="relative z-20 text-white text-center max-w-4xl mx-auto px-6 mt-auto mb-20 pt-40">
