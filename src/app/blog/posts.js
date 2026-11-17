@@ -25,6 +25,102 @@
 
 export const posts = [
   {
+    slug: 'san-clemente-market-update-november-17-2026',
+    published: true,
+    date: '2026-11-17',
+    category: 'Market Update',
+    title: 'San Clemente vs. the U.S. in October: A $1.74M Median, Up 5.7%, as Rates Slip to 7.11%',
+    excerpt:
+      "Mortgage rates eased for a fourth straight week, NAR's October numbers are in for a side-by-side with San Clemente, a closer look at Marblehead, and the Doggie Dive at Ole Hanson Beach Club.",
+    summary:
+      'The 30-year average slipped to 7.11%, its fourth weekly decline. San Clemente homes that closed in October sold in a median 13 days with a median price up 5.7% from a year ago, according to CRMLS, while national sales fell to a 3.75 million pace, according to NAR.',
+    neighborhoods: ['marblehead'],
+    image: 'https://images.unsplash.com/photo-1579127499232-a9ea42e7ff6c',
+    imageAlt: 'The San Clemente Pier and waves at sunset',
+    body: [
+      { type: 'lede', text: 'Borrowing got a little cheaper again last week. The average 30-year fixed mortgage rate slipped to 7.11%, down for the fourth week in a row, according to Freddie Mac.' },
+      { type: 'p', text: "And with the National Association of REALTORS® out with its October report, we can finally line San Clemente up against the country for the same month. Here, homes that closed in October sold in a median of 13 days, according to CRMLS, the regional MLS where local agents list and report sales. Nationally, it was 35." },
+      { type: 'h2', text: 'Mortgage Rates' },
+      { type: 'p', text: 'The 30-year average was 7.18% the week before and 6.24% a year ago. The 15-year fixed fell to 6.45%, from 6.57%.' },
+      {
+        type: 'rates',
+        items: [
+          { label: '30-year fixed', value: 7.11, prev: 7.18, yearAgo: 6.24 },
+          { label: '15-year fixed', value: 6.45, prev: 6.57, yearAgo: 5.49 },
+        ],
+        source: 'Source: Freddie Mac Primary Mortgage Market Survey, November 12, 2026',
+        href: 'https://www.freddiemac.com/pmms',
+      },
+      { type: 'calculator', price: 1743250, rate: 7.11, rate15: 6.45, source: 'Freddie Mac weekly average, November 12, 2026' },
+      { type: 'h2', text: 'San Clemente Snapshot' },
+      {
+        type: 'snapshot',
+        title: 'San Clemente, all home types, October 2026',
+        items: [
+          { value: '$1.74M', label: 'Median sale price', change: '+5.7% vs. October 2025 ($1.65M)', dir: 'up' },
+          { value: '$775', label: 'Median price per sq ft', change: '+3.6% vs. last year ($747)', dir: 'up' },
+          { value: '13', label: 'Median days on market', change: 'Down from 20 a year ago', dir: 'down' },
+          { value: '46', label: 'Homes sold', change: 'Down from 49 a year ago', dir: 'down' },
+          { value: '99.1%', label: 'Median sale-to-list', change: 'Up from 99.0% a year ago', dir: 'up' },
+          { value: '$600K–$4.3M', label: 'Range of October sales', change: 'Lowest to highest closed price', dir: 'flat' },
+        ],
+        source: 'Source: CRMLS (California Regional MLS), closed residential sales in San Clemente, October 1–31, 2026 vs. October 2025. Pulled November 17, 2026.',
+      },
+      { type: 'h2', text: 'San Clemente vs. the U.S.' },
+      { type: 'p', text: "NAR's October report, released November 12, showed national sales down 5.5% from September, while the national median price held close to last year's, up 0.4%. San Clemente's median rose faster, up 5.7%. With about 50 sales a month here, the local median can swing with the mix of homes that close, so the trend over a few months tells the clearer story." },
+      {
+        type: 'compare',
+        rows: [
+          { label: 'Median price', local: '$1,743,250', localNote: '+5.7% year over year', other: '$416,700', otherNote: '+0.4% year over year' },
+          { label: 'Median days on market', local: '13 days', localNote: 'Down from 20', other: '35 days', otherNote: 'Up from 34' },
+          { label: 'Sales', local: '46 homes sold', localNote: 'Down from 49', other: '3.75M annual pace', otherNote: '-5.5% from September, -8.8% year over year' },
+        ],
+        source: 'Sources: CRMLS closed residential sales, San Clemente, October 2026 vs. October 2025; National Association of REALTORS® existing-home sales, October 2026',
+      },
+      {
+        type: 'snapshot',
+        title: 'National market, October 2026',
+        items: [
+          { value: '1.59M', label: 'Homes for sale', change: '+4.6% vs. last year', dir: 'up' },
+          { value: '5.1', label: "Months' supply", change: 'Up from 4.7 in September', dir: 'up' },
+          { value: '29%', label: 'First-time buyers', change: 'Down from 32% a year ago', dir: 'down' },
+          { value: '$624,300', label: 'West median price', change: 'Unchanged from last year', dir: 'flat' },
+          { value: '650K', label: 'West sales pace', change: '-14.5% vs. last year', dir: 'down' },
+        ],
+        source: 'Source: National Association of REALTORS®, October 2026 existing-home sales (released November 12, 2026)',
+        href: 'https://www.nar.realtor/newsroom/existing-home-sales-decreased-5-5-percent-october-nar-report',
+      },
+      { type: 'h2', text: 'What It Means' },
+      {
+        type: 'takeaways',
+        items: [
+          { who: 'sellers', title: 'If you are selling', text: 'Homes that closed here in October sold in a median of 13 days at 99.1% of list price, according to CRMLS, even as sales slowed nationally. A home that is priced right from day one still tends to move quickly.' },
+          { who: 'buyers', title: 'If you are buying', text: 'Four straight weeks of easing rates adds up. Try the calculator above with your own numbers, and a quick conversation with your lender can show what the lower rate means for you.' },
+        ],
+      },
+      { type: 'h2', text: 'Neighborhood Spotlight' },
+      {
+        type: 'spotlight',
+        neighborhood: 'marblehead',
+        hideImage: true,
+        text: 'Marblehead starts just east of the 5 in North San Clemente and climbs into the hills, about a couple of miles from the beach. Most homes were built in the late 1980s and early 1990s in a handful of mostly gated enclaves, and the elevation gives many of them wide ocean views.',
+        jacobsTake: "Marblehead has some of the cleanest, best-kept homes in town, and the front-gate staff are some of the friendliest people you'll meet. You're also close to the freeway and downtown.",
+      },
+      { type: 'h2', text: 'Around Town' },
+      {
+        type: 'event',
+        date: '2026-11-21',
+        label: 'Coming up Saturday',
+        title: 'Doggie Dive at Ole Hanson Beach Club',
+        time: '9 AM to noon',
+        where: 'Ole Hanson Beach Club, 105 W. Avenida Pico',
+        cost: '$7 per dog pre-registered, $10 at the door for residents; humans free (non-resident fees apply)',
+        text: "The city's annual dogs-only swim before the pool closes for winter maintenance, with tennis balls in the pool, a doggie pie-eating contest on the front lawn at 11:30, and goodie bags while supplies last. Bring proof of a current dog license and rabies vaccination; pre-registration is encouraged.",
+        href: 'https://www.sanclemente.gov/Calendar.aspx?EID=1382',
+      },
+    ],
+  },
+  {
     slug: 'san-clemente-market-update-november-9-2026',
     published: true,
     date: '2026-11-09',
