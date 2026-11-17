@@ -34,11 +34,11 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Jacob Hazzard, REALTOR® | Luxre Realty · San Clemente & Orange County",
+    title: "Jacob Hazzard | REALTOR® · Luxre Realty · San Clemente & Orange County",
     description: "Buying, selling, investment and luxury real estate across San Clemente and Orange County, California.",
     url: "https://www.jacobhazzardrealestate.com",
     siteName: "Jacob Hazzard — Luxre Realty",
-    images: [{ url: "https://www.jacobhazzardrealestate.com/brand/og-jacob-hazzard.jpg", width: 1200, height: 630, alt: "Jacob Hazzard, REALTOR® with Luxre Realty, San Clemente" }],
+    images: [{ url: "https://www.jacobhazzardrealestate.com/brand/og-jacob-hazzard-v2.jpg", width: 1200, height: 630, alt: "Jacob Hazzard, REALTOR® with Luxre Realty, San Clemente" }],
     locale: "en_US",
     type: "website"
   },
@@ -46,7 +46,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Jacob Hazzard | Luxre Realty",
     description: "San Clemente-born REALTOR® helping buyers and sellers across San Clemente and Orange County.",
-    images: ["https://www.jacobhazzardrealestate.com/brand/og-jacob-hazzard.jpg"]
+    images: ["https://www.jacobhazzardrealestate.com/brand/og-jacob-hazzard-v2.jpg"]
   }
 };
 
