@@ -26,7 +26,7 @@
 export const posts = [
   {
     slug: 'san-clemente-market-update-november-17-2026',
-    published: false,
+    published: true,
     date: '2026-11-17',
     category: 'Market Update',
     title: 'San Clemente vs. the U.S. in October: A $1.74M Median, Up 5.7%, as Rates Slip to 7.11%',
