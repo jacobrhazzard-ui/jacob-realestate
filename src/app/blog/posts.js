@@ -29,17 +29,34 @@ export const posts = [
     published: true,
     date: '2026-11-23',
     category: 'Market Update',
-    title: 'Mortgage Rates Jump to 7.28%, Ending a Four-Week Slide, as San Clemente Homes Keep Selling in 13 Days',
+    title: '8 San Clemente Homes Went Under Contract This Week as Mortgage Rates Jumped to 7.28%',
     excerpt:
-      "Rates turned back up last week, national contract signings slipped, and San Clemente's October sales still moved fast. Plus a closer look at Sea Summit and Santa's Village by the Sea downtown.",
+      "This week in San Clemente: 8 new listings, 8 homes under contract and 8 closings, with 112 homes for sale. Rates turned back up, national contract signings slipped, and we take a closer look at Sea Summit and Santa's Village by the Sea.",
     summary:
-      'The 30-year average rose to 7.28% from 7.11%, according to Freddie Mac, ending four straight weekly declines. Nationally, pending home sales fell 4.7% in October, according to NAR. In San Clemente, homes that closed in October sold in a median 13 days with a median price up 5.7% from a year ago, according to CRMLS.',
+      'In the past week, 8 San Clemente homes went under contract and 8 closed at a median $1,820,000, with 112 homes for sale, according to CRMLS. The 30-year average rose to 7.28% from 7.11%, according to Freddie Mac, ending four straight weekly declines. Nationally, pending home sales fell 4.7% in October, according to NAR. In San Clemente, homes that closed in October sold in a median 13 days with a median price up 5.7% from a year ago, according to CRMLS.',
     neighborhoods: ['sea-summit'],
     image: '/photos/san-clemente/pier-lifeguard-tower.jpg',
     imageAlt: 'The lifeguard tower on the San Clemente Pier on a sunny day',
     body: [
       { type: 'lede', text: 'After four weeks of easing, mortgage rates turned back up last week. The average 30-year fixed rate rose to 7.28% from 7.11%, according to Freddie Mac, and the 15-year climbed to 6.66%.' },
       { type: 'p', text: "The daily numbers have started to cool off a bit since then: Mortgage News Daily's 30-year index was 7.33% on Friday, down from 7.45% on Thursday. Here in San Clemente, October's sales still tell a story of homes that move quickly when they're priced right." },
+      { type: 'h2', text: 'This Week in San Clemente' },
+      { type: 'p', text: "Here's what moved in the past seven days, November 16 to 23. Eight homes came on the market, eight went under contract and eight closed. So far in November, 26 homes have closed at a median $2,005,250." },
+      {
+        type: 'snapshot',
+        title: 'San Clemente, all home types, right now',
+        items: [
+          { value: '112', label: 'Homes for sale', change: 'Median list price $2,147,000', dir: 'flat' },
+          { value: '$901', label: 'Median list price per sq ft', change: 'Active listings', dir: 'flat' },
+          { value: '62', label: 'Median days on market', change: 'Active listings', dir: 'flat' },
+          { value: '8', label: 'New listings', change: 'Past 7 days (1 coming soon, 2 already under contract)', dir: 'flat' },
+          { value: '8', label: 'Went under contract', change: 'Past 7 days, median list price $1,925,000', dir: 'flat' },
+          { value: '8', label: 'Closed sales', change: 'Past 7 days, median $1,820,000 at 97.9% of list', dir: 'flat' },
+          { value: '26', label: 'Closed so far in November', change: 'Nov. 1–23, median $2,005,250', dir: 'flat' },
+          { value: '2.4', label: "Months' supply", change: '112 active ÷ 46 October sales', dir: 'flat' },
+        ],
+        source: 'Source: CRMLS (California Regional MLS), San Clemente residential, pulled November 23, 2026. Months of supply is active listings divided by October closed sales.',
+      },
       { type: 'h2', text: 'Mortgage Rates' },
       { type: 'p', text: 'The 30-year average was 7.11% the week before and 6.26% a year ago. The 15-year fixed rose to 6.66% from 6.45%.' },
       {
