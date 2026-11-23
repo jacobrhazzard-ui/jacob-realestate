@@ -39,7 +39,7 @@ export const posts = [
     imageAlt: 'The lifeguard tower on the San Clemente Pier on a sunny day',
     body: [
       { type: 'lede', text: 'After four weeks of easing, mortgage rates turned back up last week. The average 30-year fixed rate rose to 7.28% from 7.11%, according to Freddie Mac, and the 15-year climbed to 6.66%.' },
-      { type: 'p', text: "The daily numbers have started to cool off a bit since then: Mortgage News Daily's 30-year index was 7.33% on Friday, down from 7.45% on Thursday. Here in San Clemente, October's sales still tell a story of homes that move quickly when they're priced right." },
+      { type: 'p', text: "The daily numbers have started to cool off a bit since then: Mortgage News Daily's 30-year index was 7.33% on Friday, down from 7.45% on Thursday. Here in San Clemente, the market kept moving: in the past seven days, 8 homes went under contract and 8 closed at a median $1,820,000, according to CRMLS." },
       { type: 'h2', text: 'Around Town' },
       {
         type: 'event',
@@ -79,10 +79,11 @@ export const posts = [
         source: 'Source: Freddie Mac Primary Mortgage Market Survey, November 19, 2026',
         href: 'https://www.freddiemac.com/pmms',
       },
-      { type: 'p', text: "The calculator below starts at $1,743,250, San Clemente's median sale price for October, according to CRMLS. Change it to any price you like." },
-      { type: 'calculator', price: 1743250, rate: 7.28, rate15: 6.66, source: 'Freddie Mac weekly average, November 19, 2026' },
+      { type: 'p', text: "The calculator below starts at $1,820,000, the median price of the 8 San Clemente homes that closed in the past week, according to CRMLS. Change it to any price you like." },
+      { type: 'calculator', price: 1820000, rate: 7.28, rate15: 6.66, source: 'Freddie Mac weekly average, November 19, 2026' },
       { type: 'source', text: 'Daily rate: Mortgage News Daily 30-year fixed index, 7.33% on November 20, 2026', href: 'https://www.mortgagenewsdaily.com/mortgage-rates/30-year-fixed' },
       { type: 'h2', text: 'Last Month at a Glance' },
+      { type: 'p', text: 'For context, here is October, the most recent full month.' },
       {
         type: 'snapshot',
         title: 'San Clemente, all home types, October 2026',
@@ -128,7 +129,7 @@ export const posts = [
       {
         type: 'takeaways',
         items: [
-          { who: 'sellers', title: 'If you are selling', text: 'Homes that closed here in October sold in a median of 13 days at 99.1% of list price, according to CRMLS. With rates ticking up, pricing well from day one matters even more.' },
+          { who: 'sellers', title: 'If you are selling', text: 'The 8 homes that closed here in the past week sold at a median 97.9% of list price, and 8 more went under contract, according to CRMLS. With 112 homes for sale and rates ticking up, pricing well from day one matters.' },
           { who: 'buyers', title: 'If you are buying', text: "A 17-basis-point jump in a week is a reminder that rates move both ways. Run your numbers in the calculator above, and ask your lender how a rate lock works if you're close to writing an offer." },
         ],
       },
