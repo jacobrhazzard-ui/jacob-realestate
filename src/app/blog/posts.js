@@ -26,7 +26,7 @@
 export const posts = [
   {
     slug: 'san-clemente-market-update-november-23-2026',
-    published: false,
+    published: true,
     date: '2026-11-23',
     category: 'Market Update',
     title: 'Mortgage Rates Jump to 7.28%, Ending a Four-Week Slide, as San Clemente Homes Keep Selling in 13 Days',
@@ -68,7 +68,7 @@ export const posts = [
         ],
         source: 'Source: CRMLS (California Regional MLS), closed residential sales in San Clemente, October 1–31, 2026 vs. October 2025. Pulled November 17, 2026.',
       },
-      { type: 'callout', title: 'Reading a small market', text: 'With about 50 sales a month in San Clemente, the local median can swing with the mix of homes that close. The trend over a few months tells the clearer story than any single month.' },
+      { type: 'callout', title: 'Reading a small market', text: 'With about 50 sales a month in San Clemente, the local median can swing with the mix of homes that close. The trend over a few months tells a clearer story than any single month.' },
       { type: 'h2', text: 'San Clemente vs. the U.S.' },
       { type: 'p', text: "October is the latest month with numbers on both sides. San Clemente's median rose 5.7% from a year earlier, while the national median barely moved, up 0.4%, according to NAR." },
       {
