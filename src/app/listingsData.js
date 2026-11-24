@@ -10,7 +10,7 @@ export const listingSections = [
     eyebrow: 'Listing Agent',
     title: 'Sold & Pending',
     listings: [
-      { address: '4709 Westerly Ct', city: 'Oceanside', beds: 3, baths: 2, sqft: 1230, price: '$600,000', date: '2026-10', status: 'Under Contract', image: '/listings/4709-westerly-ct.jpg' },
+      { address: '4709 Westerly Ct', city: 'Oceanside', beds: 3, baths: 2, sqft: 1230, price: '$582,500', date: '2026-11', status: 'Sold', image: '/listings/4709-westerly-ct.jpg' },
       { address: '1404 Buena Vista #1', city: 'San Clemente', beds: 2, baths: 2, sqft: 1024, price: '$1,020,000', date: '2026-10', status: 'Sold', image: '/listings/1404-buena-vista-1.jpg' },
       { address: '1332 Felipe', city: 'San Clemente', beds: 2, baths: 2, sqft: 1032, price: '$1,015,000', date: '2026-07', status: 'Sold', image: '/listings/1332-felipe.jpg' },
       { address: '433 E Avenida Cordoba', city: 'San Clemente', beds: 4, baths: 3, sqft: 2549, price: '$2,600,000', date: '2025-05', status: 'Sold', image: '/cordoba4.jpeg' },
