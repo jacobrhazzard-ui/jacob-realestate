@@ -29,7 +29,7 @@ export const posts = [
     published: false,
     date: '2026-11-30',
     category: 'Market Update',
-    title: '7 San Clemente Homes Went Under Contract Over Thanksgiving Week as Rates Eased to 7.21%',
+    title: 'Sellers Took Thanksgiving Off. San Clemente Buyers Didn’t.',
     excerpt:
       "Thanksgiving week in San Clemente: 7 homes went under contract, 5 closed and just 2 new listings came on, with 108 homes for sale. Rates eased, Santa's Village and Puttin' on the Glitz are this Saturday, and we take a closer look at Shorecliffs.",
     summary:
